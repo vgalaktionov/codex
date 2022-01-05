@@ -1,4 +1,5 @@
-import { Button, Flex, Heading, ListItem, UnorderedList, useMediaQuery, VStack } from '@chakra-ui/react';
+import { Button, Flex, Heading, HStack, ListItem, UnorderedList, useMediaQuery, VStack } from '@chakra-ui/react';
+import NextLink from 'next/link';
 
 export const Hero = () => {
     const [isLargeScreen] = useMediaQuery('(min-width: 1280px)');
@@ -25,10 +26,17 @@ export const Hero = () => {
                     <ListItem>Roll dice</ListItem>
                     <ListItem>All of the above over multiple campaigns</ListItem>
                 </UnorderedList>
-                <Button mx="2" colorScheme="teal">
-                    Get started
-                </Button>
-                <Button mx="2">Tell me more</Button>
+
+                <HStack mt="10" pt="5">
+                    <NextLink href="/register" passHref>
+                        <Button as="a" mx="2" colorScheme="teal">
+                            Get started
+                        </Button>
+                    </NextLink>
+                    <Button as="a" href="/#features" mx="2">
+                        Tell me more
+                    </Button>
+                </HStack>
             </VStack>
         </Flex>
     );

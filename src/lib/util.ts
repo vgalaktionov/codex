@@ -6,3 +6,5 @@ export async function measurePromise<T>(fn: (...args: any[]) => Promise<T>, name
     log.info(`${name ?? fn.name} took ${performance.now() - start} ms`);
     return result;
 }
+
+export type HasID<T> = T & { id: number };
