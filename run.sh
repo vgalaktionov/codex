@@ -10,7 +10,8 @@ else
 fi
 
 if [ -f /app/codex.sqlite ]; then
-    sqlite3 /app/codex.sqlite
+    echo "No database found, created empty file"
+    touch /app/codex.sqlite
 fi
 
 # Run litestream with your app as the subprocess.

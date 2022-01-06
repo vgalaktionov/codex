@@ -18,4 +18,4 @@ RUN npm run build
 
 COPY litestream.yml /etc/litestream.yml
 
-CMD run.sh
+CMD ./run.sh
