@@ -1,10 +1,11 @@
 {
     "private": true,
     "scripts": {
+        "test": "$(npm bin)/jest",
         "dev": "next",
         "build": "next build",
         "start": "next start",
-        "load": "$(npm bin)/ts-node src/lib/rules/index.ts"
+        "load": "$(npm bin)/ts-node src/lib/rules/load.ts"
     },
     "dependencies": {
         "@chakra-ui/icons": "^1.0.5",
@@ -13,7 +14,6 @@
         "@emotion/react": "11.1.5",
         "@emotion/styled": "11.1.5",
         "@hookform/resolvers": "^2.8.5",
-        "@leafac/sqlite": "^2.0.2",
         "@types/js-yaml": "^4.0.5",
         "axios": "^0.24.0",
         "bcrypt": "^5.0.1",
@@ -22,6 +22,7 @@
         "framer-motion": "^4.0.3",
         "gray-matter": "^4.0.3",
         "http-status-codes": "^2.2.0",
+        "jsdom": "^19.0.0",
         "jsonwebtoken": "^8.5.1",
         "marked": "^4.0.8",
         "next": "latest",
@@ -29,19 +30,27 @@
         "react-dom": "^17.0.2",
         "react-hook-form": "^7.22.5",
         "react-icons": "^4.3.1",
+        "sql-template-strings": "^2.2.2",
+        "sqlite": "^4.0.23",
+        "sqlite3": "^5.0.2",
         "ts-node": "^10.4.0",
+        "turndown": "^7.1.1",
         "zod": "^3.11.6"
     },
     "devDependencies": {
         "@types/bcrypt": "^5.0.0",
+        "@types/cannon": "0.1.8",
         "@types/cookies": "^0.7.7",
+        "@types/jest": "^27.4.0",
         "@types/jsonwebtoken": "^8.5.6",
         "@types/node": "^14.6.0",
         "@types/react": "^17.0.3",
         "@types/react-dom": "^17.0.3",
-        "@types/cannon": "0.1.8",
+        "@types/sqlite3": "^3.1.8",
         "@types/three": "^0.135.0",
+        "jest": "^27.4.7",
         "three": "^0.117.1",
+        "ts-jest": "^27.1.2",
         "typescript": "4.3.2"
     }
 }

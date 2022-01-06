@@ -40,6 +40,12 @@ export function resolveDescriptionsFromContent(rule: Rule) {
     }
 }
 
+export const DBRuleSchema = RuleSchema.extend({
+    id: z.number().int().positive(),
+    rule: RuleSchema,
+});
+export type DBRule = z.infer<typeof DBRuleSchema>;
+
 export const GetOrChooseSchema = <T>(schema: ZodSchema<T>, options: readonly [string, ...string[]]) =>
     z.object({
         get: schema,

@@ -2,7 +2,8 @@ import fs from 'fs/promises';
 import matter from 'gray-matter';
 import path from 'path';
 import { ZodSchema } from 'zod';
-import { log, measurePromise } from '../util';
+import { upsertRule } from '../../db/rules';
+import { log } from '../util';
 import { GeneralRuleSchema, resolveDescriptionsFromContent, Rule, RuleCategory } from './base';
 import { ClassSchema } from './classes';
 import { RaceSchema } from './races';
@@ -23,14 +24,14 @@ const ALL_RULES: Readonly<RuleConfig[]> = [
     { category: RuleCategory.CLASS, defaultPath: 'rules/classes', schema: ClassSchema },
 ] as const;
 
-export async function loadDefaultRules() {
-    log.info('Loading default rules...');
+export async function loadDefaultRules(verbose = false) {
+    verbose && log.info('Loading default rules...');
 
     try {
         await Promise.all(
             ALL_RULES.map(async (config) => {
                 const files = await fs.readdir(config.defaultPath);
-                log.info({ category: config.category, files });
+                verbose && log.info({ category: config.category, files });
 
                 await Promise.all(
                     files.map(async (fileName) => {
@@ -42,16 +43,17 @@ export async function loadDefaultRules() {
                             category: config.category,
                         });
                         resolveDescriptionsFromContent(validated);
-                        log.info(validated);
+                        verbose && log.info(validated);
+
+                        await upsertRule(validated);
                     }),
                 );
             }),
         );
     } catch (error) {
         log.error('Failed to load default rules: ', error);
+        throw error;
     }
 
-    log.info('Loaded default rules successfully!');
+    verbose && log.info('Loaded default rules successfully!');
 }
-
-measurePromise(loadDefaultRules);
