@@ -52,7 +52,7 @@ const Login = () => {
                     <Text mt="6" mb="6">
                         Welcome back! Please enter your login details to get started. <br /> Don't have an account yet?
                         Click
-                        <NextLink href="/login" passHref>
+                        <NextLink href="/register" passHref>
                             <Link color="teal.500"> here </Link>
                         </NextLink>
                         to register.

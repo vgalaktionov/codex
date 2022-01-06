@@ -40,6 +40,9 @@ export function resolveDescriptionsFromContent(rule: Rule) {
     }
 }
 
+export const linkHref = (rule: Rule) =>
+    `/app/rules/${rule.category.toLowerCase()}/${encodeURIComponent(rule.name.toLowerCase())}`;
+
 export const DBRuleSchema = RuleSchema.extend({
     id: z.number().int().positive(),
     rule: RuleSchema,
@@ -56,3 +59,9 @@ export const GetOrChooseSchema = <T>(schema: ZodSchema<T>, options: readonly [st
             }),
         ),
     });
+
+export const RuleLinksSchema = z.record(
+    z.nativeEnum(RuleCategory),
+    z.record(z.string().min(1), z.object({ href: z.string().min(1) })),
+);
+export type RuleLinks = z.infer<typeof RuleLinksSchema>;
