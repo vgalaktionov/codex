@@ -2,4 +2,4 @@ dbs:
     - path: /app/codex.sqlite
       replicas:
           - url: s3://codex.ams3.digitaloceanspaces.com/db
-      exec: npm start
+      exec: cd /app && npm start
