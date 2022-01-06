@@ -61,9 +61,13 @@ const SidebarLink = ({
 );
 
 export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
-    const { status, data, error } = useQuery('ruleLinks', async () =>
-        RuleLinksSchema.parse((await axios.get('/api/rules/links')).data.rulesLinks),
-    );
+    const { status, data, error } = useQuery('ruleLinks', async () => {
+        try {
+            return RuleLinksSchema.parse((await axios.get('/api/rules/links')).data.rulesLinks);
+        } catch (error) {
+            return [];
+        }
+    });
     const { colorMode } = useColorMode();
     const router = useRouter();
     const {
