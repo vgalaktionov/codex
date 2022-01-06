@@ -16,4 +16,6 @@ COPY . .
 
 RUN npm run build
 
-CMD npm start
+COPY litestream.yml /etc/litestream.yml
+
+CMD litestream replicate
