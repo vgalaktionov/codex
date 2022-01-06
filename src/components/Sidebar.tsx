@@ -5,20 +5,19 @@ import {
     AccordionItem,
     AccordionPanel,
     Box,
+    Button,
     Drawer,
     DrawerBody,
     DrawerContent,
     DrawerOverlay,
     Flex,
     FormControl,
-    FormErrorMessage,
-    FormLabel,
     Heading,
     HStack,
     Icon,
     Input,
     InputGroup,
-    InputLeftElement,
+    InputRightElement,
     Link,
     LinkProps,
     useColorMode,
@@ -31,20 +30,19 @@ import { useRouter } from 'next/router';
 import { PropsWithChildren } from 'react';
 import { useForm } from 'react-hook-form';
 import { IconType } from 'react-icons';
-import {
-    FaBookDead,
-    FaDiceD20,
-    FaHistory,
-    FaScroll,
-    FaSearch,
-    FaSignOutAlt,
-    FaUserCircle,
-    FaUsers,
-} from 'react-icons/fa';
+import { FaBookDead, FaDiceD20, FaHistory, FaScroll, FaSignOutAlt, FaUserCircle, FaUsers } from 'react-icons/fa';
+import { GiArchiveResearch, GiOrcHead, GiRuleBook, GiWizardFace, GiWomanElfFace } from 'react-icons/gi';
 import { useQuery } from 'react-query';
-import { RuleLinksSchema } from '../lib/rules/base';
+import { PUBLIC_ROUTES } from '../lib/auth';
+import { RuleCategory, RuleLinksSchema } from '../lib/rules/base';
 import { SearchForm, SearchFormSchema } from '../lib/search';
-import { log } from '../lib/util';
+
+const CATEGORY_ICONS: Record<string, IconType> = {
+    [RuleCategory.GENERAL]: GiRuleBook,
+    [RuleCategory.RACE]: GiWomanElfFace,
+    [RuleCategory.SUBRACE]: GiOrcHead,
+    [RuleCategory.CLASS]: GiWizardFace,
+};
 
 const SidebarLink = ({
     href,
@@ -74,9 +72,8 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
         watch,
         formState: { errors },
     } = useForm<SearchForm>({ resolver: zodResolver(SearchFormSchema) });
-    log.info(data);
 
-    const show = !['/', '/login', '/register'].includes(router.asPath);
+    const show = !PUBLIC_ROUTES.includes(router.asPath);
 
     if (!show) return null;
 
@@ -86,7 +83,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
 
     const contents = (
         <VStack height="calc(100vh - 62px)" py="10" px="10" justifyContent="start" alignItems="start">
-            <Heading size="md" textDecoration="underline">
+            <Heading size="md" color="orange.400" pb="2">
                 Characters
             </Heading>
             <SidebarLink href="/app/characters/sheet" icon={FaScroll}>
@@ -96,7 +93,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
                 List
             </SidebarLink>
 
-            <Heading size="md" textDecoration="underline" pt="10">
+            <Heading size="md" color="orange.400" pt="10" pb="2">
                 Dice
             </Heading>
             <SidebarLink href="/app/dice/roll" icon={FaDiceD20}>
@@ -106,51 +103,58 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
                 History
             </SidebarLink>
 
-            <Heading size="md" textDecoration="underline" pt="10">
+            <Heading size="md" color="orange.400" pt="10" pb="2">
                 Campaigns
             </Heading>
             <SidebarLink href="/app/campaigns/list" icon={FaBookDead}>
                 List
             </SidebarLink>
 
-            <Heading size="md" textDecoration="underline" pt="10">
+            <Heading size="md" color="orange.400" pt="10" pb="2">
                 Rules
             </Heading>
-            <FormControl isInvalid={errors.q != null} mb="6">
-                <FormLabel htmlFor="q">Search rules</FormLabel>
+            <FormControl isInvalid={errors.q != null} mb="6" pt="2">
                 <InputGroup>
-                    <InputLeftElement pointerEvents="none" children={<FaSearch />} />
                     <Input type="search" {...register('q')}></Input>
+                    <InputRightElement pointerEvents="none" children={<GiArchiveResearch />} />
                 </InputGroup>
-                {/* <FormHelperText>Enter the q you use to log in.</FormHelperText> */}
-                {errors.q && <FormErrorMessage>{errors.q.message}</FormErrorMessage>}
             </FormControl>
-            <Accordion maxWidth="200px">
+            <Flex w="100%" justifyContent="end" pt="2" pb="4" borderBottom="1px" borderBottomColor="gray">
+                <Button colorScheme="gray" ml="auto">
+                    Search rules
+                </Button>
+            </Flex>
+            <Heading size="sm" pt="2">
+                Browse
+            </Heading>
+            <Accordion maxWidth="100%" pt="2">
                 {Object.entries(data ?? {}).map(([category, values]) => (
                     <AccordionItem key={category} border="none">
                         <Heading>
                             <AccordionButton>
+                                <Icon as={CATEGORY_ICONS[category] ?? null} py="auto" display="block" mr="2" />
                                 <Box flex="1" textAlign="left">
                                     {category}
                                 </Box>
+                                <hr />
                                 <AccordionIcon />
                             </AccordionButton>
                         </Heading>
                         <AccordionPanel>
                             {Object.entries(values).map(([name, { href }]) => (
-                                <>
+                                <Box key={name} ml="6" my="3">
                                     <NextLink href={href} passHref>
-                                        <Link ml="5">{name}</Link>
+                                        <Link> ❖&nbsp;&nbsp; {name}</Link>
                                     </NextLink>
                                     <br />
-                                </>
+                                </Box>
                             ))}
                         </AccordionPanel>
                     </AccordionItem>
                 ))}
             </Accordion>
 
-            <Heading size="md" textDecoration="underline" pt="10">
+            <Heading size="md" color="orange.400" pt="10" pb="2">
                 Accounts
             </Heading>
             <SidebarLink href="/app/characters/sheet" icon={FaUserCircle}>

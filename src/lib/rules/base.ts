@@ -1,4 +1,5 @@
 import { z, ZodSchema } from 'zod';
+import { User } from '../auth';
 import { Race } from './races';
 import { Subrace } from './subraces';
 
@@ -42,6 +43,11 @@ export function resolveDescriptionsFromContent(rule: Rule) {
 
 export const linkHref = (rule: Rule) =>
     `/app/rules/${rule.category.toLowerCase()}/${encodeURIComponent(rule.name.toLowerCase())}`;
+
+export const render = (rule: Rule, user?: User) => {
+    // const html = marked.parse(rule.description);
+    return rule.description;
+};
 
 export const DBRuleSchema = RuleSchema.extend({
     id: z.number().int().positive(),

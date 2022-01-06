@@ -1,11 +1,14 @@
 import { Box, Button, Flex, Heading, IconButton, Link } from '@chakra-ui/react';
 import Image from 'next/image';
 import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 import { GrMenu } from 'react-icons/gr';
 import icon from '../../public/android-chrome-512x512.png';
+import { PUBLIC_ROUTES } from '../lib/auth';
 import { DarkModeSwitch } from './DarkModeSwitch';
 
 export default function Header(props: { onOpen(): void }) {
+    const router = useRouter();
     return (
         <Flex
             py="1"
@@ -35,42 +38,44 @@ export default function Header(props: { onOpen(): void }) {
                 </Flex>
             </NextLink>
 
-            <Flex
-                px="5"
-                my="auto"
-                justifyContent="space-between"
-                alignItems="center"
-                fontSize="lg"
-                width="80%"
-                display={['none', 'flex']}
-            >
-                <Box>
-                    <Link mx="4" href="/#features">
-                        Features
-                    </Link>
-                    <Link mx="4" href="/#pricing">
-                        Pricing
-                    </Link>
-                    <Link mx="4" href="/#legal">
-                        Legal
-                    </Link>
-                    <Link mx="4" href="/#about">
-                        About
-                    </Link>
-                </Box>
-                <Box>
-                    <NextLink href="/register" passHref>
-                        <Button as="a" mx="2" colorScheme="cyan">
-                            Register
-                        </Button>
-                    </NextLink>
-                    <NextLink href="/login" passHref>
-                        <Button as="a" mx="2" colorScheme="gray">
-                            Login
-                        </Button>
-                    </NextLink>
-                </Box>
-            </Flex>
+            {PUBLIC_ROUTES.includes(router.asPath) && (
+                <Flex
+                    px="5"
+                    my="auto"
+                    justifyContent="space-between"
+                    alignItems="center"
+                    fontSize="lg"
+                    width="80%"
+                    display={['none', 'flex']}
+                >
+                    <Box>
+                        <Link mx="4" href="/#features">
+                            Features
+                        </Link>
+                        <Link mx="4" href="/#pricing">
+                            Pricing
+                        </Link>
+                        <Link mx="4" href="/#legal">
+                            Legal
+                        </Link>
+                        <Link mx="4" href="/#about">
+                            About
+                        </Link>
+                    </Box>
+                    <Box>
+                        <NextLink href="/register" passHref>
+                            <Button as="a" mx="2" colorScheme="cyan">
+                                Register
+                            </Button>
+                        </NextLink>
+                        <NextLink href="/login" passHref>
+                            <Button as="a" mx="2" colorScheme="gray">
+                                Login
+                            </Button>
+                        </NextLink>
+                    </Box>
+                </Flex>
+            )}
 
             <DarkModeSwitch />
         </Flex>

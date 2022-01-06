@@ -1,5 +1,5 @@
 import { User } from '../lib/auth';
-import { linkHref, Rule, RuleLinks, RuleLinksSchema } from '../lib/rules/base';
+import { linkHref, Rule, RuleLinks, RuleLinksSchema, RuleSchema } from '../lib/rules/base';
 import { database, sql } from './client';
 
 export async function upsertRule(rule: Rule, user?: User) {
@@ -25,4 +25,11 @@ export async function getRulesLinks(user?: User): Promise<RuleLinks> {
             return acc;
         }, {} as RuleLinks),
     );
+}
+
+export async function getRule(category: string, name: string, user?: User): Promise<Rule | undefined> {
+    const db = await database;
+    const rule = await db.get<Rule>(sql`
+        SELECT * FROM rules WHERE UPPER(category) = ${category.toUpperCase()} AND UPPER(name) = ${name.toUpperCase()};`);
+    return rule ? RuleSchema.parse(rule) : rule;
 }
