@@ -4,7 +4,7 @@
         "test": "$(npm bin)/jest",
         "dev": "next",
         "build": "next build",
-        "start": "next start",
+        "start": "npm run load && next start",
         "load": "$(npm bin)/ts-node src/lib/rules/load.ts"
     },
     "dependencies": {
@@ -26,6 +26,8 @@
         "jsonwebtoken": "^8.5.1",
         "marked": "^4.0.8",
         "next": "latest",
+        "postgres": "^2.0.0-beta.11",
+        "postgres-shift": "^0.0.4",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-hook-form": "^7.22.5",
@@ -33,9 +35,6 @@
         "react-markdown": "^7.1.2",
         "react-query": "^3.34.7",
         "remark-gfm": "^3.0.1",
-        "sql-template-strings": "^2.2.2",
-        "sqlite": "^4.0.23",
-        "sqlite3": "^5.0.2",
         "ts-node": "^10.4.0",
         "turndown": "^7.1.1",
         "zod": "^3.11.6"

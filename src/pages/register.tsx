@@ -38,7 +38,7 @@ const Register = () => {
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 log.error(error.response?.data.error);
-                setGeneralError(error.response?.data.error);
+                setGeneralError(error.response?.data.error.toString());
             }
         }
     };

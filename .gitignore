@@ -33,6 +33,3 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-# dev db
-codex.sqlite*

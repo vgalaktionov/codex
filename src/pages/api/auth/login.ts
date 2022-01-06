@@ -15,7 +15,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         const { email, password } = LoginFormSchema.parse(req.body);
 
         const user = await getUserByEmail(email);
-        if (!(await bcrypt.compare(password, user.passwordHash)))
+        if (!user || !(await bcrypt.compare(password, user.passwordHash)))
             return res.status(StatusCodes.UNAUTHORIZED).json({ error: 'Username and password did not match.' });
         const exp = Math.floor(Date.now() / 1000) + 60 * 60 * 24;
         const token = jwt.sign(

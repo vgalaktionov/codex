@@ -1,17 +1,19 @@
 import { User, UserSchema } from '../lib/auth';
 import { HasID } from '../lib/util';
-import { database, sql } from './client';
+import sql from './client';
 
 export async function createUser(user: User) {
-    const db = await database;
-    const result = await db.get<HasID<User>>(
-        sql`INSERT INTO users (email, passwordHash) VALUES (${user.email}, ${user.passwordHash}) RETURNING *;`,
-    );
+    const [result] = await sql<
+        HasID<User>[]
+    >`INSERT INTO users (email, "passwordHash") VALUES (${user.email}, ${user.passwordHash}) RETURNING *;`;
     return UserSchema.parse(result);
 }
 
 export async function getUserByEmail(email: string) {
-    const db = await database;
-    const result = await db.get<HasID<User>>(sql`SELECT * FROM users WHERE email = ${email};`);
-    return UserSchema.parse(result);
+    const [result] = await sql<HasID<User>[]>`SELECT * FROM users WHERE email = ${email};`;
+    try {
+        return UserSchema.parse(result);
+    } catch (error) {
+        return undefined;
+    }
 }
