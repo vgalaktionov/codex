@@ -16,6 +16,7 @@ function CODEX({ Component, pageProps }: AppProps<{ rulesLinks: RuleLinks }>) {
     const showSidebar = !PUBLIC_ROUTES.includes(router.asPath);
     const [queryClient] = useState(() => new QueryClient());
     const { isOpen, onOpen, onClose } = useDisclosure();
+
     return (
         <>
             <Head>

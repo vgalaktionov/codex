@@ -4,3 +4,5 @@ declare module 'postgres-shift' {
 }
 
 declare module 'turndown-plugin-gfm';
+
+declare module 'three/examples/js/controls/OrbitControls';

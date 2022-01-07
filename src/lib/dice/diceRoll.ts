@@ -1,20 +1,28 @@
 import * as CANNON from 'cannon';
+import { MutableRefObject } from 'react';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { DiceD10, DiceD100, DiceD12, DiceD20, DiceD4, DiceD6, DiceD8, DiceManager, DiceObject } from './dice';
+import { DiceRoll } from '.';
+import { OrbitControls } from './controls';
+import {
+    DiceD10,
+    DiceD100,
+    DiceD100D10,
+    DiceD12,
+    DiceD20,
+    DiceD4,
+    DiceD6,
+    DiceD8,
+    DiceManager,
+    DiceObject,
+} from './dice';
 
-export const rollDice = (
-    id: string,
-    results: { kind: 'd4' | 'd6' | 'd8' | 'd10' | 'd12' | 'd20' | 'd100'; roll: number }[],
-) => {
+export const rollDice = (ref: MutableRefObject<any>, roll: DiceRoll) => {
     // SCENE
     const scene = new THREE.Scene();
     // CAMERA
-    const container = document.getElementById(id);
-    if (!container) throw new Error('container not found!');
 
-    const SCREEN_WIDTH = container.clientWidth,
-        SCREEN_HEIGHT = container.clientHeight;
+    const SCREEN_WIDTH = ref?.current.clientWidth,
+        SCREEN_HEIGHT = window.document.body.clientHeight * 0.6 || 800;
     const VIEW_ANGLE = 45,
         ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT,
         NEAR = 0.01,
@@ -30,7 +38,7 @@ export const rollDice = (
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-    container.appendChild(renderer.domElement);
+    ref?.current.appendChild(renderer.domElement);
     // EVENTS
     // CONTROLS
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -96,9 +104,9 @@ export const rollDice = (
     const size = 3;
     const dice: DiceObject[] = [];
     const diceValues = [];
-    for (const result of results) {
+    for (const result of roll.result) {
         let die;
-        switch (result.kind) {
+        switch (result.type) {
             case 'd4':
                 die = new DiceD4({
                     size,
@@ -165,7 +173,7 @@ export const rollDice = (
                     fontColor: 'white',
                     backColor: 'black',
                 });
-                const die2 = new DiceD10({
+                const die2 = new DiceD100D10({
                     size,
                     fontColor: 'white',
                     backColor: 'black',
@@ -174,12 +182,12 @@ export const rollDice = (
                 scene.add(die2.getObject());
                 dice.push(die1, die2);
                 diceValues.push(
-                    { dice: die1, value: Math.floor(result.roll / 10) },
-                    { dice: die2, value: result.roll % 10 },
+                    { dice: die1, value: Math.floor(result.roll / 10) + 1 },
+                    { dice: die2, value: (result.roll % 10) + 1 },
                 );
                 break;
             default:
-                throw new Error(`invalid die ${result.kind}`);
+                throw new Error(`invalid die ${result.type}`);
         }
     }
 
@@ -244,4 +252,6 @@ export const rollDice = (
         }
     };
     setTimeout(checkDone, 50);
+
+    return renderer.domElement;
 };
