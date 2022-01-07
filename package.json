@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "test": "$(npm bin)/jest",
+        "test": "$(npm bin)/jest --forceExit --detectOpenHandles",
         "dev": "next",
         "build": "next build",
         "start": "npm run migrate && npm run load && next start",
