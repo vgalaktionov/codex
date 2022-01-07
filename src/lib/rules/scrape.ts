@@ -32,7 +32,7 @@ async function scrapeClasses(verbose = false) {
                 .querySelectorAll('center ~ *:not(.footer):not(script):not(noscript)')
                 .forEach((el) => elements.push(el.outerHTML));
 
-            const name = classDom.window.document.querySelector('h1')?.innerHTML ?? 'rogue';
+            const name = classDom.window.document.querySelector('h1')?.innerHTML ?? 'Rogue';
             const content = `---\nname: ${name}\n---\n\n` + turndown.turndown(elements.join('\n'));
             verbose && log.info(content);
             const filename = name.toLowerCase().replace(' ', '_') + '.md';
@@ -68,6 +68,66 @@ async function scrapeRaces(verbose = false) {
     );
 }
 
+async function scrapeSpells(verbose = false) {
+    const spellsPage = await axios.get(HOST + '/indexes/spells.htm');
+    const dom = new JSDOM(spellsPage.data);
+    const links: string[] = [];
+    dom.window.document.querySelectorAll('a[href^="/srd/spells/"]').forEach((el) => {
+        const a = el as HTMLAnchorElement;
+        if (!/(multiclassing|beyond|characterAdvancement)/.test(a.href)) {
+            links.push(a.href);
+        }
+    });
+    verbose && log.info(links);
+
+    await Promise.all(
+        links.map(async (l) => {
+            if (l.includes('divineFavor')) return;
+            const spellPage = await axios.get(HOST + l);
+            const spellDom = new JSDOM(spellPage.data);
+            const elements: string[] = [];
+            spellDom.window.document
+                .querySelectorAll('center ~ *:not(.footer):not(script):not(noscript)')
+                .forEach((el) => elements.push(el.outerHTML));
+
+            const name = spellDom.window.document.querySelector('body h1')?.innerHTML ?? 'Unknown';
+            const type = spellDom.window.document.querySelector('body h4')?.innerHTML ?? 'Unknown Type';
+            const level = /\d/.test(type[0]) ? +type[0] : undefined;
+            const castingTime =
+                spellDom.window.document.querySelector('.statBlock tr:nth-child(1) td')?.innerHTML ??
+                'Unknown Casting Time';
+            const range =
+                spellDom.window.document.querySelector('.statBlock tr:nth-child(2) td')?.innerHTML ?? 'Unknown Range';
+            let components: string | undefined;
+            let duration: string;
+            const durationEl = spellDom.window.document.querySelector('.statBlock tr:nth-child(4) td');
+            if (durationEl != null) {
+                components =
+                    spellDom.window.document.querySelector('.statBlock tr:nth-child(3) td')?.innerHTML ??
+                    'Unknown Components';
+                duration = durationEl.innerHTML;
+            } else {
+                duration =
+                    spellDom.window.document.querySelector('.statBlock tr:nth-child(3) td')?.innerHTML ??
+                    'Unknown Duration';
+            }
+
+            const content =
+                `---\nname: ${name}\ntype: ${type}\nlevel: ${
+                    level ?? 0
+                }\ncastingTime: ${castingTime}\nrange: ${range}\ncomponents: ${
+                    components ?? ''
+                }\nduration: ${duration}\n---\n\n` + turndown.turndown(elements.join('\n'));
+            verbose && log.info(content);
+            const filename =
+                name.trim().toLowerCase().replaceAll('&nbsp;', '').replaceAll(' ', '_').replaceAll('/', '_or_') + '.md';
+            if (!existsSync(`rules/spells/${filename}`)) await fs.writeFile(`rules/spells/${filename}`, content);
+        }),
+    );
+}
+
 measurePromise(() =>
-    Promise.all([scrapeClasses(false), scrapeRaces(false)]).then(() => setTimeout(() => sql.end(), 1000)),
+    Promise.all([scrapeClasses(false), scrapeRaces(false), scrapeSpells(false)]).then(() =>
+        setTimeout(() => sql.end(), 1000),
+    ),
 );

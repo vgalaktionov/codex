@@ -1,0 +1,20 @@
+---
+name: Sanctuary
+type: 1st-level abjuration
+level: 1
+castingTime: 1 bonus action
+range: 30 feet
+components: V, S, M (a small silver mirror)
+duration: 1 minute
+---
+
+Sanctuary
+=========
+
+#### 1st-level abjuration
+
+<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 bonus action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>30 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a small silver mirror)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>1 minute</td></tr></tbody></table>
+
+You ward a creature within range against attack. Until the spell ends, any creature who targets the warded creature with an attack or a harmful spell must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or spell. This spell doesn’t protect the warded creature from area effects, such as the explosion of a fireball.
+
+If the warded creature makes an attack or casts a spell that affects an enemy creature, this spell ends.

@@ -1,0 +1,20 @@
+---
+name: Hunter's Mark
+type: 1st-level divination
+level: 1
+castingTime: 1 bonus action
+range: 90 feet
+components: V
+duration: Concentration, up to 1 hour
+---
+
+Hunter's Mark
+=============
+
+#### 1st-level divination
+
+<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 bonus action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>90 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 1 hour</td></tr></tbody></table>
+
+You choose a creature you can see within range and mystically mark it as your quarry. Until the spell ends, you deal an extra 1d6 damage to the target whenever you hit it with a weapon attack, and you have advantage on any Wisdom (Perception) or Wisdom (Survival) check you make to find it. If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to mark a new creature.
+
+_**At Higher Levels.**_ When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your concentration on the spell for up to 8 hours. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 24 hours.
