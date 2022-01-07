@@ -95,7 +95,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
             px="10"
             justifyContent="start"
             alignItems="start"
-            width="450px"
+            width={['100%', '450px']}
         >
             <Heading size="md" color="orange.400" pb="2">
                 Characters
@@ -148,7 +148,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
             <Heading size="sm" pt="2">
                 Browse
             </Heading>
-            <Accordion width="350px" pt="2">
+            <Accordion width={['100%', '350px']} pt="2">
                 {Object.entries(data ?? {}).map(([category, values]) => (
                     <AccordionItem key={category} border="none">
                         <Heading>

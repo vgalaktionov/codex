@@ -22,7 +22,7 @@ export const rollDice = (ref: MutableRefObject<any>, roll: DiceRoll) => {
     // CAMERA
 
     const SCREEN_WIDTH = ref?.current.clientWidth,
-        SCREEN_HEIGHT = window.document.body.clientHeight * 0.5 || 800;
+        SCREEN_HEIGHT = ref?.current.clientHeight ?? 800;
     const VIEW_ANGLE = 45,
         ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT,
         NEAR = 0.01,
@@ -101,7 +101,7 @@ export const rollDice = (ref: MutableRefObject<any>, roll: DiceRoll) => {
     floorBody.quaternion.setFromAxisAngle(new CANNON.Vec3(1, 0, 0), -Math.PI / 2);
     world.addBody(floorBody);
 
-    const size = 3;
+    const size = screen.width > 1280 ? 4 : 7;
     const dice: DiceObject[] = [];
     const diceValues = [];
     for (const result of roll.result) {

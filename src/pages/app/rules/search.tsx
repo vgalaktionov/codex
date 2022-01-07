@@ -43,7 +43,7 @@ const Search = ({ results, query }: { results: DBRule[]; query: string }) => {
 
     const bgColor = { light: 'gray.100', dark: 'gray.900' };
     return (
-        <VStack w="100%" alignItems="start" py="6" px="20">
+        <VStack w="100%" alignItems="start" py="6" px={['2', '20']} maxWidth="70vw">
             <Heading size="2xl" mb="6">
                 Search results
             </Heading>
@@ -56,9 +56,9 @@ const Search = ({ results, query }: { results: DBRule[]; query: string }) => {
                 onSubmit={handleSubmit(({ q }) => {
                     router.push({ pathname: '/app/rules/search', query: { q } });
                 })}
-                style={{ width: '80%' }}
+                style={{ width: '100%' }}
             >
-                <FormControl isInvalid={errors.q != null} mb="6" pt="2">
+                <FormControl isInvalid={errors.q != null} mb="6" pt="2" w="100%">
                     <InputGroup>
                         <Input type="search" {...register('q')}></Input>
                         <InputRightElement pointerEvents="none" children={<GiArchiveResearch />} />

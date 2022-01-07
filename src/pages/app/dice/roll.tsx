@@ -61,7 +61,7 @@ const Roll = () => {
         if (roll != null && mountRef.current != null) {
             element = rollDice(mountRef, roll);
         }
-        return () => (element ? mountRef!.current!.removeChild(element) && undefined : undefined);
+        return () => (element ? mountRef?.current?.removeChild(element) && undefined : undefined);
     }, [mountRef, roll]);
 
     const stableListener = () => setStable(true);
@@ -74,7 +74,7 @@ const Roll = () => {
     }, [stableListener, setStable]);
 
     return (
-        <VStack w="100%" px={['2', '20']} py="6" justifyContent={'center'}>
+        <VStack w="100%" maxH="calc(100vh - 62px)" px={['2', '20']} py="6" justifyContent={'start'}>
             <Heading>Roll Dice</Heading>
             <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%', marginBottom: '2rem' }}>
                 {/* <Text mt="6" mb="6">
@@ -123,7 +123,7 @@ const Roll = () => {
             </form>
 
             {roll && (
-                <Box w="100%" h="100%" pt="6" px="6" border="1px" borderColor="gray.500" mt="6" borderRadius="md">
+                <Box w="100%" h="100%" pt="6" px="6" border="1px" borderColor="gray.500" borderRadius="md">
                     <Heading size="lg" pb="6">
                         Results
                     </Heading>
@@ -151,7 +151,7 @@ const Roll = () => {
                         {<Fade in={stable}>{roll.result.reduce((acc, cur) => acc + cur.roll, 0)}</Fade>}
                     </Text>
                     <br />
-                    <div ref={mountRef}></div>
+                    <chakra.div ref={mountRef} minH={['20vh', '40vh']} mt="-12rem" mb="6rem"></chakra.div>
                 </Box>
             )}
         </VStack>

@@ -2,7 +2,7 @@ import { ChakraProvider, Flex, useDisclosure, VStack } from '@chakra-ui/react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { Container } from '../components/Container';
 import Header from '../components/Header';
@@ -16,6 +16,10 @@ function CODEX({ Component, pageProps }: AppProps<{ rulesLinks: RuleLinks }>) {
     const showSidebar = !PUBLIC_ROUTES.includes(router.asPath);
     const [queryClient] = useState(() => new QueryClient());
     const { isOpen, onOpen, onClose } = useDisclosure();
+    useEffect(() => {
+        router.events.on('routeChangeComplete', onClose);
+        return () => router.events.off('routeChangeComplete', onClose);
+    }, [router]);
 
     return (
         <>
@@ -31,7 +35,12 @@ function CODEX({ Component, pageProps }: AppProps<{ rulesLinks: RuleLinks }>) {
 
                             <Flex width="100vw" mt="0px !important">
                                 {showSidebar && <Sidebar onClose={onClose} isOpen={isOpen} />}
-                                <Container ml={['0px', '450px']} height="calc(100vh - 62px)" mt="62px" width="100%">
+                                <Container
+                                    ml={['0px', showSidebar ? '450px' : '0px']}
+                                    height="calc(100vh - 62px)"
+                                    mt="62px"
+                                    width="100%"
+                                >
                                     <Component {...pageProps} />
                                 </Container>
                             </Flex>
