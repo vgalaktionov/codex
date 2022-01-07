@@ -5,10 +5,9 @@ import { ZodSchema } from 'zod';
 import { upsertRule } from '../../db/rules';
 import { log } from '../util';
 import { GeneralRuleSchema, resolveDescriptionsFromContent, Rule, RuleCategory } from './base';
+import { ClassSchema } from './classes';
 import { RaceSchema } from './races';
 import { SubraceSchema } from './subraces';
-
-// const ALL_RULES = [GeneralRule, Race, Subrace, Class];
 
 interface RuleConfig {
     category: RuleCategory;
@@ -20,7 +19,7 @@ const ALL_RULES: Readonly<RuleConfig[]> = [
     { category: RuleCategory.GENERAL, defaultPath: 'rules/general', schema: GeneralRuleSchema },
     { category: RuleCategory.RACE, defaultPath: 'rules/races', schema: RaceSchema },
     { category: RuleCategory.SUBRACE, defaultPath: 'rules/subraces', schema: SubraceSchema },
-    // { category: RuleCategory.CLASS, defaultPath: 'rules/classes', schema: ClassSchema },
+    { category: RuleCategory.CLASS, defaultPath: 'rules/classes', schema: ClassSchema },
 ] as const;
 
 export async function loadDefaultRules(verbose = false) {
