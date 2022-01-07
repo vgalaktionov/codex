@@ -22,7 +22,7 @@ export const rollDice = (ref: MutableRefObject<any>, roll: DiceRoll) => {
     // CAMERA
 
     const SCREEN_WIDTH = ref?.current.clientWidth,
-        SCREEN_HEIGHT = window.document.body.clientHeight * 0.6 || 800;
+        SCREEN_HEIGHT = window.document.body.clientHeight * 0.5 || 800;
     const VIEW_ANGLE = 45,
         ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT,
         NEAR = 0.01,
@@ -241,13 +241,9 @@ export const rollDice = (ref: MutableRefObject<any>, roll: DiceRoll) => {
 
     const checkDone = () => {
         // @ts-ignore
-        if (manager.throwRunning === false) {
-            setTimeout(() => {
-                const rollResults = document.getElementById('roll-results');
-                if (rollResults) rollResults.style.visibility = 'initial';
-            }, 2000);
+        if (world.bodies.map((b) => b.velocity.norm() < 0.1).every(Boolean)) {
+            window.dispatchEvent(new Event('diceStable'));
         } else {
-            console.log(DiceManager);
             setTimeout(checkDone, 50);
         }
     };

@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, IconButton, Link } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, IconButton, Link, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import Image from 'next/image';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
@@ -9,6 +9,54 @@ import { DarkModeSwitch } from './DarkModeSwitch';
 
 export default function Header(props: { onOpen(): void }) {
     const router = useRouter();
+    const menu = PUBLIC_ROUTES.includes(router.asPath) ? (
+        <Menu>
+            <MenuButton as={IconButton} icon={<GrMenu />} mx="5"></MenuButton>
+            <MenuList>
+                <MenuItem>
+                    <Link mx="4" href="/#features">
+                        Features
+                    </Link>
+                </MenuItem>
+                <MenuItem>
+                    <Link mx="4" href="/#pricing">
+                        Pricing
+                    </Link>
+                </MenuItem>
+                <MenuItem>
+                    <Link mx="4" href="/#legal">
+                        Legal
+                    </Link>
+                </MenuItem>
+                <MenuItem>
+                    <Link mx="4" href="/#about">
+                        About
+                    </Link>
+                </MenuItem>
+
+                <MenuItem>
+                    <NextLink href="/register" passHref>
+                        <Button as="a" mx="2" colorScheme="cyan">
+                            Register
+                        </Button>
+                    </NextLink>
+                    <NextLink href="/login" passHref>
+                        <Button as="a" mx="2" colorScheme="gray">
+                            Login
+                        </Button>
+                    </NextLink>
+                </MenuItem>
+            </MenuList>
+        </Menu>
+    ) : (
+        <IconButton
+            aria-label="Open sidebar"
+            icon={<GrMenu />}
+            onClick={props.onOpen}
+            ml="5"
+            display={['flex', 'none']}
+        />
+    );
     return (
         <Flex
             py="1"
@@ -21,13 +69,7 @@ export default function Header(props: { onOpen(): void }) {
             position="absolute"
             top="0px"
         >
-            <IconButton
-                aria-label="Open sidebar"
-                icon={<GrMenu />}
-                onClick={props.onOpen}
-                ml="5"
-                display={['flex', 'none']}
-            />
+            {menu}
 
             <NextLink href="/" passHref>
                 <Flex px="5" justifyContent="center" as="a">

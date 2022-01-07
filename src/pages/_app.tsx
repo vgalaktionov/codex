@@ -31,12 +31,7 @@ function CODEX({ Component, pageProps }: AppProps<{ rulesLinks: RuleLinks }>) {
 
                             <Flex width="100vw" mt="0px !important">
                                 {showSidebar && <Sidebar onClose={onClose} isOpen={isOpen} />}
-                                <Container
-                                    ml={showSidebar ? '450px' : '0px'}
-                                    height="calc(100vh - 62px)"
-                                    mt="62px"
-                                    width="100%"
-                                >
+                                <Container ml={['0px', '450px']} height="calc(100vh - 62px)" mt="62px" width="100%">
                                     <Component {...pageProps} />
                                 </Container>
                             </Flex>

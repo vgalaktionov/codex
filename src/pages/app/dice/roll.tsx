@@ -2,6 +2,7 @@ import {
     Box,
     Button,
     chakra,
+    Fade,
     FormControl,
     FormErrorMessage,
     FormHelperText,
@@ -20,7 +21,6 @@ import {
 } from '@chakra-ui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
-import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaDiceD20 } from 'react-icons/fa';
@@ -36,12 +36,13 @@ const Roll = () => {
         watch,
         formState: { errors },
     } = useForm<DiceRoll>({ resolver: zodResolver(DiceRollSchema.omit({ result: true })) });
-    const router = useRouter();
     const [generalError, setGeneralError] = useState<string | undefined>(undefined);
+    const [stable, setStable] = useState(true);
     const [roll, setRoll] = useState<DiceRoll | undefined>();
     const onSubmit = async (data: DiceRoll) => {
         try {
             setRoll(newRoll(data.type, data.amount));
+            setStable(false);
             await axios.post('/api/dice/roll', data);
         } catch (error) {
             if (axios.isAxiosError(error)) {
@@ -63,8 +64,17 @@ const Roll = () => {
         return () => (element ? mountRef!.current!.removeChild(element) && undefined : undefined);
     }, [mountRef, roll]);
 
+    const stableListener = () => setStable(true);
+
+    useEffect(() => {
+        window.addEventListener('diceStable', stableListener);
+        return () => {
+            window.removeEventListener('diceStable', stableListener);
+        };
+    }, [stableListener, setStable]);
+
     return (
-        <VStack w="100%" px="20" py="6">
+        <VStack w="100%" px={['2', '20']} py="6" justifyContent={'center'}>
             <Heading>Roll Dice</Heading>
             <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%', marginBottom: '2rem' }}>
                 {/* <Text mt="6" mb="6">
@@ -80,33 +90,33 @@ const Roll = () => {
                     <FormErrorMessage>{generalError}</FormErrorMessage>
                 </FormControl>
 
-                <HStack w="100%">
-                    <FormControl isInvalid={errors.type != null} w="30%" px="6">
-                        <FormLabel htmlFor="email">Type</FormLabel>
-                        <Select defaultValue="d20" {...register('type')}>
-                            {Object.values(DieType).map((v) => (
-                                <option key={v.toString()} value={v.toString()}>
-                                    {v.toString()}
-                                </option>
-                            ))}
-                        </Select>
-                        <FormHelperText>Select the type of dice you'd to roll.</FormHelperText>
-                        {errors.type && <FormErrorMessage>{errors.type.message}</FormErrorMessage>}
-                    </FormControl>
-                    <FormControl isInvalid={errors.amount != null} w="30%" px="6">
-                        <FormLabel htmlFor="amount">Amount</FormLabel>
-                        <NumberInput defaultValue={1} min={1}>
-                            <NumberInputField {...register('amount')} />
-                            <NumberInputStepper>
-                                <NumberIncrementStepper />
-                                <NumberDecrementStepper />
-                            </NumberInputStepper>
-                        </NumberInput>
-                        <FormHelperText>Enter the amount of dice to roll.</FormHelperText>
-                        {errors.amount && <FormErrorMessage>{errors.amount.message}</FormErrorMessage>}
-                    </FormControl>
+                <FormControl isInvalid={errors.type != null} w="100%" px="6" py="2" mx="auto">
+                    <FormLabel htmlFor="email">Type</FormLabel>
+                    <Select defaultValue="d20" {...register('type')}>
+                        {Object.values(DieType).map((v) => (
+                            <option key={v.toString()} value={v.toString()}>
+                                {v.toString()}
+                            </option>
+                        ))}
+                    </Select>
+                    <FormHelperText>Select the type of dice you'd to roll.</FormHelperText>
+                    {errors.type && <FormErrorMessage>{errors.type.message}</FormErrorMessage>}
+                </FormControl>
+                <FormControl isInvalid={errors.amount != null} w="100%" px="6" py="2" mx="auto">
+                    <FormLabel htmlFor="amount">Amount</FormLabel>
+                    <NumberInput defaultValue={1} min={1}>
+                        <NumberInputField {...register('amount')} />
+                        <NumberInputStepper>
+                            <NumberIncrementStepper />
+                            <NumberDecrementStepper />
+                        </NumberInputStepper>
+                    </NumberInput>
+                    <FormHelperText>Enter the amount of dice to roll.</FormHelperText>
+                    {errors.amount && <FormErrorMessage>{errors.amount.message}</FormErrorMessage>}
+                </FormControl>
 
-                    <Button type="submit" colorScheme="orange" leftIcon={<FaDiceD20 />} ml="6">
+                <HStack w="100%">
+                    <Button type="submit" colorScheme="orange" leftIcon={<FaDiceD20 />} mt="2" mx="auto">
                         Roll
                     </Button>
                 </HStack>
@@ -120,22 +130,25 @@ const Roll = () => {
                     <Text>
                         <strong>Dice:</strong>{' '}
                         {roll?.result.map((rs, id) => (
-                            <chakra.div
-                                display="inline-block"
-                                key={id}
-                                backgroundColor="gray.500"
-                                textAlign="center"
-                                w="2rem"
-                                py="1"
-                                mx="1"
-                                as="kbd"
-                            >
-                                {rs.roll}
-                            </chakra.div>
+                            <Fade in={stable}>
+                                <chakra.div
+                                    display="inline-block"
+                                    key={id}
+                                    backgroundColor="gray.500"
+                                    textAlign="center"
+                                    w="2rem"
+                                    py="1"
+                                    mx="1"
+                                    as="kbd"
+                                >
+                                    {rs.roll}
+                                </chakra.div>
+                            </Fade>
                         ))}
                         <br />
                         <br />
-                        <strong>Total:</strong> {roll.result.reduce((acc, cur) => acc + cur.roll, 0)}
+                        <strong>Total:</strong>{' '}
+                        {<Fade in={stable}>{roll.result.reduce((acc, cur) => acc + cur.roll, 0)}</Fade>}
                     </Text>
                     <br />
                     <div ref={mountRef}></div>
