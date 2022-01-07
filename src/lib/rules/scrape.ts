@@ -41,4 +41,33 @@ async function scrapeClasses(verbose = false) {
     );
 }
 
-measurePromise(() => Promise.all([scrapeClasses(false)]).then(() => setTimeout(() => sql.end(), 1000)));
+async function scrapeRaces(verbose = false) {
+    const racesPage = await axios.get(HOST + '/srd/races.htm');
+    const dom = new JSDOM(racesPage.data);
+    const blocks: { name: string; content: string }[] = [];
+    dom.window.document.querySelectorAll('h2, h2 ~ h3, h2 ~ h3 ~ p').forEach((el) => {
+        switch (el.tagName) {
+            case 'H2':
+                blocks.push({ name: el.firstChild?.textContent ?? '', content: el.outerHTML });
+                break;
+            case 'H3':
+            case 'P':
+                blocks[blocks.length - 1].content = blocks[blocks.length - 1].content + '\n' + el.outerHTML;
+                break;
+        }
+    });
+    verbose && log.info(blocks);
+
+    await Promise.all(
+        blocks.map(async (b) => {
+            const content = `---\nname: ${b.name}\n---\n\n` + turndown.turndown(b.content);
+            verbose && log.info(content);
+            const filename = b.name.toLowerCase().replace(' ', '_') + '.md';
+            if (!existsSync(`rules/races/${filename}`)) await fs.writeFile(`rules/races/${filename}`, content);
+        }),
+    );
+}
+
+measurePromise(() =>
+    Promise.all([scrapeClasses(false), scrapeRaces(false)]).then(() => setTimeout(() => sql.end(), 1000)),
+);

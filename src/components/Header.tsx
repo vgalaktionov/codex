@@ -18,6 +18,8 @@ export default function Header(props: { onOpen(): void }) {
             color="white"
             justifyContent="space-between"
             alignItems="center"
+            position="absolute"
+            top="0px"
         >
             <IconButton
                 aria-label="Open sidebar"

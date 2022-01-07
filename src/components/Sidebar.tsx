@@ -86,7 +86,17 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
     const color = { light: 'black', dark: 'white' };
 
     const contents = (
-        <VStack height="calc(100vh - 62px)" py="10" px="10" justifyContent="start" alignItems="start">
+        <VStack
+            height="calc(100vh - 62px)"
+            maxHeight="calc(100vh - 62px)"
+            position="absolute"
+            top="62px"
+            overflowY="scroll"
+            py="10"
+            px="10"
+            justifyContent="start"
+            alignItems="start"
+        >
             <Heading size="md" color="orange.400" pb="2">
                 Characters
             </Heading>
