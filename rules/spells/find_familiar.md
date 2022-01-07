@@ -4,17 +4,13 @@ type: 1st-level conjuration (ritual)
 level: 1
 castingTime: 1 hour
 range: 10 feet
-components: V, S, M (10 gp worth of charcoal, incense, and herbs<br>
-			that must be consumed by fire in a brass brazier)
+components: V, S, M (10 gp worth of charcoal, incense, and herbs that must be consumed by fire in a brass brazier)
 duration: Instantaneous
 ---
 
-Find Familiar
-=============
+# Find Familiar
 
 #### 1st-level conjuration (ritual)
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 hour</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>10 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (10 gp worth of charcoal, incense, and herbs<br>that must be consumed by fire in a brass brazier)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Instantaneous</td></tr></tbody></table>
 
 You gain the service of a familiar, a spirit that takes an animal form you choose: bat, cat, crab, frog (toad), hawk, lizard, octopus, owl, poisonous snake, fish (quipper), rat, raven, sea horse, spider, or weasel. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a celestial, fey, or fiend (your choice) instead of a beast.
 

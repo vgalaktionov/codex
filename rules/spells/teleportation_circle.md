@@ -4,18 +4,13 @@ type: 5th-level conjuration
 level: 5
 castingTime: 1 action
 range: 10 feet
-components: V, M (rare chalks and inks insused<br>
-			with precious gems worth 50gp,<br>
-			which the spell consumes)
+components: V, M (rare chalks and inks insused with precious gems worth 50gp, which the spell consumes)
 duration: 1 round
 ---
 
-Teleportation Circle
-====================
+# Teleportation Circle
 
 #### 5th-level conjuration
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#level">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#components">Range</a>:</th><td>10 feet</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#range">Components</a>:</th><td>V, M (rare chalks and inks insused<br>with precious gems worth 50gp,<br>which the spell consumes)</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#effect">Duration</a>:</th><td>1 round</td></tr></tbody></table>
 
 As you cast the spell, you draw a 10-foot-diameter circle on the ground inscribed with sigils that link your location to a permanent teleportation circle of your choice whose sigil sequence you know and that is on the same plane of existence as you. A shimmering portal opens within the circle you drew and remains open until the end of your next turn. Any creature that enters the portal instantly appears within 5 feet of the destination circle or in the nearest unoccupied space if that space is occupied.
 

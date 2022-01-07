@@ -8,12 +8,9 @@ components: V, S
 duration: 1 hour
 ---
 
-Disguise Self
-=============
+# Disguise Self
 
 #### 1st-level illusion
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Self</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>1 hour</td></tr></tbody></table>
 
 You make yourself—including your clothing, armor, weapons, and other belongings on your person—look different until the spell ends or until you use your action to dismiss it. You can seem 1 foot shorter or taller and can appear thin, fat, or in between. You can’t change your body type, so you must adopt a form that has the same basic arrangement of limbs. Otherwise, the extent of the illusion is up to you.
 

@@ -8,12 +8,9 @@ components: V, S
 duration: 8 hours
 ---
 
-Seeming
-=======
+# Seeming
 
 #### 5th-level illusion
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>30 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>8 hours</td></tr></tbody></table>
 
 This spell allows you to change the appearance of any number of creatures that you can see within range. You give each target you choose a new, illusory appearance. An unwilling target can make a Charisma saving throw, and if it succeeds, it is unaffected by this spell.
 

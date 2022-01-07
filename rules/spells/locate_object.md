@@ -8,12 +8,9 @@ components: V, S, M (a forked twig)
 duration: Concentration, up to 10 minutes
 ---
 
-Locate Object
-=============
+# Locate Object
 
 #### 2nd-level divination
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Self</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#">Components</a>:</th><td>V, S, M (a forked twig)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 10 minutes</td></tr></tbody></table>
 
 Describe or name an object that is familiar to you. You sense the direction to the object’s location, as long as that object is within 1,000 feet of you. If the object is in motion, you know the direction of its movement.
 

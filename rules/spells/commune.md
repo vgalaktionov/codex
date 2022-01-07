@@ -8,12 +8,9 @@ components: V, S, M (incense and a vial of holy or unholy water)
 duration: 1 minute
 ---
 
-Commune
-=======
+# Commune
 
 #### 5th-level divination (ritual)
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 minute</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Self</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (incense and a vial of holy or unholy water)</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#effect">Duration</a>:</th><td>1 minute</td></tr></tbody></table>
 
 You contact your deity or a divine proxy and ask up to three questions that can be answered with a yes or no. You must ask your questions before the spell ends. You receive a correct answer for each question.
 

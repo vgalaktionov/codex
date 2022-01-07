@@ -8,12 +8,9 @@ components: V, S, M (a drop of molasses)
 duration: Concentration, up to 1 minute
 ---
 
-Slow
-====
+# Slow
 
 #### 3rd-level transmutation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>120 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a drop of molasses)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 1 minute</td></tr></tbody></table>
 
 You alter time around up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Wisdom saving throw or be affected by this spell for the duration.
 

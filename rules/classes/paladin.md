@@ -2,8 +2,7 @@
 name: Paladin
 ---
 
-Paladin
-=======
+# Paladin
 
 #### Hit Points
 
@@ -29,12 +28,10 @@ Paladin
 
 You start with the following equipment, in addition to the equipment granted by your background:
 
-*   (_a_) a martial weapon and a shield or (_b_) two martial weapons
-*   (_a_) five javelins or (_b_) any simple melee weapon
-*   (_a_) a priest's pack or (_b_) an explorer's pack
-*   Chain mail and a holy symbol
-
-<table cellspacing="0" id="tableThePaladin"><caption>Table: The Paladin</caption><tbody><tr><th rowspan="2">Level</th><th align="left" rowspan="2">Proficiency<br>Bonus</th><th align="left" rowspan="2">Features</th><th colspan="5" rowspan="1">Spells per Day</th></tr><tr><th><a href="/srd/spellLists/paladinSpells.htm#firstLevelPaladinSpells">1st</a></th><th><a href="/srd/spellLists/paladinSpells.htm#secondLevelPaladinSpells">2nd</a></th><th><a href="/srd/spellLists/paladinSpells.htm#thirdLevelPaladinSpells">3rd</a></th><th><a href="/srd/spellLists/paladinSpells.htm#fourthLevelPaladinSpells">4th</a></th><th><a href="/srd/spellLists/paladinSpells.htm#fourthLevelPaladinSpells">5th</a></th></tr><tr><td align="center">1st</td><td style="text-align: center;">+2</td><td>Divine Sense, Lay on Hands</td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">2nd</td><td style="text-align: center;">+2</td><td>Fighting Style, Spellcasting, Divine Smite</td><td align="center">2</td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">3rd</td><td style="text-align: center;">+2</td><td>Divine Health, Sacred Oath</td><td align="center">3</td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">4th</td><td style="text-align: center;">+2</td><td>Ability Score Improvement</td><td align="center">3</td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">5th</td><td style="text-align: center;">+3</td><td>Extra Attack</td><td align="center">4</td><td align="center">2</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">6th</td><td style="text-align: center;">+3</td><td>Aura of Protection</td><td align="center">4</td><td align="center">2</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">7th</td><td style="text-align: center;">+3</td><td>Sacred Oath feature</td><td align="center">4</td><td align="center">3</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">8th</td><td style="text-align: center;">+3</td><td>Ability Score Improvement</td><td align="center">4</td><td align="center">3</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">9th</td><td style="text-align: center;">+4</td><td>—</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">10th</td><td style="text-align: center;">+4</td><td>Aura of Courage</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">11th</td><td style="text-align: center;">+4</td><td>Improved Divine Smite</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">12th</td><td style="text-align: center;">+4</td><td>Ability Score Improvement</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">13th</td><td style="text-align: center;">+5</td><td>—</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">1</td><td align="center">—</td></tr><tr><td align="center">14th</td><td style="text-align: center;">+5</td><td>Cleansing Touch</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">1</td><td align="center">—</td></tr><tr><td align="center">15th</td><td style="text-align: center;">+5</td><td>Sacred Oath feature</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">2</td><td align="center">—</td></tr><tr><td align="center">16th</td><td style="text-align: center;">+5</td><td>Ability Score Improvement</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">2</td><td align="center">—</td></tr><tr><td align="center">17th</td><td style="text-align: center;">+6</td><td>—</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">3</td><td align="center">1</td></tr><tr><td align="center">18th</td><td style="text-align: center;">+6</td><td><a href="#removeDisease">Aura improvements</a></td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">3</td><td align="center">1</td></tr><tr><td align="center">19th</td><td style="text-align: center;">+6</td><td>Ability Score Improvement</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">3</td><td align="center">2</td></tr><tr><td align="center">20th</td><td style="text-align: center;">+6</td><td><a href="#smiteEvil">Sacred Oath feature</a></td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">3</td><td align="center">2</td></tr></tbody></table>
+-   (_a_) a martial weapon and a shield or (_b_) two martial weapons
+-   (_a_) five javelins or (_b_) any simple melee weapon
+-   (_a_) a priest's pack or (_b_) an explorer's pack
+-   Chain mail and a holy symbol
 
 #### Class Features
 
@@ -142,11 +139,11 @@ The Oath of Devotion binds a paladin to the loftiest ideals of justice, virtue, 
 
 Though the exact words and strictures of the Oath of Devotion vary, paladins of this oath share these tenets.
 
-*   **Honesty.** Don't lie or chat. Let your word be your promise.
-*   **Courage.** Never fear to act, though caution is wise.
-*   **Compassion.** Aid others, protect the weak, and punish those who threaten them. Show mercy to your foes, but temper it with wisdom.
-*   **Honor.** Treat others with fairness, and let your honorable deeds be an example to them. Do as much good as possible while causing the least amount of harm.
-*   **Duty.** Be responsible for your actions and their consequences, protect those entrusted to your care, and obey those who have just authority over you.
+-   **Honesty.** Don't lie or chat. Let your word be your promise.
+-   **Courage.** Never fear to act, though caution is wise.
+-   **Compassion.** Aid others, protect the weak, and punish those who threaten them. Show mercy to your foes, but temper it with wisdom.
+-   **Honor.** Treat others with fairness, and let your honorable deeds be an example to them. Do as much good as possible while causing the least amount of harm.
+-   **Duty.** Be responsible for your actions and their consequences, protect those entrusted to your care, and obey those who have just authority over you.
 
 Oath of Devotion Spells
 | Paladin Level | Spells |
@@ -166,8 +163,8 @@ Oath of Devotion Spells
 
 When you take this oath at 3rd level, you gain the following two Channel Divinity options.
 
-*   **_Sacred Weapon._** As an action, you can imbue one weapon that you are holding with positive energy, using your Channel Divinity. For one minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of +1). The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration. You can end this effect on your turn as part of any other action. If you are no longer holding or carrying this weapon, or if you fall unconscious, this effect ends.
-*   **_Turn the Unholy._** As an action, you present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage. A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.
+-   **_Sacred Weapon._** As an action, you can imbue one weapon that you are holding with positive energy, using your Channel Divinity. For one minute, you add your Charisma modifier to attack rolls made with that weapon (with a minimum bonus of +1). The weapon also emits bright light in a 20-foot radius and dim light 20 feet beyond that. If the weapon is not already magical, it becomes magical for the duration. You can end this effect on your turn as part of any other action. If you are no longer holding or carrying this weapon, or if you fall unconscious, this effect ends.
+-   **_Turn the Unholy._** As an action, you present your holy symbol and speak a prayer censuring fiends and undead, using your Channel Divinity. Each fiend or undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes damage. A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.
 
 ##### Aura of Devotion
 

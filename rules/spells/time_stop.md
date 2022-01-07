@@ -8,12 +8,9 @@ components: V
 duration: Instantaneous
 ---
 
-Time Stop
-=========
+# Time Stop
 
 #### 9th-level transmutation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#level">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#components">Range</a>:</th><td>Self</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#range">Components</a>:</th><td>V</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#effect">Duration</a>:</th><td>Instantaneous</td></tr></tbody></table>
 
 You briefly stop the flow of time for everyone but yourself. No time passes for other creatures, while you take 1d4 + 1 turns in a row, during which you can use actions and move as normal.
 

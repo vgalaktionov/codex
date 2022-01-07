@@ -4,17 +4,13 @@ type: 2nd-level transmutation
 level: 2
 castingTime: 1 action
 range: Touch
-components: V, S, M (powdered corn extract and a<br>
-			twisted loop of parchment)
+components: V, S, M (powdered corn extract and a twisted loop of parchment)
 duration: 1 hour
 ---
 
-Rope Trick
-==========
+# Rope Trick
 
 #### 2nd-level transmutation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Touch</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (powdered corn extract and a<br>twisted loop of parchment)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>1 hour</td></tr></tbody></table>
 
 You touch a length of rope that is up to 60 feet long. One end of the rope then rises into the air until the whole rope hangs perpendicular to the ground. At the upper end of the rope, an invisible entrance opens to an extradimensional space that lasts until the spell ends.
 

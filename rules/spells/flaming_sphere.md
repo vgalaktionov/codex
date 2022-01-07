@@ -4,17 +4,13 @@ type: 2nd-level conjuration
 level: 2
 castingTime: 1 action
 range: 60 feet
-components: V, S, M (a bit of tallow, a pinch of brimstone,<br>
-			nd a dusting of powdered iron)
+components: V, S, M (a bit of tallow, a pinch of brimstone, nd a dusting of powdered iron)
 duration: Concentration, up to 1 minute
 ---
 
-Flaming Sphere
-==============
+# Flaming Sphere
 
 #### 2nd-level conjuration
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>60 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a bit of tallow, a pinch of brimstone,<br>nd a dusting of powdered iron)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 1 minute</td></tr></tbody></table>
 
 A 5-foot-diameter sphere of fire appears in an unoccupied space of your choice within range and lasts for the duration. Any creature that ends its turn within 5 feet of the sphere must make a Dexterity saving throw. The creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.
 

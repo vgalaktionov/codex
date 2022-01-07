@@ -4,17 +4,13 @@ type: 3rd-level evocation
 level: 3
 castingTime: 1 action
 range: Self (100-foot line)
-components: V, S, M (a bit of fur and a rod of amber,<br>
-			crystal, or galss)
+components: V, S, M (a bit of fur and a rod of amber, crystal, or galss)
 duration: Instantaneous
 ---
 
-Lightning Bolt
-==============
+# Lightning Bolt
 
 #### 3rd-level evocation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Self (100-foot line)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a bit of fur and a rod of amber,<br>crystal, or galss)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Instantaneous</td></tr></tbody></table>
 
 A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes 8d6 lightning damage on a failed save, or half as much damage on a successful one.
 

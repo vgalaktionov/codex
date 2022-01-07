@@ -31,7 +31,7 @@ import { PropsWithChildren } from 'react';
 import { useForm } from 'react-hook-form';
 import { IconType } from 'react-icons';
 import { FaBookDead, FaDiceD20, FaHistory, FaScroll, FaSignOutAlt, FaUserCircle, FaUsers } from 'react-icons/fa';
-import { GiArchiveResearch, GiOrcHead, GiRuleBook, GiWizardFace, GiWomanElfFace } from 'react-icons/gi';
+import { GiArchiveResearch, GiOrcHead, GiRuleBook, GiSpellBook, GiWizardFace, GiWomanElfFace } from 'react-icons/gi';
 import { useQuery } from 'react-query';
 import { PUBLIC_ROUTES } from '../lib/auth';
 import { RuleCategory, RuleLinksSchema } from '../lib/rules/base';
@@ -42,6 +42,7 @@ const CATEGORY_ICONS: Record<string, IconType> = {
     [RuleCategory.RACE]: GiWomanElfFace,
     [RuleCategory.SUBRACE]: GiOrcHead,
     [RuleCategory.CLASS]: GiWizardFace,
+    [RuleCategory.SPELL]: GiSpellBook,
 };
 
 const SidebarLink = ({
@@ -89,13 +90,12 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
         <VStack
             height="calc(100vh - 62px)"
             maxHeight="calc(100vh - 62px)"
-            position="absolute"
-            top="62px"
             overflowY="scroll"
             py="10"
             px="10"
             justifyContent="start"
             alignItems="start"
+            width="450px"
         >
             <Heading size="md" color="orange.400" pb="2">
                 Characters
@@ -147,7 +147,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
             <Heading size="sm" pt="2">
                 Browse
             </Heading>
-            <Accordion maxWidth="100%" pt="2">
+            <Accordion width="350px" pt="2">
                 {Object.entries(data ?? {}).map(([category, values]) => (
                     <AccordionItem key={category} border="none">
                         <Heading>
@@ -205,8 +205,11 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
                 color={color[colorMode]}
                 justifyContent="space-between"
                 alignItems="center"
+                width="450px"
+                position="absolute"
+                top="62px"
             >
-                <Flex>{contents}</Flex>
+                <Flex width="450px">{contents}</Flex>
             </Flex>
 
             <Drawer placement="left" onClose={props.onClose} isOpen={props.isOpen}>

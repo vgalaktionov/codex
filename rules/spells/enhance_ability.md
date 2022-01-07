@@ -8,12 +8,9 @@ components: V, S, M (fur or feather from a beast)
 duration: Concentration, up to 1 hour.
 ---
 
-Enhance Ability
-===============
+# Enhance Ability
 
 #### 2nd-level transmutation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Touch</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (fur or feather from a beast)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 1 hour.</td></tr></tbody></table>
 
 You touch a creature and bestow upon it a magical enhancement. Choose one of the following effects; the target gains that effect until the spell ends.
 

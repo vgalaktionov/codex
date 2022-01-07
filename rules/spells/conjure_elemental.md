@@ -4,18 +4,13 @@ type: 5th-level conjuration
 level: 5
 castingTime: 1 minute
 range: 90 feet
-components: V, S, M (burning incense for air, soft clay for<br>
-			earth, sulfur and phosphorus for fire, or water<br>
-			and sand for water)
+components: V, S, M (burning incense for air, soft clay for earth, sulfur and phosphorus for fire, or water and sand for water)
 duration: Concentration, up to 1 hour
 ---
 
-Conjure Elemental
-=================
+# Conjure Elemental
 
 #### 5th-level conjuration
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 minute</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>90 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (burning incense for air, soft clay for<br>earth, sulfur and phosphorus for fire, or water<br>and sand for water)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 1 hour</td></tr></tbody></table>
 
 You call forth an elemental servant. Choose an area of air, earth, fire, or water that fills a 10-foot cube within range. An elemental of challenge rating 5 or lower appropriate to the area you chose appears in an unoccupied space within 10 feet of it. For example, a fire elemental emerges from a bonfire, and an earth elemental rises up from the ground. The elemental disappears when it drops to 0 hit points or when the spell ends.
 

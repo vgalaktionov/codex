@@ -4,17 +4,13 @@ type: 3rd-level evocation
 level: 3
 castingTime: 1 action
 range: 120 feet
-components: V, S, M (a tiny fan and a feather of<br>
-			exotic origin)
+components: V, S, M (a tiny fan and a feather of exotic origin)
 duration: Concentration, up to 1 minute
 ---
 
-Wind Wall
-=========
+# Wind Wall
 
 #### 3rd-level evocation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#level">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#components">Range</a>:</th><td>120 feet</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#range">Components</a>:</th><td>V, S, M (a tiny fan and a feather of<br>exotic origin)</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#effect">Duration</a>:</th><td>Concentration, up to 1 minute</td></tr></tbody></table>
 
 A wall of strong wind rises from the ground at a point you choose within range. You can make the wall up to 50 feet long, 15 feet high, and 1 foot thick. You can shape the wall in any way you choose so long as it makes one continuous path along the ground. The wall lasts for the duration.
 

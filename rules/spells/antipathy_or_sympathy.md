@@ -4,18 +4,13 @@ type: 8th-level enchantment
 level: 8
 castingTime: 1 hour
 range: 60 feet
-components: V, S, M (either a lump of alum soaked<br>
-			in vinegar for the <strong><em>antipathy</em></strong> effect or a drop of<br>
-			honey for the <strong><em>sympathy </em></strong>effect)
+components: V, S, M (either a lump of alum soaked in vinegar for the <strong><em>antipathy</em></strong> effect or a drop of honey for the <strong><em>sympathy </em></strong>effect)
 duration: 10 days
 ---
 
-Antipathy/Sympathy
-==================
+# Antipathy/Sympathy
 
 #### 8th-level enchantment
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingTime">Casting Time</a>:</th><td>1 hour</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>60 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (either a lump of alum soaked<br>in vinegar for the <strong><em>antipathy</em></strong> effect or a drop of<br>honey for the <strong><em>sympathy </em></strong>effect)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>10 days</td></tr></tbody></table>
 
 This spell attracts or repels creatures of your choice. You target something within range, either a Huge or smaller object or creature or an area that is no larger than a 200-foot cube. Then specify a kind of intelligent creature, such as red dragons, goblins, or vampires. You invest the target with an aura that either attracts or repels the specified creatures for the duration. Choose antipathy or sympathy as the aura’s effect.
 

@@ -4,19 +4,13 @@ type: 7th-level abjuration
 level: 7
 castingTime: 1 minute
 range: Touch
-components: V, S, M (mercury, phosphorus, and<br>
-			powdered diamond and opal with<br>
-			a total value of at least 1,000 gp,<br>
-			which the spell consumes)
+components: V, S, M (mercury, phosphorus, and powdered diamond and opal with a total value of at least 1,000 gp, which the spell consumes)
 duration: Until dispelled or triggered
 ---
 
-Symbol
-======
+# Symbol
 
 #### 7th-level abjuration
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#level">Casting Time</a>:</th><td>1 minute</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#components">Range</a>:</th><td>Touch</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#range">Components</a>:</th><td>V, S, M (mercury, phosphorus, and<br>powdered diamond and opal with<br>a total value of at least 1,000 gp,<br>which the spell consumes)</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#effect">Duration</a>:</th><td>Until dispelled or triggered</td></tr></tbody></table>
 
 When you cast this spell, you inscribe a harmful glyph either on a surface (such as a section of floor, a wall, or a table) or within an object that can be closed to conceal the glyph (such as a book, a scroll, or a treasure chest). If you choose a surface, the glyph can cover an area of the surface no larger than 10 feet in diameter. If you choose an object, that object must remain in its place; if the object is moved more than 10 feet from where you cast this spell, the glyph is broken, and the spell ends without being triggered.
 

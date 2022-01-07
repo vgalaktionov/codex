@@ -4,17 +4,13 @@ type: 7th-level illusion
 level: 7
 castingTime: 1 action
 range: 500 miles
-components: V, S, M (a small replica of you made from<br>
-			materials worth at least 5 gp)
+components: V, S, M (a small replica of you made from materials worth at least 5 gp)
 duration: Concentration, up to 1 day
 ---
 
-Project Image
-=============
+# Project Image
 
 #### 7th-level illusion
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>500 miles</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a small replica of you made from<br>materials worth at least 5 gp)</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#effect">Duration</a>:</th><td>Concentration, up to 1 day</td></tr></tbody></table>
 
 You create an illusory copy of yourself that lasts for the duration. The copy can appear at any location within range that you have seen before, regardless of intervening obstacles. The illusion looks and sounds like you but is intangible. If the illusion takes any damage, it disappears, and the spell ends.
 

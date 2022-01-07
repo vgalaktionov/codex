@@ -8,12 +8,9 @@ components: V, S
 duration: 8 hours
 ---
 
-Meld into Stone
-===============
+# Meld into Stone
 
 #### 3rd-level transmutation (ritual)
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Touch</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#/srd/magicOverview/spellDescriptions.htm#effect">Duration</a>:</th><td>8 hours</td></tr></tbody></table>
 
 You step into a stone object or surface large enough to fully contain your body, melding yourself and all the equipment you carry with the stone for the duration. Using your movement, you step into the stone at a point you can touch. Nothing of your presence remains visible or otherwise detectable by nonmagical senses.
 

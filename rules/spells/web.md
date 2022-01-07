@@ -8,12 +8,9 @@ components: V, S, M (a bit of spiderweb)
 duration: Concentration, up to 1 hour
 ---
 
-Web
-===
+# Web
 
 #### 2nd-level conjuration
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>60 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components&quot;">Components</a>:</th><td>V, S, M (a bit of spiderweb)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 1 hour</td></tr></tbody></table>
 
 You conjure a mass of thick, sticky webbing at a point of your choice within range. The webs fill a 20-foot cube from that point for the duration. The webs are difficult terrain and lightly obscure their area.
 

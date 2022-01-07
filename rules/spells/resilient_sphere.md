@@ -4,18 +4,13 @@ type: 4th-level evocation
 level: 4
 castingTime: 1 action
 range: 30 feet
-components: V, S, M (a hemispherical piece of clear<br>
-			crystal and a matching hemispherical<br>
-			piece of gum arabic)
+components: V, S, M (a hemispherical piece of clear crystal and a matching hemispherical piece of gum arabic)
 duration: Concentration, up to 1 minute
 ---
 
-Resilient Sphere
-================
+# Resilient Sphere
 
 #### 4th-level evocation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>30 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a hemispherical piece of clear<br>crystal and a matching hemispherical<br>piece of gum arabic)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 1 minute</td></tr></tbody></table>
 
 A sphere of shimmering force encloses a creature or object of Large size or smaller within range. An unwilling creature must make a Dexterity saving throw. On a failed save, the creature is enclosed for the duration.
 

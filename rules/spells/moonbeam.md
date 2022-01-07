@@ -4,17 +4,13 @@ type: 2nd-level evocation
 level: 2
 castingTime: 1 action
 range: 120 feet
-components: V, S, M (several seeds of any moonseed<br>
-			plant and a piece of opalescent fieldspar)
+components: V, S, M (several seeds of any moonseed plant and a piece of opalescent fieldspar)
 duration: Concentration, up to 1 minute
 ---
 
-Moonbeam
-========
+# Moonbeam
 
 #### 2nd-level evocation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>120 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (several seeds of any moonseed<br>plant and a piece of opalescent fieldspar)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 1 minute</td></tr></tbody></table>
 
 A silvery beam of pale light shines down in a 5-foot-radius, 40-foot-high cylinder centered on a point within range. Until the spell ends, dim light fills the cylinder.
 

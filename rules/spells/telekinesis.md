@@ -8,12 +8,9 @@ components: V, S
 duration: Concentration, up to 10 minutes
 ---
 
-Telekinesis
-===========
+# Telekinesis
 
 #### 5th-level transmutation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#level">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#components">Range</a>:</th><td>60 feet</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#range">Components</a>:</th><td>V, S</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#effect">Duration</a>:</th><td>Concentration, up to 10 minutes</td></tr></tbody></table>
 
 You gain the ability to move or manipulate creatures or objects by thought. When you cast the spell, and as your action each round for the duration, you can exert your will on one creature or object that you can see within range, causing the appropriate effect below. You can affect the same target round after round, or choose a new one at any time. If you switch targets, the prior target is no longer affected by the spell.
 

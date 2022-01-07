@@ -4,17 +4,13 @@ type: 9th-level transmutation
 level: 9
 castingTime: 1 action
 range: 30 feet
-components: V, S, M (a drop of mercury, a dollop<br>
-			of gum arabic, and a wisp of smoke)
+components: V, S, M (a drop of mercury, a dollop of gum arabic, and a wisp of smoke)
 duration: Concentration, up to 1 hour
 ---
 
-True Polymorph
-==============
+# True Polymorph
 
 #### 9th-level transmutation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#level">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#components">Range</a>:</th><td>30 feet</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#range">Components</a>:</th><td>V, S, M (a drop of mercury, a dollop<br>of gum arabic, and a wisp of smoke)</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#effect">Duration</a>:</th><td>Concentration, up to 1 hour</td></tr></tbody></table>
 
 Choose one creature or nonmagical object that you can see within range. You transform the creature into a different creature, the creature into an object, or the object into a creature (the object must be neither worn nor carried by another creature). The transformation lasts for the duration, or until the target drops to 0 hit points or dies. If you concentrate on this spell for the full duration, the transformation lasts until it is dispelled.
 

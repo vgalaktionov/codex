@@ -2,10 +2,7 @@
 name: Barbarian
 ---
 
-<table cellspacing="0" class="right" id="tableTheBarbarian"><caption>Table: The Barbarian</caption><tbody><tr><th>Level</th><th align="left">Proficiency Bonus</th><th align="left">Features</th><th align="left">Rages</th><th align="left">Rage Damage</th></tr><tr><td align="center">1st</td><td style="text-align: center;">+2</td><td>Rage, Unarmored Defense</td><td style="text-align: center;">2</td><td style="text-align: center;">+2</td></tr><tr><td align="center">2nd</td><td style="text-align: center;">+2</td><td>Reckless Attack, Danger Sense</td><td style="text-align: center;">2</td><td style="text-align: center;">+2</td></tr><tr><td align="center">3rd</td><td style="text-align: center;">+2</td><td>Primal Path</td><td style="text-align: center;">3</td><td style="text-align: center;">+2</td></tr><tr><td align="center">4th</td><td style="text-align: center;">+2</td><td>Ability Score Improvement</td><td style="text-align: center;">3</td><td style="text-align: center;">+2</td></tr><tr><td align="center">5th</td><td style="text-align: center;">+3</td><td>Extra Attack, Fast Movement</td><td style="text-align: center;">3</td><td style="text-align: center;">+2</td></tr><tr><td align="center">6th</td><td style="text-align: center;">+3</td><td>Path Feature</td><td style="text-align: center;">4</td><td style="text-align: center;">+2</td></tr><tr><td align="center">7th</td><td style="text-align: center;">+3</td><td>Feral Instinct</td><td style="text-align: center;">4</td><td style="text-align: center;">+2</td></tr><tr><td align="center">8th</td><td style="text-align: center;">+3</td><td>Ability Score Improvement</td><td style="text-align: center;">4</td><td style="text-align: center;">+2</td></tr><tr><td align="center">9th</td><td style="text-align: center;">+4</td><td>Brutal Critical (1 die)</td><td style="text-align: center;">4</td><td style="text-align: center;">+3</td></tr><tr><td align="center">10th</td><td style="text-align: center;">+4</td><td>Path Feature</td><td style="text-align: center;">4</td><td style="text-align: center;">+3</td></tr><tr><td align="center">11th</td><td style="text-align: center;">+4</td><td>Relentless Rage</td><td style="text-align: center;">4</td><td style="text-align: center;">+3</td></tr><tr><td align="center">12th</td><td style="text-align: center;">+4</td><td>Ability Score Improvement</td><td style="text-align: center;">5</td><td style="text-align: center;">+3</td></tr><tr><td align="center">13th</td><td style="text-align: center;">+5</td><td>Brutal Critical (2 dice)</td><td style="text-align: center;">5</td><td style="text-align: center;">+3</td></tr><tr><td align="center">14th</td><td style="text-align: center;">+5</td><td>Path Feature</td><td style="text-align: center;">5</td><td style="text-align: center;">+3</td></tr><tr><td align="center">15th</td><td style="text-align: center;">+5</td><td>Persistent Rage</td><td style="text-align: center;">5</td><td style="text-align: center;">+4</td></tr><tr><td align="center">16th</td><td style="text-align: center;">+5</td><td>Ability Score Improement</td><td style="text-align: center;">5</td><td style="text-align: center;">+4</td></tr><tr><td align="center">17th</td><td style="text-align: center;">+6</td><td>Brutal Critical (3 dice)</td><td style="text-align: center;">6</td><td style="text-align: center;">+4</td></tr><tr><td align="center">18th</td><td style="text-align: center;">+6</td><td>Indomitable Might</td><td style="text-align: center;">6</td><td style="text-align: center;">+4</td></tr><tr><td align="center">19th</td><td style="text-align: center;">+6</td><td>Ability Score Improvement</td><td style="text-align: center;">6</td><td style="text-align: center;">+4</td></tr><tr><td align="center">20th</td><td style="text-align: center;">+6</td><td>Primal Champion</td><td style="text-align: center;">Unlimited</td><td style="text-align: center;">+4</td></tr></tbody></table>
-
-Barbarian
-=========
+# Barbarian
 
 #### Hit Points
 
@@ -31,9 +28,9 @@ Barbarian
 
 You start with the following equipment, in addition to the equipment granted by your background:
 
-*   (_a_) a greataxe or (_b_) any martial melee weapon
-*   (_a_) two handaxes or (_b_) any simple weapon
-*   An explorer's pack and four javelins
+-   (_a_) a greataxe or (_b_) any martial melee weapon
+-   (_a_) two handaxes or (_b_) any simple weapon
+-   An explorer's pack and four javelins
 
 #### Class Features
 
@@ -43,9 +40,9 @@ As a barbarian, you gain the following class features:
 
 In battle you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor:
 
-*   You have Advantage on Strength checks and Strength saving throws.
-*   When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.
-*   You have resistance to bludgeoning, piercing, and slashing damage.
+-   You have Advantage on Strength checks and Strength saving throws.
+-   When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.
+-   You have resistance to bludgeoning, piercing, and slashing damage.
 
 If you are able to cast spells, you can't cast them or concentrate on them while raging. Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. Once you have raged the number of times shown for your Barbarian table, you must finish a long rest before you can rage again.
 

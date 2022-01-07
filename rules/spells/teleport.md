@@ -8,26 +8,23 @@ components: V
 duration: Instantaneous
 ---
 
-Teleport
-========
+# Teleport
 
 #### 7th-level conjuration
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#level">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#components">Range</a>:</th><td>10 feet</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#range">Components</a>:</th><td>V</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#effect">Duration</a>:</th><td>Instantaneous</td></tr></tbody></table>
 
 This spell instantly transports you and up to eight willing creatures of your choice that you can see within range, or a single object that you can see within range, to a destination you select. If you target an object, it must be able to fit entirely inside a 10-foot cube, and it can’t be held or carried by an unwilling creature.
 
 The destination you choose must be known to you, and it must be on the same plane of existence as you. Your familiarity with the destination determines whether you arrive there successfully. The GM rolls d100 and consults the table.
 
-| Familiarity | Mishap | Similar Area | Off Target | On Target |
-| :-- | --- | --- | --- | --- |
-| Permanent circle | — | — | — | 01-100 |
-| Associated object | — | — | — | 01-100 |
-| Very familiar | 01-05 | 06-13 | 14-24 | 25-100 |
-| Seen casually | 01-33 | 34-43 | 44-53 | 54-100 |
-| Viewed once | 01-43 | 44-53 | 54-73 | 74-100 |
-| Description | 01-43 | 44-53 | 54-73 | 74-100 |
-| False destination | 01-50 | 51-100 | — | — |
+| Familiarity       | Mishap | Similar Area | Off Target | On Target |
+| :---------------- | ------ | ------------ | ---------- | --------- |
+| Permanent circle  | —      | —            | —          | 01-100    |
+| Associated object | —      | —            | —          | 01-100    |
+| Very familiar     | 01-05  | 06-13        | 14-24      | 25-100    |
+| Seen casually     | 01-33  | 34-43        | 44-53      | 54-100    |
+| Viewed once       | 01-43  | 44-53        | 54-73      | 74-100    |
+| Description       | 01-43  | 44-53        | 54-73      | 74-100    |
+| False destination | 01-50  | 51-100       | —          | —         |
 
 _**Familiarity.**_ “Permanent circle” means a permanent teleportation circle whose sigil sequence you know. “Associated object” means that you possess an object taken from the desired destination within the last six months, such as a book from a wizard’s library, bed linen from a royal suite, or a chunk of marble from a lich’s secret tomb.
 

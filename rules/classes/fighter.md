@@ -2,10 +2,7 @@
 name: Fighter
 ---
 
-<table cellspacing="0" class="right" id="tableTheFighter"><caption>Table: The Fighter</caption><tbody><tr><th>Level</th><th style="text-align: left;">Proficiency<br>Bonus</th><th>Features</th></tr><tr><td align="center">1st</td><td style="text-align: center;">+2</td><td>Fighting Style, Second Wind</td></tr><tr><td align="center">2nd</td><td style="text-align: center;">+2</td><td>Action Surge (one use)</td></tr><tr><td align="center">3rd</td><td style="text-align: center;">+2</td><td>Martial Archetype</td></tr><tr><td align="center">4th</td><td style="text-align: center;">+2</td><td>Ability Score Improvement</td></tr><tr><td align="center">5th</td><td style="text-align: center;">+3</td><td>Extra Attack</td></tr><tr><td align="center">6th</td><td style="text-align: center;">+3</td><td>Ability Score Improvement</td></tr><tr><td align="center">7th</td><td style="text-align: center;">+3</td><td>Martial Archetype feature</td></tr><tr><td align="center">8th</td><td style="text-align: center;">+3</td><td>Ability Score Improvement</td></tr><tr><td align="center">9th</td><td style="text-align: center;">+4</td><td>Indomitable (one use)</td></tr><tr><td align="center">10th</td><td style="text-align: center;">+4</td><td>Martial Archetype Feature</td></tr><tr><td align="center">11th</td><td style="text-align: center;">+4</td><td>Extra Attack (2)</td></tr><tr><td align="center">12th</td><td style="text-align: center;">+4</td><td>Ability Score Improvement</td></tr><tr><td align="center">13th</td><td style="text-align: center;">+5</td><td>Indomitable (two uses)</td></tr><tr><td align="center">14th</td><td style="text-align: center;">+5</td><td>Ability Score Improvement</td></tr><tr><td align="center">15th</td><td style="text-align: center;">+5</td><td>Martial Archetype feature</td></tr><tr><td align="center">16th</td><td style="text-align: center;">+5</td><td>Ability Score Improvement</td></tr><tr><td align="center">17th</td><td style="text-align: center;">+6</td><td>Action Surge (two uses),<br>Indomitable (three uses)</td></tr><tr><td align="center">18th</td><td style="text-align: center;">+6</td><td>Martial Archetype feature</td></tr><tr><td align="center">19th</td><td style="text-align: center;">+6</td><td>Ability Score Improvement</td></tr><tr><td align="center">20th</td><td style="text-align: center;">+6</td><td>Extra Attack (3)</td></tr></tbody></table>
-
-Fighter
-=======
+# Fighter
 
 #### Hit Points
 
@@ -31,10 +28,10 @@ Fighter
 
 You start with the following equipment, in addition to the equipment granted by your background:
 
-*   (_a_) chain mail or (_b_) leather armor, longbow, and 20 arrows
-*   (_a_) a martial weapon and a shield or (_b_) two martial weapons
-*   (_a_) a light crossbow and 20 bolts or (_b_) two handaxes
-*   (_a_) a dungeoneer's pack or (_b_) an explorer's pack
+-   (_a_) chain mail or (_b_) leather armor, longbow, and 20 arrows
+-   (_a_) a martial weapon and a shield or (_b_) two martial weapons
+-   (_a_) a light crossbow and 20 bolts or (_b_) two handaxes
+-   (_a_) a dungeoneer's pack or (_b_) an explorer's pack
 
 #### Class Features
 

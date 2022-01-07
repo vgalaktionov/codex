@@ -7,6 +7,7 @@ import { log } from '../util';
 import { GeneralRuleSchema, resolveDescriptionsFromContent, Rule, RuleCategory } from './base';
 import { ClassSchema } from './classes';
 import { RaceSchema } from './races';
+import { SpellSchema } from './spells';
 import { SubraceSchema } from './subraces';
 
 interface RuleConfig {
@@ -20,6 +21,7 @@ const ALL_RULES: Readonly<RuleConfig[]> = [
     { category: RuleCategory.RACE, defaultPath: 'rules/races', schema: RaceSchema },
     { category: RuleCategory.SUBRACE, defaultPath: 'rules/subraces', schema: SubraceSchema },
     { category: RuleCategory.CLASS, defaultPath: 'rules/classes', schema: ClassSchema },
+    { category: RuleCategory.SPELL, defaultPath: 'rules/spells', schema: SpellSchema },
 ] as const;
 
 export async function loadDefaultRules(verbose = false) {

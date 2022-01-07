@@ -4,17 +4,13 @@ type: 5th-level illusion
 level: 5
 castingTime: 1 action
 range: 60 feet
-components: V, S, M (a handful of sand, a dab of ink, and<br>
-			a writing quill plucked from a sleeping bird)
+components: V, S, M (a handful of sand, a dab of ink, and a writing quill plucked from a sleeping bird)
 duration: 8 hours
 ---
 
-Dream
-=====
+# Dream
 
 #### 5th-level illusion
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>60 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a handful of sand, a dab of ink, and<br>a writing quill plucked from a sleeping bird)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>8 hours</td></tr></tbody></table>
 
 This spell shapes a creature’s dreams. Choose a creature known to you as the target of this spell. The target must be on the same plane of existence as you. Creatures that don’t sleep, such as elves, can’t be contacted by this spell. You, or a willing creature you touch, enters a trance state, acting as a messenger. While in the trance, the messenger is aware of his or her surroundings, but can’t take actions or move.
 

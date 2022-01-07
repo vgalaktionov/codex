@@ -4,17 +4,13 @@ type: 8th-level evocation
 level: 8
 castingTime: 1 action
 range: 500 feet
-components: V, S, M (a pinch of dirt, a piece of rock,<br>
-			and a lump of clay)
+components: V, S, M (a pinch of dirt, a piece of rock, and a lump of clay)
 duration: Concentration, up to 1 minute
 ---
 
-Earthquake
-==========
+# Earthquake
 
 #### 8th-level evocation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>500 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a pinch of dirt, a piece of rock,<br>and a lump of clay)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 1 minute</td></tr></tbody></table>
 
 You create a seismic disturbance at a point on the ground that you can see within range. For the duration, an intense tremor rips through the ground in a 100--‐‑foot--‐‑radius circle centered on that point and shakes creatures and structures in contact with the ground in that area.
 

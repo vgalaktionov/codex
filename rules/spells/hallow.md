@@ -4,17 +4,13 @@ type: 5th-level evocation
 level: 5
 castingTime: 24 hours
 range: Touch
-components: V, S, M (herbs, oils, and incense worth at least<br>
-			1,000 gp, which the spell consumes)
+components: V, S, M (herbs, oils, and incense worth at least 1,000 gp, which the spell consumes)
 duration: Until dispelled
 ---
 
-Hallow
-======
+# Hallow
 
 #### 5th-level evocation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>24 hours</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Touch</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (herbs, oils, and incense worth at least<br>1,000 gp, which the spell consumes)</td></tr><tr><th><a srd="" spellcasting="" castingaspell.htm#duration"="">Duration</a>:</th><td>Until dispelled</td></tr></tbody></table>
 
 You touch a point and infuse an area around it with holy (or unholy) power. The area can have a radius up to 60 feet, and the spell fails if the radius includes an area already under the effect a hallow spell. The affected area is subject to the following effects.
 

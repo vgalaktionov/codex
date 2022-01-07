@@ -4,17 +4,13 @@ type: 6th-level transmutation
 level: 6
 castingTime: 1 action
 range: 120 feet
-components: V, S, M (an iron blade and a small bag containing<br>
-			a mixture of soils-clay, loam, and sand)
+components: V, S, M (an iron blade and a small bag containing a mixture of soils-clay, loam, and sand)
 duration: Concentration, up to 2 hours
 ---
 
-Move Earth
-==========
+# Move Earth
 
 #### 6th-level transmutation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>120 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (an iron blade and a small bag containing<br>a mixture of soils-clay, loam, and sand)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 2 hours</td></tr></tbody></table>
 
 Choose an area of terrain no larger than 40 feet on a side within range. You can reshape dirt, sand, or clay in the area in any manner you choose for the duration. You can raise or lower the area’s elevation, create or fill in a trench, erect or flatten a wall, or form a pillar. The extent of any such changes can’t exceed half the area’s largest dimension. So, if you affect a 40-foot square, you can create a pillar up to 20 feet high, raise or lower the square’s elevation by up to 20 feet, dig a trench up to 20 feet deep, and so on. It takes 10 minutes for these changes to complete.
 

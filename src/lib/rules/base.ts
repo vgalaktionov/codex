@@ -8,6 +8,7 @@ export enum RuleCategory {
     SUBRACE = 'Subrace',
     CLASS = 'Class',
     GENERAL = 'General',
+    SPELL = 'Spell',
 }
 
 export const RuleSchema = z.object({

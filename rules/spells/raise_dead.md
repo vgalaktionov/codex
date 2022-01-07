@@ -4,17 +4,13 @@ type: 5th-level necromancy
 level: 5
 castingTime: 1 hour
 range: Touch
-components: V, S, M (a diamond worth at least 500 gp,<br>
-			which the spell consumes)
+components: V, S, M (a diamond worth at least 500 gp, which the spell consumes)
 duration: Instantaneous
 ---
 
-Raise Dead
-==========
+# Raise Dead
 
 #### 5th-level necromancy
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 hour</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Touch</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a diamond worth at least 500 gp,<br>which the spell consumes)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Instantaneous</td></tr></tbody></table>
 
 You return a dead creature you touch to life, provided that it has been dead no longer than 10 days. If the creature’s soul is both willing and at liberty to rejoin the body, the creature returns to life with 1 hit point.
 

@@ -4,18 +4,13 @@ type: 2nd-level illusion (ritual)
 level: 2
 castingTime: 1 action
 range: 120 feet
-components: V, S, M (a small bit of honeycomb and<br>
-			jade dust worth at least 10 gp, which<br>
-			the spell consumes)
+components: V, S, M (a small bit of honeycomb and jade dust worth at least 10 gp, which the spell consumes)
 duration: Until dispelled
 ---
 
-Magic Mouth
-===========
+# Magic Mouth
 
 #### 2nd-level illusion (ritual)
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>120 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a small bit of honeycomb and<br>jade dust worth at least 10 gp, which<br>the spell consumes)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Until dispelled</td></tr></tbody></table>
 
 You implant a message within an object in range, a message that is uttered when a trigger condition is met. Choose an object that you can see and that isn’t being worn or carried by another creature. Then speak the message, which must be 25 words or less, though it can be delivered over as long as 10 minutes. Finally, determine the circumstance that will trigger the spell to deliver your message.
 

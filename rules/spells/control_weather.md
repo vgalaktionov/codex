@@ -4,17 +4,13 @@ type: 8th-level transmutation
 level: 8
 castingTime: 10 minutes
 range: Self (5-mile radius)
-components: V, S, M (burning incense and bits of<br>
-			earth and wood mixed in water)
+components: V, S, M (burning incense and bits of earth and wood mixed in water)
 duration: Concentration, up to 8 hours
 ---
 
-Control Weather
-===============
+# Control Weather
 
 #### 8th-level transmutation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>10 minutes</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Self (5-mile radius)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (burning incense and bits of<br>earth and wood mixed in water)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 8 hours</td></tr></tbody></table>
 
 You take control of the weather within 5 miles of you for the duration. You must be outdoors to cast this spell. Moving to a place where you don’t have a clear path to the sky ends the spell early.
 

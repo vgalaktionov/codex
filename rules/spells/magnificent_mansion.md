@@ -4,17 +4,13 @@ type: 7th-level conjuration
 level: 7
 castingTime: 1 minute
 range: 300 feet
-components: V, S, M (a miniature portal carved from ivory,<br>
-			a small piece of polished marble, and a tiny<br>
-			silver spoon, each item worth at least 5 gp)
+components: V, S, M (a miniature portal carved from ivory, a small piece of polished marble, and a tiny silver spoon, each item worth at least 5 gp)
 duration: 24 hours
 ---
 
 #  Magnificent Mansion
 
 #### 7th-level conjuration
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 minute</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>300 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a miniature portal carved from ivory,<br>a small piece of polished marble, and a tiny<br>silver spoon, each item worth at least 5 gp)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>24 hours</td></tr></tbody></table>
 
 You conjure an extradimensional dwelling in range that lasts for the duration. You choose where its one entrance is located. The entrance shimmers faintly and is 5 feet wide and 10 feet tall. You and any creature you designate when you cast the spell can enter the extradimensional dwelling as long as the portal remains open. You can open or close the portal if you are within 30 feet of it. While closed, the portal is invisible.
 

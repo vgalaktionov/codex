@@ -4,17 +4,13 @@ type: 6th-level necromancy
 level: 6
 castingTime: 1 minute
 range: Self
-components: V, S, M (a gem, crystal, reliquary, or some other<br>
-			ornamental container worth at least 500 gp)
+components: V, S, M (a gem, crystal, reliquary, or some other ornamental container worth at least 500 gp)
 duration: Until dispelled
 ---
 
-Magic Jar
-=========
+# Magic Jar
 
 #### 6th-level necromancy
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 minute</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Self</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a gem, crystal, reliquary, or some other<br>ornamental container worth at least 500 gp)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Until dispelled</td></tr></tbody></table>
 
 Your body falls into a catatonic state as your soul leaves it and enters the container you used for the spell’s material component. While your soul inhabits the container, you are aware of your surroundings as if you were in the container’s space. You can’t move or use reactions. The only action you can take is to project your soul up to 100 feet out of the container, either returning to your living body (and ending the spell) or attempting to possess a humanoids body.
 

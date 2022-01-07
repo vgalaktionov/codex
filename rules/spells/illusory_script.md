@@ -4,17 +4,13 @@ type: 1st-level illusion (ritual)
 level: 1
 castingTime: 1 minute
 range: Touch
-components: S, M (a lead-based ink worth at least<br>
-			10 gp, which the spell consumes)
+components: S, M (a lead-based ink worth at least 10 gp, which the spell consumes)
 duration: 10 days
 ---
 
-Illusory Script
-===============
+# Illusory Script
 
 #### 1st-level illusion (ritual)
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 minute</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Touch</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>S, M (a lead-based ink worth at least<br>10 gp, which the spell consumes)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>10 days</td></tr></tbody></table>
 
 You write on parchment, paper, or some other suitable writing material and imbue it with a potent illusion that lasts for the duration.
 

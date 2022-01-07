@@ -4,18 +4,13 @@ type: 7th-level conjuration
 level: 7
 castingTime: 1 action
 range: Touch
-components: V, S, M (a forked, metal rod worth at least<br>
-			250 gp, attuned to a particular plane of<br>
-			existence)
+components: V, S, M (a forked, metal rod worth at least 250 gp, attuned to a particular plane of existence)
 duration: Instantaneous
 ---
 
-Plane Shift
-===========
+# Plane Shift
 
 #### 7th-level conjuration
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Touch</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a forked, metal rod worth at least<br>250 gp, attuned to a particular plane of<br>existence)</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#effect">Duration</a>:</th><td>Instantaneous</td></tr></tbody></table>
 
 You and up to eight willing creatures who link hands in a circle are transported to a different plane of existence. You can specify a target destination in general terms, such as the City of Brass on the Elemental Plane of Fire or the palace of Dispater on the second level of the Nine Hells, and you appear in or near that destination. If you are trying to reach the City of Brass, for example, you might arrive in its Street of Steel, before its Gate of Ashes, or looking at the city from across the Sea of Fire, at the GM’s discretion.
 

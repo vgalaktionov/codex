@@ -4,20 +4,13 @@ type: 9th-level Necromancy
 level: 9
 castingTime: 1 hour
 range: 10 feet
-components: V, S, M (for each creature you affect<br>
-			with this spell, you must provide one jacinth<br>
-			worth at least 1,000 gp and one ornately carved<br>
-			bar of silver worth at least 100gp, all of which the<br>
-			spell consumes)
+components: V, S, M (for each creature you affect with this spell, you must provide one jacinth worth at least 1,000 gp and one ornately carved bar of silver worth at least 100gp, all of which the spell consumes)
 duration: Special
 ---
 
-Astral Projection
-=================
+# Astral Projection
 
 #### 9th-level Necromancy
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingTime">Casting Time</a>:</th><td>1 hour</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>10 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (for each creature you affect<br>with this spell, you must provide one jacinth<br>worth at least 1,000 gp and one ornately carved<br>bar of silver worth at least 100gp, all of which the<br>spell consumes)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Special</td></tr></tbody></table>
 
 You and up to eight willing creatures within range project your astral bodies into the Astral Plane (the spell fails and the casting is wasted if you are already on that plane). The material body you leave behind is unconscious and in a state of suspended animation; it doesn’t need food or air and doesn’t age.
 

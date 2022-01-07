@@ -8,12 +8,9 @@ components: V, S, M (a bit of fleece)
 duration: Concentration, up to 10 minutes
 ---
 
-Silent Image
-============
+# Silent Image
 
 #### 1st-level illusion
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>60 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a bit of fleece)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 10 minutes</td></tr></tbody></table>
 
 You create the image of an object, a creature, or some other visible phenomenon that is no larger than a 15-­‐‑foot cube. The image appears at a spot within range and lasts for the duration. The image is purely visual; it isn’t accompanied by sound, smell, or other sensory effects.
 

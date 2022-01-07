@@ -4,19 +4,13 @@ type: 4th-level Conjuration)
 level: 4
 castingTime: 1 minute
 range: 10 feet
-components: V, S, M (an exquisite chest, 3 feet by 2 feet by 2 feet,<br>
-			constructed from rare materials worth at least 5,000 gp<br>
-			and a Tiny replica made from the same materials worth<br>
-			at least 50 gp)
+components: V, S, M (an exquisite chest, 3 feet by 2 feet by 2 feet, constructed from rare materials worth at least 5,000 gp and a Tiny replica made from the same materials worth at least 50 gp)
 duration: Instantaneous
 ---
 
-Secret Chest
-============
+# Secret Chest
 
 #### 4th-level Conjuration)
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 minute</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>10 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (an exquisite chest, 3 feet by 2 feet by 2 feet,<br>constructed from rare materials worth at least 5,000 gp<br>and a Tiny replica made from the same materials worth<br>at least 50 gp)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Instantaneous</td></tr></tbody></table>
 
 You hide a chest, and all its contents, on the Ethereal Plane. You must touch the chest and the miniature replica that serves as a material component for the spell. The chest can contain up to 12 cubic feet of nonliving material (3 feet by 2 feet by 2 feet).
 

@@ -4,17 +4,13 @@ type: 5th-level abjuration
 level: 5
 castingTime: 1 hour
 range: 60 feet
-components: V, S, M (a jewel worth at least 1,000 gp,<br>
-			which the spell consumes)
+components: V, S, M (a jewel worth at least 1,000 gp, which the spell consumes)
 duration: 24 hours
 ---
 
-Planar Binding
-==============
+# Planar Binding
 
 #### 5th-level abjuration
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 hour</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>60 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a jewel worth at least 1,000 gp,<br>which the spell consumes)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>24 hours</td></tr></tbody></table>
 
 With this spell, you attempt to bind a celestial, an elemental, a fey, or a fiend to your service. The creature must be within range for the entire casting of the spell. (Typically, the creature is first summoned into the center of an inverted magic circle in order to keep it trapped while this spell is cast.) At the completion of the casting, the target must make a Charisma saving throw. On a failed save, it is bound to serve you for the duration. If the creature was summoned or created by another spell, that spell’s duration is extended to match the duration of this spell.
 

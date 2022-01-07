@@ -4,18 +4,13 @@ type: 9th-level necromancy
 level: 9
 castingTime: 1 hour
 range: Touch
-components: V, S, M (a sprinkle of holy water and<br>
-			diamonds worth at least 25,000 gp<br>
-			which the spell consumes)
+components: V, S, M (a sprinkle of holy water and diamonds worth at least 25,000 gp which the spell consumes)
 duration: Instantaneous
 ---
 
-True Resurrection
-=================
+# True Resurrection
 
 #### 9th-level necromancy
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#level">Casting Time</a>:</th><td>1 hour</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#components">Range</a>:</th><td>Touch</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#range">Components</a>:</th><td>V, S, M (a sprinkle of holy water and<br>diamonds worth at least 25,000 gp<br>which the spell consumes)</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#effect">Duration</a>:</th><td>Instantaneous</td></tr></tbody></table>
 
 You touch a creature that has been dead for no longer than 200 years and that died for any reason except old age. If the creature’s soul is free and willing, the creature is restored to life with all its hit points.
 

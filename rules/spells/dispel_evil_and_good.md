@@ -4,17 +4,13 @@ type: 5th-level abjuration
 level: 5
 castingTime: 1 action
 range: Self
-components: V, S, M (holy water or powdered silver<br>
-			and iron)
+components: V, S, M (holy water or powdered silver and iron)
 duration: Concentration, up to 1 minute
 ---
 
-Dispel Evil and Good
-====================
+# Dispel Evil and Good
 
 #### 5th-level abjuration
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Self</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (holy water or powdered silver<br>and iron)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 1 minute</td></tr></tbody></table>
 
 Shimmering energy surrounds and protects you from fey, undead, and creatures originating from beyond the Material Plane. For the duration, celestials, elementals, fey, fiends, and undead have disadvantage on attack rolls against you. You can end the spell early by using either of the following special functions.
 

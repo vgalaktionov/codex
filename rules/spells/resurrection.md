@@ -4,17 +4,13 @@ type: 7th-level necromancy
 level: 7
 castingTime: 1 hour
 range: Touch
-components: V, S, M (a diamond worth at least<br>
-			1,000 gp, which the spell consumes)
+components: V, S, M (a diamond worth at least 1,000 gp, which the spell consumes)
 duration: Instantaneous
 ---
 
-Resurrection
-============
+# Resurrection
 
 #### 7th-level necromancy
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 hour</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Touch</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a diamond worth at least<br>1,000 gp, which the spell consumes)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Instantaneous</td></tr></tbody></table>
 
 You touch a dead creature that has been dead for no more than a century, that didn’t die of old age, and that isn’t undead. If its soul is free and willing, the target returns to life with all its hit points.
 

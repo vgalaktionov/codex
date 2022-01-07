@@ -4,17 +4,13 @@ type: 3rd-level evocation
 level: 3
 castingTime: 1 action
 range: 150 feet
-components: V, S, M (a tiny ball of bat guano<br>
-			and sulfur)
+components: V, S, M (a tiny ball of bat guano and sulfur)
 duration: Instantaneous
 ---
 
-Fireball
-========
+# Fireball
 
 #### 3rd-level evocation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>150 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a tiny ball of bat guano<br>and sulfur)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Instantaneous</td></tr></tbody></table>
 
 A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one.
 

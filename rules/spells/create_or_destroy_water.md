@@ -4,17 +4,13 @@ type: 3rd-level conjuration
 level: 3
 castingTime: 1 action
 range: 30 feet
-components: V, S, M (a drop of water if creating water<br>
-			or a few grains of sand if destroying it)
+components: V, S, M (a drop of water if creating water or a few grains of sand if destroying it)
 duration: Instantaneous
 ---
 
-Create or Destroy Water
-=======================
+# Create or Destroy Water
 
 #### 3rd-level conjuration
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>30 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a drop of water if creating water<br>or a few grains of sand if destroying it)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Instantaneous</td></tr></tbody></table>
 
 You either create or destroy water.
 

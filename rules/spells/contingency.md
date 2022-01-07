@@ -4,18 +4,13 @@ type: 6th-level evocation
 level: 6
 castingTime: 10 minutes
 range: Self
-components: V, S, M (a statuette of yourself carved from<br>
-			ivory and decorated with gems worth at least<br>
-			1,500 gp)
+components: V, S, M (a statuette of yourself carved from ivory and decorated with gems worth at least 1,500 gp)
 duration: 10 days
 ---
 
-Contingency
-===========
+# Contingency
 
 #### 6th-level evocation
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>10 minutes</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Self</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a statuette of yourself carved from<br>ivory and decorated with gems worth at least<br>1,500 gp)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>10 days</td></tr></tbody></table>
 
 Choose a spell of 5th level or lower that you can cast, that has a casting time of 1 action, and that can target you. You cast that spell—called the contingent spell—as part of casting _**contingency**_, expending spell slots for both, but the contingent spell doesn’t come into effect. Instead, it takes effect when a certain circumstance occurs. You describe that circumstance when you cast the two spells. For example, a _**contingency**_ cast with _**water breathing**_ might stipulate that _**water breathing**_ comes into effect when you are engulfed in water or a similar liquid.
 

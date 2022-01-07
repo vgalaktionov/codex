@@ -4,17 +4,13 @@ type: 6th-level abjuration (ritual)
 level: 6
 castingTime: 10 minutes
 range: Touch
-components: V, S, M (a sprinkling of holy water, rare incense,<br>
-			and powdered ruby worth at least 1,000 gp)
+components: V, S, M (a sprinkling of holy water, rare incense, and powdered ruby worth at least 1,000 gp)
 duration: 1 day
 ---
 
-Forbiddance
-===========
+# Forbiddance
 
 #### 6th-level abjuration (ritual)
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>10 minutes</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Touch</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a sprinkling of holy water, rare incense,<br>and powdered ruby worth at least 1,000 gp)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>1 day</td></tr></tbody></table>
 
 You create a ward against magical travel that protects up to 40,000 square feet of floor space to a height of 30 feet above the floor. For the duration, creatures can’t teleport into the area or use portals, such as those created by the _**gate**_ spell, to enter the area. The spell proofs the area against planar travel, and therefore prevents creatures from accessing the area by way of the Astral Plane, Ethereal Plane, Feywild, Shadowfell, or the _**plane shift**_ spell.
 

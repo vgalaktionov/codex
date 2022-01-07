@@ -8,19 +8,16 @@ components: V, S
 duration: Concentration, up to 1 hour
 ---
 
-Conjure Minor Elementals
-========================
+# Conjure Minor Elementals
 
 #### 4th-level conjuration
 
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 minute</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>90 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Concentration, up to 1 hour</td></tr></tbody></table>
-
 You summon elementals that appear in unoccupied spaces that you can see within range. Choose one of the following options for what appears:
 
-*   One elemental of challenge rating 2 or lower
-*   Two elementals of challenge rating 1 or lower
-*   Four elementals of challenge rating 1/2 or lower
-*   Eight elementals of challenge rating 1/4 or lower
+-   One elemental of challenge rating 2 or lower
+-   Two elementals of challenge rating 1 or lower
+-   Four elementals of challenge rating 1/2 or lower
+-   Eight elementals of challenge rating 1/4 or lower
 
 An elemental summoned by this spell disappears when it drops to 0 hit points or when the spell ends. The summoned creatures are friendly to you and your companions. Roll initiative for the summoned creatures as a group, which has its own turns. They obey any verbal commands that you issue to them (no action required by you). If you don’t issue any commands to them, they defend themselves from hostile creatures, but otherwise take no actions. The GM has the creatures’ statistics.
 

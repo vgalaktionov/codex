@@ -4,17 +4,13 @@ type: 3rd-level illusion
 level: 3
 castingTime: 1 action
 range: Self
-components: V, S, M (a small amount of alcohol or<br>
-			distilled spirits)
+components: V, S, M (a small amount of alcohol or distilled spirits)
 duration: 1 hour
 ---
 
-Fear
-====
+# Fear
 
 #### 3rd-level illusion
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Self</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a small amount of alcohol or<br>distilled spirits)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>1 hour</td></tr></tbody></table>
 
 You project a phantasmal image of a creature’s worst fears. Each creature in a 30-foot cone must succeed on a Wisdom saving throw or drop whatever it is holding and become frightened for the duration.
 

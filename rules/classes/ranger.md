@@ -2,8 +2,7 @@
 name: Ranger
 ---
 
-Ranger
-======
+# Ranger
 
 #### Hit Points
 
@@ -29,12 +28,10 @@ Ranger
 
 You start with the following equipment, in addition to the equipment granted by your background:
 
-*   (_a_) scale mail or (_b_) leather armor
-*   (_a_) two shortswords or (_b_) two simple melee weapons
-*   (_a_) a dungeoneer's pack or (_b_) an explorer's pack
-*   A longbow and a quiver of 20 arrows
-
-<table cellspacing="0" id="tableTheRanger"><caption>Table: The Ranger</caption><tbody><tr><th rowspan="2">Level</th><th align="left" rowspan="2">Proficiency<br>Bonus</th><th align="left" rowspan="2">Features</th><th align="left" rowspan="2">Spells Known</th><th colspan="5" rowspan="1">Spells</th></tr><tr><th><a href="/srd/spellLists/rangerSpells.htm#secondLevelRangerSpells">1st</a></th><th><a href="/srd/spellLists/rangerSpells.htm#secondLevelRangerSpells">2nd</a></th><th><a href="/srd/spellLists/rangerSpells.htm#thirdLevelRangerSpells">3rd</a></th><th><a href="/srd/spellLists/rangerSpells.htm#fourthLevelRangerSpells">4th</a></th><th><a href="/srd/spellLists/rangerSpells.htm#secondLevelRangerSpells">5th</a></th></tr><tr><td align="center">1st</td><td style="text-align: center;">2</td><td>Favored Enemy, Natural Explorer</td><td style="text-align: center;">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">2nd</td><td style="text-align: center;">2</td><td>Fighting Style, Spellcasting</td><td style="text-align: center;">2</td><td align="center">2</td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">3rd</td><td style="text-align: center;">2</td><td>Ranger Archetype, Primeval Awareness</td><td style="text-align: center;">3</td><td align="center">3</td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">4th</td><td style="text-align: center;">2</td><td>Ability Score Improvement</td><td style="text-align: center;">3</td><td align="center">3</td><td align="center">—</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">5th</td><td style="text-align: center;">3</td><td>Extra Attack</td><td style="text-align: center;">4</td><td align="center">4</td><td align="center">2</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">6th</td><td style="text-align: center;">3</td><td>Favored Enemy and Natural Explorer improvements</td><td style="text-align: center;">4</td><td align="center">4</td><td align="center">2</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">7th</td><td style="text-align: center;">3</td><td>Ranger Archetype feature</td><td style="text-align: center;">5</td><td align="center">4</td><td align="center">3</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">8th</td><td style="text-align: center;">3</td><td>Ability Score Improvement, Land's Stride</td><td style="text-align: center;">5</td><td align="center">4</td><td align="center">3</td><td align="center">—</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">9th</td><td style="text-align: center;">4</td><td>—</td><td style="text-align: center;">6</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">10th</td><td style="text-align: center;">4</td><td>Natural Explorer improvement, Hide in Plain Sight</td><td style="text-align: center;">6</td><td align="center">4</td><td align="center">3</td><td align="center">2</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">11th</td><td style="text-align: center;">4</td><td>Ranger Archetype feature</td><td style="text-align: center;">7</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">12th</td><td style="text-align: center;">4</td><td>Ability Score Improvement</td><td style="text-align: center;">7</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">—</td><td align="center">—</td></tr><tr><td align="center">13th</td><td style="text-align: center;">5</td><td>—</td><td style="text-align: center;">8</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">1</td><td align="center">—</td></tr><tr><td align="center">14th</td><td style="text-align: center;">5</td><td>Favored Enemy improvement, Vanish</td><td style="text-align: center;">8</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">1</td><td align="center">—</td></tr><tr><td align="center">15th</td><td style="text-align: center;">5</td><td>Ranger Archetype feature</td><td style="text-align: center;">9</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">2</td><td align="center">—</td></tr><tr><td align="center">16th</td><td style="text-align: center;">5</td><td>Ability Score Improvement</td><td style="text-align: center;">9</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">2</td><td align="center">—</td></tr><tr><td align="center">17th</td><td style="text-align: center;">6</td><td>—</td><td style="text-align: center;">10</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">3</td><td align="center">1</td></tr><tr><td align="center">18th</td><td style="text-align: center;">6</td><td>Feral Senses</td><td style="text-align: center;">10</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">3</td><td align="center">1</td></tr><tr><td align="center">19th</td><td style="text-align: center;">6</td><td>Ability Score Improvement</td><td style="text-align: center;">11</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">3</td><td align="center">2</td></tr><tr><td align="center">20th</td><td style="text-align: center;">6</td><td>Foe Slayer</td><td style="text-align: center;">11</td><td align="center">4</td><td align="center">3</td><td align="center">3</td><td align="center">3</td><td align="center">2</td></tr></tbody></table>
+-   (_a_) scale mail or (_b_) leather armor
+-   (_a_) two shortswords or (_b_) two simple melee weapons
+-   (_a_) a dungeoneer's pack or (_b_) an explorer's pack
+-   A longbow and a quiver of 20 arrows
 
 #### Class Features
 
@@ -50,12 +47,12 @@ You have advantage on Wisdom (Survival) checks to track your favored enemies, as
 
 You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain: arctic, coast, desert, forest, grassland, mountain, or swamp. When you make an Intelligence of Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you're proficient in. While travelling for an hour or more in your favored terrain, you gain the following benefits:
 
-*   Difficult terrain doesn't slow your group's travel.
-*   Your group can't become lost except by magical means.
-*   Even when you are engaged in another activity (such as foraging, navigating, or tracking), you remain alert to danger.
-*   If you are traveling alone, you can move stealthily at a normal pace.
-*   When you forage, you find twice as much food as you normally would.
-*   While tracking other creatures, you also learn their exact number, their sizes, how long ago they passed through the area.
+-   Difficult terrain doesn't slow your group's travel.
+-   Your group can't become lost except by magical means.
+-   Even when you are engaged in another activity (such as foraging, navigating, or tracking), you remain alert to danger.
+-   If you are traveling alone, you can move stealthily at a normal pace.
+-   When you forage, you find twice as much food as you normally would.
+-   While tracking other creatures, you also learn their exact number, their sizes, how long ago they passed through the area.
 
 You choose additional favored terrain types at 6th and 10th level.
 
@@ -157,29 +154,29 @@ Emulating the Hunter archetype means accepting your place as a bulwark between c
 
 At 3rd level, you gain one of the following features of your choice.
 
-*   **_Colossus Slayer._** Your tenacity can wear down the most potent foes. When you hit a creature with a weapon attack, the creature takes an extra 1d8 damage if it's below its hit point maximum. You can deal this extra damage only once per turn.
-*   **_Giant Killer._** When a Large or larger creature within 5 feet of your hits or misses you with an attack, you can use your reaction to attack that creature immediately after its attack, provided that you can see the creature.
-*   **_Horde Breaker._** Once on each of your turns when you make a weapon attack, you can make another attack with the same weapon against a different creature that is within 5 feet of the original target and within range of your weapon.
+-   **_Colossus Slayer._** Your tenacity can wear down the most potent foes. When you hit a creature with a weapon attack, the creature takes an extra 1d8 damage if it's below its hit point maximum. You can deal this extra damage only once per turn.
+-   **_Giant Killer._** When a Large or larger creature within 5 feet of your hits or misses you with an attack, you can use your reaction to attack that creature immediately after its attack, provided that you can see the creature.
+-   **_Horde Breaker._** Once on each of your turns when you make a weapon attack, you can make another attack with the same weapon against a different creature that is within 5 feet of the original target and within range of your weapon.
 
 ##### Defensive Tactics
 
 At 7th level, you gain one of the following features of your choice.
 
-*   **_Escape the Horde_****_._** Opportunity attacks against you are made with disadvantage.
-*   **_Multiattack Defense._** When a creature hits you with an attack, you gain a +4 bonus to AC against all subsequent attacks made by that creature for the rest of the turn.
-*   **_Steel Will._** You have advantage on saving throws against being frightened.
+-   **_Escape the Horde_\*\***_._\*\* Opportunity attacks against you are made with disadvantage.
+-   **_Multiattack Defense._** When a creature hits you with an attack, you gain a +4 bonus to AC against all subsequent attacks made by that creature for the rest of the turn.
+-   **_Steel Will._** You have advantage on saving throws against being frightened.
 
 ##### Multiattack
 
 At 11th level, you gain one of the following features of your choice.
 
-*   **_Volley._** You can use your action to make a ranged attack against any number of creatures within 10 feet of a point you can see within your weapon's range. You must have ammunition for each target, as normal, and you make a separate attack roll for each target.
-*   **_Whirlwind_** **_Attack._** You can use your action to make a melee attack against any number of creatures within 5 feet of you, with a separate attack roll for each target.
+-   **_Volley._** You can use your action to make a ranged attack against any number of creatures within 10 feet of a point you can see within your weapon's range. You must have ammunition for each target, as normal, and you make a separate attack roll for each target.
+-   **_Whirlwind_** **_Attack._** You can use your action to make a melee attack against any number of creatures within 5 feet of you, with a separate attack roll for each target.
 
 ##### Superior Hunter's Defense
 
 At 15th level, you gain one of the following features of your choice.
 
-*   **_Evasion._** When you are subjected to an effect, such as a red dragon's fiery breath or a **_lightning bolt_** spell, that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.
-*   **_Stand Against the Tide._** When a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice.
-*   **_Uncanny Dodge._** When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you.
+-   **_Evasion._** When you are subjected to an effect, such as a red dragon's fiery breath or a **_lightning bolt_** spell, that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.
+-   **_Stand Against the Tide._** When a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice.
+-   **_Uncanny Dodge._** When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you.

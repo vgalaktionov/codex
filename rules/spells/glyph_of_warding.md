@@ -4,18 +4,13 @@ type: 3rd-level abjuration
 level: 3
 castingTime: 1 hour
 range: Touch
-components: V, S, M (incense and powdered diamond<br>
-			worth at least 200 gp which the spell<br>
-			consumes)
+components: V, S, M (incense and powdered diamond worth at least 200 gp which the spell consumes)
 duration: Until dispelled or triggered
 ---
 
-Glyph of Warding
-================
+# Glyph of Warding
 
 #### 3rd-level abjuration
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 hour</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Touch</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (incense and powdered diamond<br>worth at least 200 gp which the spell<br>consumes)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Until dispelled or triggered</td></tr></tbody></table>
 
 When you cast this spell, you inscribe a glyph that harms other creatures, either upon a surface (such as a table or a section of floor or wall) or within an object that can be closed (such as a book, a scroll, or a treasure chest) to conceal the glyph. If you choose a surface, the glyph can cover an area of the surface no larger than 10 feet in diameter. If you choose an object, that object must remain in its place; if the object is moved more than 10 feet from where you cast this spell, the glyph is broken, and the spell ends without being triggered.
 

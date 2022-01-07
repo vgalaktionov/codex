@@ -4,18 +4,13 @@ type: 6th-level necromancy
 level: 6
 castingTime: 1 minute
 range: 10 feet
-components: V, S, M (one clay pot filled with grave dirt,<br>
-			one clay pot filled with brackish water,<br>
-			and one 150 gp black onyx for each corpse)
+components: V, S, M (one clay pot filled with grave dirt, one clay pot filled with brackish water, and one 150 gp black onyx for each corpse)
 duration: Instantaneous
 ---
 
-Create Undead
-=============
+# Create Undead
 
 #### 6th-level necromancy
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 minute</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>10 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (one clay pot filled with grave dirt,<br>one clay pot filled with brackish water,<br>and one 150 gp black onyx for each corpse)</td></tr><tr><th><a href="/srd/magicOverview/spellDescriptions.htm#effect">Duration</a>:</th><td>Instantaneous</td></tr></tbody></table>
 
 You can cast this spell only at night. Choose up to three corpses of Medium or Small humanoids within range. Each corpse becomes a ghoul under your control. (The GM has game statistics for these creatures.)
 

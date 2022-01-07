@@ -4,17 +4,13 @@ type: 3rd-level necromancy
 level: 3
 castingTime: 1 minute
 range: 10 feet
-components: V, S, M (a drop of blood, a piece of flesh,<br>
-			and a pinch of bone dust)
+components: V, S, M (a drop of blood, a piece of flesh, and a pinch of bone dust)
 duration: Instantaneous
 ---
 
-Animate Dead
-============
+# Animate Dead
 
 #### 3rd-level necromancy
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingTime">Casting Time</a>:</th><td>1 minute</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>10 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a drop of blood, a piece of flesh,<br>and a pinch of bone dust)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Instantaneous</td></tr></tbody></table>
 
 This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or a zombie if you chose a corpse (the GM has the creature’s game statistics).
 

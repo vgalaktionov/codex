@@ -8,12 +8,9 @@ components: V, S
 duration: 8 hours
 ---
 
-Death Ward
-==========
+# Death Ward
 
 #### 4th-level abjuration
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>Touch</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>8 hours</td></tr></tbody></table>
 
 You touch a creature and grant it a measure of protection from death.
 

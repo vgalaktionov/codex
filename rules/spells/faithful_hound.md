@@ -4,17 +4,13 @@ type: 4th-level conjuration
 level: 4
 castingTime: 1 action
 range: 30 feet
-components: V, S, M (a tiny silver whistle, a piece of bone,<br>
-			and a thread)
+components: V, S, M (a tiny silver whistle, a piece of bone, and a thread)
 duration: 8 hours
 ---
 
-Faithful Hound
-==============
+# Faithful Hound
 
 #### 4th-level conjuration
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="//srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>30 feet</td></tr><tr><th><a href="//srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a tiny silver whistle, a piece of bone,<br>and a thread)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>8 hours</td></tr></tbody></table>
 
 You conjure a phantom watchdog in an unoccupied space that you can see within range, where it remains for the duration, until you dismiss it as an action, or until you move more than 100 feet away from it.
 

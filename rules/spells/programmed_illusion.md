@@ -4,17 +4,13 @@ type: 6th-level illusion
 level: 6
 castingTime: 1 action
 range: 120 feet
-components: V, S, M (a bit of fleece and jade dust<br>
-			worth at least 25 gp)
+components: V, S, M (a bit of fleece and jade dust worth at least 25 gp)
 duration: Until dispelled
 ---
 
-Programmed Illusion
-===================
+# Programmed Illusion
 
 #### 6th-level illusion
-
-<table cellspacing="0" class="statBlock"><tbody><tr><th><a href="/srd/spellcasting/castingASpell.htm#castingtime">Casting Time</a>:</th><td>1 action</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#range">Range</a>:</th><td>120 feet</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#components">Components</a>:</th><td>V, S, M (a bit of fleece and jade dust<br>worth at least 25 gp)</td></tr><tr><th><a href="/srd/spellcasting/castingASpell.htm#duration">Duration</a>:</th><td>Until dispelled</td></tr></tbody></table>
 
 You create an illusion of an object, a creature, or some other visible phenomenon within range that activates when a specific condition occurs. The illusion is imperceptible until then. It must be no larger than a 30-­‐‑foot cube, and you decide when you cast the spell how the illusion behaves and what sounds it makes. This scripted performance can last up to 5 minutes.
 
