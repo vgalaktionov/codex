@@ -8,7 +8,7 @@ import { render, Rule } from '../../../lib/rules/base';
 const RuleView = ({ rule }: { rule: Rule }) => {
     return (
         <VStack>
-            <Container px="20" py="16" width="100%" height="100%">
+            <Container px="20" py="16" width="100%" maxWidth="70vw" height="100%">
                 <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     children={render(rule)}

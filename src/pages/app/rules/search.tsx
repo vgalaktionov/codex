@@ -43,7 +43,7 @@ const Search = ({ results, query }: { results: DBRule[]; query: string }) => {
 
     const bgColor = { light: 'gray.100', dark: 'gray.900' };
     return (
-        <VStack w="100%" alignItems="start" p="6">
+        <VStack w="100%" alignItems="start" py="6" px="20">
             <Heading size="2xl" mb="6">
                 Search results
             </Heading>
@@ -72,7 +72,7 @@ const Search = ({ results, query }: { results: DBRule[]; query: string }) => {
             </form>
             {results.length === 0 && <Text>No results... try a different term?</Text>}
             {results.map((r) => (
-                <Box key={r.name} backgroundColor={bgColor[colorMode]} p="6" m="6">
+                <Box key={r.name} backgroundColor={bgColor[colorMode]} p="6" m="6" width="100%" maxWidth="70vw">
                     <NextLink href={linkHref(r)} passHref>
                         <Link>
                             <Heading size="md">{r.name}</Heading>

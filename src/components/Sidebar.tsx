@@ -131,6 +131,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
                 onSubmit={handleSubmit(({ q }) => {
                     router.push({ pathname: '/app/rules/search', query: { q } });
                 })}
+                style={{ width: '100%' }}
             >
                 <FormControl isInvalid={errors.q != null} mb="6" pt="2">
                     <InputGroup>
