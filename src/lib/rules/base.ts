@@ -52,6 +52,7 @@ export const render = (rule: Rule, user?: User) => {
 export const DBRuleSchema = RuleSchema.extend({
     id: z.number().int().positive(),
     rule: RuleSchema,
+    highlighted: z.string().optional().nullable(),
 });
 export type DBRule = z.infer<typeof DBRuleSchema>;
 

@@ -25,7 +25,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             SECRET_KEY,
         );
         const cookies = new Cookies(req, res);
-        cookies.set('token', token, { httpOnly: true, expires: new Date(exp) });
+        cookies.set('token', token, { httpOnly: true, expires: new Date(exp * 1000) });
         return res.status(StatusCodes.OK).json({ email });
     } catch (error) {
         log.error(error);

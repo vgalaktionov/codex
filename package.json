@@ -2,7 +2,7 @@
     "private": true,
     "scripts": {
         "test": "$(npm bin)/jest --forceExit --detectOpenHandles",
-        "dev": "next",
+        "dev": "npm run migrate && next",
         "build": "next build",
         "start": "npm run migrate && npm run load && next start",
         "load": "$(npm bin)/ts-node src/lib/rules/load.ts",

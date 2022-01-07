@@ -117,17 +117,23 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
             <Heading size="md" color="orange.400" pt="10" pb="2">
                 Rules
             </Heading>
-            <FormControl isInvalid={errors.q != null} mb="6" pt="2">
-                <InputGroup>
-                    <Input type="search" {...register('q')}></Input>
-                    <InputRightElement pointerEvents="none" children={<GiArchiveResearch />} />
-                </InputGroup>
-            </FormControl>
-            <Flex w="100%" justifyContent="end" pt="2" pb="4" borderBottom="1px" borderBottomColor="gray">
-                <Button colorScheme="gray" ml="auto">
-                    Search rules
-                </Button>
-            </Flex>
+            <form
+                onSubmit={handleSubmit(({ q }) => {
+                    router.push({ pathname: '/app/rules/search', query: { q } });
+                })}
+            >
+                <FormControl isInvalid={errors.q != null} mb="6" pt="2">
+                    <InputGroup>
+                        <Input type="search" {...register('q')}></Input>
+                        <InputRightElement pointerEvents="none" children={<GiArchiveResearch />} />
+                    </InputGroup>
+                </FormControl>
+                <Flex w="100%" justifyContent="end" pt="2" pb="4" borderBottom="1px" borderBottomColor="gray">
+                    <Button colorScheme="orange" ml="auto" type="submit">
+                        Search rules
+                    </Button>
+                </Flex>
+            </form>
             <Heading size="sm" pt="2">
                 Browse
             </Heading>
@@ -146,7 +152,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
                         </Heading>
                         <AccordionPanel>
                             {Object.entries(values).map(([name, { href }]) => (
-                                <Box key={name} ml="6" my="3">
+                                <Box key={name + '-sidebar'} ml="6" my="3">
                                     <NextLink href={href} passHref>
                                         <Link> ❖&nbsp;&nbsp; {name}</Link>
                                     </NextLink>
