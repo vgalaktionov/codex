@@ -1,9 +1,19 @@
-import postgres from 'postgres';
+import pg from 'pg';
+import { SQL } from 'sql-template-strings';
 
-if ((global as any).sql == null) {
-    const sql = postgres(process.env.DATABASE_URL ?? 'postgres://vadim@localhost:5432/codex');
+if ((global as any).pool == null) {
+    const pool = new pg.Pool({
+        connectionString: process.env.DATABASE_URL ?? 'postgres://vadim@localhost:5432/codex',
+    });
 
-    (global as any).sql = sql;
+    process.on('beforeExit', async () => {
+        try {
+            await pool.end();
+        } catch (error) {}
+    });
+
+    (global as any).pool = pool;
 }
 
-export default (global as any).sql as postgres.Sql<{}>;
+export const pool = (global as any).pool as pg.Pool;
+export const sql = SQL;

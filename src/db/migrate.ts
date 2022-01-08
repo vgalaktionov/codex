@@ -1,4 +1,9 @@
-import shift from 'postgres-shift';
-import sql from './client';
+import { migrate } from 'postgres-migrations';
+import { pool } from './client';
 
-shift({ sql }).then(() => setTimeout(() => sql.end(), 1000));
+async function runMigrations() {
+    await migrate({ client: pool }, 'migrations');
+    await pool.end();
+}
+
+runMigrations();

@@ -46,7 +46,6 @@ export const linkHref = (rule: Rule) =>
     `/app/rules/${rule.category.toLowerCase()}/${encodeURIComponent(rule.name.toLowerCase())}`;
 
 export const render = (rule: Rule, user?: User) => {
-    // const html = marked.parse(rule.description);
     return rule.description;
 };
 

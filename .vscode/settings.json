@@ -1,5 +1,8 @@
 {
   "files.exclude": {
     "node_modules": true
+  },
+  "sqltools.format": {
+    "linesBetweenQueries": 2
   }
 }
