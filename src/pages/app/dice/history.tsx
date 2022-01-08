@@ -46,8 +46,11 @@ const DiceRollHistory = () => {
                                 bgColor={bgColor[colorMode]}
                                 p={6}
                             >
-                                <Heading size="sm">{dr.amount + dr.type}</Heading>
-                                <Text>
+                                <Heading size="sm" width="80px">
+                                    {dr.amount + dr.type}
+                                </Heading>
+                                <Text width="100px">Total: {dr.result.reduce((acc, cur) => acc + cur.roll, 0)}</Text>
+                                <Text width="100%" textAlign="center">
                                     {dr.result.map((rs, id) => (
                                         <chakra.span
                                             display="inline-block"

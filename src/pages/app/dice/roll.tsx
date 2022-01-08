@@ -141,7 +141,7 @@ const Roll = () => {
                     <Text as="div">
                         <strong>Dice:</strong>{' '}
                         {roll?.result.map((rs, id) => (
-                            <Fade in={stable} key={id}>
+                            <Fade in={stable} key={id} style={{ display: 'inline-block' }}>
                                 <chakra.span
                                     display="inline-block"
                                     backgroundColor="gray.500"
