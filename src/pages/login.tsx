@@ -20,6 +20,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { LoginForm, LoginFormSchema } from '../lib/auth';
 import { log } from '../lib/util';
+import rest from '../rest';
 
 const Login = () => {
     const { colorMode } = useColorMode();
@@ -33,7 +34,7 @@ const Login = () => {
     const [generalError, setGeneralError] = useState<string | undefined>(undefined);
     const onSubmit = async (data: LoginForm) => {
         try {
-            await axios.post('/api/auth/login', data);
+            await rest.login(data);
             router.push('/app/characters/sheet');
         } catch (error) {
             if (axios.isAxiosError(error)) {

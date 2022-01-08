@@ -1,8 +1,7 @@
-import { Button, Flex, Heading, HStack, ListItem, UnorderedList, useMediaQuery, VStack } from '@chakra-ui/react';
+import { Button, Flex, Heading, HStack, ListItem, UnorderedList, VStack } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 export const Hero = () => {
-    const [isLargeScreen] = useMediaQuery('(min-width: 1280px)');
     return (
         <Flex
             justifyContent="center"
@@ -29,7 +28,7 @@ export const Hero = () => {
 
                 <HStack mt="10" pt="5">
                     <NextLink href="/register" passHref>
-                        <Button as="a" mx="2" colorScheme="teal">
+                        <Button as="a" mx="2" colorScheme="orange">
                             Get started
                         </Button>
                     </NextLink>

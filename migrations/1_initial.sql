@@ -45,7 +45,8 @@ CREATE TABLE campaigns (
   "userId" integer NOT NULL REFERENCES users ("id"),
   name text NOT NULL,
   description text,
-  active boolean DEFAULT TRUE
+  active boolean DEFAULT TRUE,
+  UNIQUE("userId", name)
 );
 
 CREATE TRIGGER set_timestamp_campaigns BEFORE

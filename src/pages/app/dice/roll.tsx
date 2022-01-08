@@ -27,9 +27,11 @@ import { FaDiceD20 } from 'react-icons/fa';
 import { DiceRoll, DiceRollSchema, DieType, newRoll } from '../../../lib/dice';
 import { rollDice } from '../../../lib/dice/diceRoll';
 import { log } from '../../../lib/util';
+import rest from '../../../rest';
 
 const Roll = () => {
     const { colorMode } = useColorMode();
+    const bgColor = { light: 'gray.100', dark: 'gray.900' };
     const {
         register,
         handleSubmit,
@@ -41,9 +43,9 @@ const Roll = () => {
     const [roll, setRoll] = useState<DiceRoll | undefined>();
     const onSubmit = async (data: DiceRoll) => {
         try {
-            setRoll(newRoll(data.type, data.amount));
             setStable(false);
-            await axios.post('/api/dice/roll', data);
+            setRoll(newRoll(data.type, data.amount));
+            await rest.createDiceRoll(data);
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 log.error(error.response?.data.error);
@@ -51,8 +53,6 @@ const Roll = () => {
             }
         }
     };
-
-    const bgColor = { light: 'gray.100', dark: 'gray.900' };
 
     const mountRef = useRef<HTMLDivElement | null>(null);
 

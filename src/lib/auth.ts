@@ -1,3 +1,6 @@
+import Cookies from 'cookies';
+import { IncomingMessage, ServerResponse } from 'http';
+import jwt from 'jsonwebtoken';
 import { z } from 'zod';
 
 export const SECRET_KEY =
@@ -27,3 +30,9 @@ export const UserSchema = z.object({
 export type User = z.infer<typeof UserSchema>;
 
 export const PUBLIC_ROUTES = ['/', '/login', '/register', '/api/auth/login', '/api/auth/register', '/site.webmanifest'];
+
+export const getUserId = (req: IncomingMessage, res: ServerResponse) => {
+    const cookies = new Cookies(req, res);
+    const { user: userId } = jwt.verify(cookies.get('token') ?? '', SECRET_KEY) as { user: number };
+    return userId;
+};

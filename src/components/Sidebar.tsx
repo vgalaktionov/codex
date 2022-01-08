@@ -12,6 +12,7 @@ import {
     DrawerOverlay,
     Flex,
     FormControl,
+    FormLabel,
     Heading,
     HStack,
     Icon,
@@ -20,11 +21,11 @@ import {
     InputRightElement,
     Link,
     LinkProps,
+    Select,
     useColorMode,
     VStack,
 } from '@chakra-ui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import axios from 'axios';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { PropsWithChildren } from 'react';
@@ -34,8 +35,10 @@ import { FaBookDead, FaDiceD20, FaHistory, FaScroll, FaSignOutAlt, FaUserCircle,
 import { GiArchiveResearch, GiOrcHead, GiRuleBook, GiSpellBook, GiWizardFace, GiWomanElfFace } from 'react-icons/gi';
 import { useQuery } from 'react-query';
 import { PUBLIC_ROUTES } from '../lib/auth';
-import { RuleCategory, RuleLinksSchema } from '../lib/rules/base';
+import { Campaign } from '../lib/campaigns';
+import { RuleCategory } from '../lib/rules/base';
 import { SearchForm, SearchFormSchema } from '../lib/search';
+import rest from '../rest';
 
 const CATEGORY_ICONS: Record<string, IconType> = {
     [RuleCategory.GENERAL]: GiRuleBook,
@@ -62,13 +65,8 @@ const SidebarLink = ({
 );
 
 export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
-    const { status, data, error } = useQuery('ruleLinks', async () => {
-        try {
-            return RuleLinksSchema.parse((await axios.get('/api/rules/links')).data.rulesLinks);
-        } catch (error) {
-            return [];
-        }
-    });
+    const { status, data: ruleLinks, error } = useQuery('ruleLinks', rest.getRuleLinks);
+    const { data: campaigns } = useQuery<Campaign[]>('campaigns', rest.getCampaigns);
     const { colorMode } = useColorMode();
     const router = useRouter();
     const {
@@ -123,6 +121,18 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
             <SidebarLink href="/app/campaigns/list" icon={FaBookDead}>
                 List
             </SidebarLink>
+            <FormControl pt="2" mx="auto">
+                <FormLabel htmlFor="email" color="gray.500">
+                    Active campaign:
+                </FormLabel>
+                <Select defaultValue={campaigns?.find((c) => c.active)?.name}>
+                    {campaigns?.map((c) => (
+                        <option key={c.name} value={c.name}>
+                            {c.name}
+                        </option>
+                    ))}
+                </Select>
+            </FormControl>
 
             <Heading size="md" color="orange.400" pt="10" pb="2">
                 Rules
@@ -149,7 +159,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
                 Browse
             </Heading>
             <Accordion width={['100%', '350px']} pt="2">
-                {Object.entries(data ?? {}).map(([category, values]) => (
+                {Object.entries(ruleLinks ?? {}).map(([category, values]) => (
                     <AccordionItem key={category} border="none">
                         <Heading>
                             <AccordionButton>
@@ -184,7 +194,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
 
             <Link
                 onClick={async () => {
-                    await axios.post('/api/auth/logout');
+                    await rest.logout();
                     router.push('/login');
                 }}
             >

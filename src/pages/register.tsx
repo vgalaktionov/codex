@@ -20,6 +20,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { RegisterForm, RegisterFormSchema } from '../lib/auth';
 import { log } from '../lib/util';
+import rest from '../rest';
 
 const Register = () => {
     const { colorMode } = useColorMode();
@@ -33,7 +34,7 @@ const Register = () => {
     const [generalError, setGeneralError] = useState<string | undefined>(undefined);
     const onSubmit = async (data: RegisterForm) => {
         try {
-            await axios.post('/api/auth/register', data);
+            await rest.register(data);
             router.push('/app/characters/sheet');
         } catch (error) {
             if (axios.isAxiosError(error)) {
