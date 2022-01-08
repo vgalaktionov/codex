@@ -85,8 +85,8 @@ const Roll = () => {
     }, [stableListener, setStable]);
 
     return (
-        <VStack w="100%" maxH="calc(100vh - 62px)" px={['2', '20']} py="6" justifyContent={'start'}>
-            <Heading>Roll Dice</Heading>
+        <VStack w="100%" h="calc(100vh - 62px)" px={['2', '20']} py="6" justifyContent={'start'}>
+            <Heading size="2xl">Roll Dice</Heading>
             <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%', marginBottom: '2rem' }}>
                 {/* <Text mt="6" mb="6">
                     Welcome back! Please enter your login details to get started. <br /> Don't have an account yet?

@@ -36,6 +36,7 @@ import { GiArchiveResearch, GiOrcHead, GiRuleBook, GiSpellBook, GiWizardFace, Gi
 import { useQuery } from 'react-query';
 import { PUBLIC_ROUTES } from '../lib/auth';
 import { Campaign } from '../lib/campaigns';
+import { Character } from '../lib/characters';
 import { RuleCategory } from '../lib/rules/base';
 import { SearchForm, SearchFormSchema } from '../lib/search';
 import rest from '../rest';
@@ -67,6 +68,7 @@ const SidebarLink = ({
 export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
     const { status, data: ruleLinks, error } = useQuery('ruleLinks', rest.getRuleLinks);
     const { data: campaigns } = useQuery<Campaign[]>('campaigns', rest.getCampaigns);
+    const { data: characters } = useQuery<Character[]>('characters', rest.getCharacters);
     const { colorMode } = useColorMode();
     const router = useRouter();
     const {
@@ -104,8 +106,20 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
             <SidebarLink href="/app/characters/list" icon={FaUsers}>
                 List
             </SidebarLink>
+            <FormControl pt="2" mx="auto">
+                <FormLabel htmlFor="email" color="gray.500">
+                    Active character:
+                </FormLabel>
+                <Select defaultValue={characters?.find((c) => c.active)?.name}>
+                    {characters?.map((c) => (
+                        <option key={c.name} value={c.name}>
+                            {c.name} ({campaigns?.find((campaign) => campaign.id === c.campaignId)?.name})
+                        </option>
+                    ))}
+                </Select>
+            </FormControl>
 
-            <Heading size="md" color="orange.400" pt="10" pb="2">
+            <Heading size="md" color="orange.400" pt="6" pb="2">
                 Dice
             </Heading>
             <SidebarLink href="/app/dice/roll" icon={FaDiceD20}>
@@ -115,7 +129,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
                 History
             </SidebarLink>
 
-            <Heading size="md" color="orange.400" pt="10" pb="2">
+            <Heading size="md" color="orange.400" pt="6" pb="2">
                 Campaigns
             </Heading>
             <SidebarLink href="/app/campaigns/list" icon={FaBookDead}>
@@ -134,7 +148,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
                 </Select>
             </FormControl>
 
-            <Heading size="md" color="orange.400" pt="10" pb="2">
+            <Heading size="md" color="orange.400" pt="6" pb="2">
                 Rules
             </Heading>
             <form
@@ -158,34 +172,55 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
             <Heading size="sm" pt="2">
                 Browse
             </Heading>
-            <Accordion width={['100%', '350px']} pt="2">
-                {Object.entries(ruleLinks ?? {}).map(([category, values]) => (
-                    <AccordionItem key={category} border="none">
-                        <Heading>
-                            <AccordionButton>
-                                <Icon as={CATEGORY_ICONS[category] ?? null} py="auto" display="block" mr="2" />
-                                <Box flex="1" textAlign="left">
-                                    {category}
-                                </Box>
-                                <hr />
-                                <AccordionIcon />
-                            </AccordionButton>
-                        </Heading>
-                        <AccordionPanel>
-                            {Object.entries(values).map(([name, { href }]) => (
-                                <Box key={name + '-sidebar'} ml="6" my="3">
-                                    <NextLink href={href} passHref>
-                                        <Link> ❖&nbsp;&nbsp; {name}</Link>
-                                    </NextLink>
-                                    <br />
-                                </Box>
+            <Accordion width={['100%', '350px']} pt="2" borderTop="none" allowToggle>
+                <AccordionItem borderTop="none">
+                    <h2>
+                        <AccordionButton>
+                            <Box flex="1" textAlign="left">
+                                Rules
+                            </Box>
+                            <AccordionIcon />
+                        </AccordionButton>
+                    </h2>
+                    <AccordionPanel pb={4} width={['100%', '350px']} pt="2">
+                        <Accordion width={['100%', '350px']} pt="2" allowToggle>
+                            {Object.entries(ruleLinks ?? {}).map(([category, values]) => (
+                                <AccordionItem key={category} border="none">
+                                    <Heading>
+                                        <AccordionButton>
+                                            <Icon
+                                                as={CATEGORY_ICONS[category] ?? null}
+                                                py="auto"
+                                                display="block"
+                                                mr="2"
+                                            />
+                                            <Box flex="1" textAlign="left">
+                                                {category}
+                                            </Box>
+                                            <hr />
+                                            <AccordionIcon />
+                                        </AccordionButton>
+                                    </Heading>
+                                    <AccordionPanel>
+                                        {Object.entries(values)
+                                            .sort(([a, _], [b, __]) => a.localeCompare(b, 'en-gb', { numeric: true }))
+                                            .map(([name, { href }]) => (
+                                                <Box key={name + '-sidebar'} ml="6" my="3">
+                                                    <NextLink href={href} passHref>
+                                                        <Link> ❖&nbsp;&nbsp; {name}</Link>
+                                                    </NextLink>
+                                                    <br />
+                                                </Box>
+                                            ))}
+                                    </AccordionPanel>
+                                </AccordionItem>
                             ))}
-                        </AccordionPanel>
-                    </AccordionItem>
-                ))}
+                        </Accordion>
+                    </AccordionPanel>
+                </AccordionItem>
             </Accordion>
 
-            <Heading size="md" color="orange.400" pt="10" pb="2">
+            <Heading size="md" color="orange.400" pt="6" pb="2">
                 Accounts
             </Heading>
             <SidebarLink href="/app/characters/sheet" icon={FaUserCircle}>

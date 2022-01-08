@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { LoginForm, RegisterForm } from './lib/auth';
 import { Campaign, CampaignSchema } from './lib/campaigns';
+import { Character, CharacterSchema } from './lib/characters';
 import { DiceRoll, DiceRollSchema } from './lib/dice';
 import { RuleLinksSchema } from './lib/rules/base';
 
@@ -14,6 +15,9 @@ async function getRuleLinks() {
 async function getCampaigns() {
     const res = await client.get('/api/campaigns');
     return res.data.campaigns.map((c: unknown) => CampaignSchema.parse(c));
+}
+async function createCampaign(data: Campaign) {
+    await axios.post('/api/campaigns', data);
 }
 
 async function login(data: LoginForm) {
@@ -36,8 +40,12 @@ async function getDiceRollHistory() {
     return (await axios.get('/api/dice/history')).data.history.map((dr: unknown) => DiceRollSchema.parse(dr));
 }
 
-async function createCampaign(data: Campaign) {
-    await axios.post('/api/campaigns', data);
+async function getCharacters() {
+    const res = await client.get('/api/characters');
+    return res.data.characters.map((c: unknown) => CharacterSchema.parse(c));
+}
+async function createCharacter(data: Character) {
+    await axios.post('/api/characters', data);
 }
 
 export default {
@@ -49,4 +57,6 @@ export default {
     createDiceRoll,
     createCampaign,
     getDiceRollHistory,
+    getCharacters,
+    createCharacter,
 };

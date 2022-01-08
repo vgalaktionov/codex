@@ -17,7 +17,9 @@ const DiceRollHistory = () => {
 
     return (
         <VStack w="100%" h="calc(100vh - 62px)" px={['2', '20']} py="6" justifyContent={'start'}>
-            <Heading my="6">Dice Roll History</Heading>
+            <Heading my="6" size="2xl">
+                Dice Roll History
+            </Heading>
             <HStack w="100%" justifyContent="end">
                 <NextLink href="/app/dice/roll" passHref>
                     <Button as="a" colorScheme="orange" leftIcon={<FaDiceD20 />}>
@@ -61,7 +63,7 @@ const DiceRollHistory = () => {
                                         </chakra.span>
                                     ))}
                                 </Text>
-                                <Text>{dr.createdAt?.toISOString()}</Text>
+                                <Text>{dr.createdAt?.toLocaleString('en-gb')}</Text>
                             </HStack>
                         ))}
                 </VStack>

@@ -16,7 +16,9 @@ const CampaignsList = () => {
 
     return (
         <VStack w="100%" h="calc(100vh - 62px)" px={['2', '20']} py="6" justifyContent={'start'}>
-            <Heading my="6">Campaigns List</Heading>
+            <Heading my="6" size="2xl">
+                Campaigns List
+            </Heading>
             <HStack w="100%" justifyContent="end">
                 <NextLink href="/app/campaigns/new" passHref>
                     <Button as="a" colorScheme="orange" leftIcon={<FaPlus />}>

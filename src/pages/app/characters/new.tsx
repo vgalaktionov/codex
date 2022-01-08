@@ -1,48 +1,35 @@
-import {
-    Button,
-    FormControl,
-    FormErrorMessage,
-    FormHelperText,
-    FormLabel,
-    Heading,
-    HStack,
-    Input,
-    Text,
-    Textarea,
-    useColorMode,
-    VStack,
-} from '@chakra-ui/react';
+import { FormControl, FormErrorMessage, Heading, Text, useColorMode, VStack } from '@chakra-ui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useMutation, useQueryClient } from 'react-query';
-import { Campaign, CampaignSchema } from '../../../lib/campaigns';
+import { Character, CharacterSchema } from '../../../lib/characters';
 import { log } from '../../../lib/util';
 import rest from '../../../rest';
 
-const NewCampaign = () => {
+const NewCharacter = () => {
     const { colorMode } = useColorMode();
     const {
         register,
         handleSubmit,
         watch,
         formState: { errors },
-    } = useForm<Campaign>({ resolver: zodResolver(CampaignSchema) });
+    } = useForm<Character>({ resolver: zodResolver(CharacterSchema) });
     const router = useRouter();
     const [generalError, setGeneralError] = useState<string | undefined>(undefined);
     const queryClient = useQueryClient();
-    const mutation = useMutation(rest.createCampaign, {
+    const mutation = useMutation(rest.createCharacter, {
         onSuccess: () => {
-            queryClient.invalidateQueries('campaigns');
+            queryClient.invalidateQueries('characters');
         },
     });
-    const onSubmit = async (data: Campaign) => {
+    const onSubmit = async (data: Character) => {
         try {
             await mutation.mutateAsync(data);
 
-            router.push('/app/campaigns/list');
+            router.push('/app/characters/sheet');
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 log.error(error.response?.data.error);
@@ -62,16 +49,18 @@ const NewCampaign = () => {
             px={['2', '20']}
         >
             <form onSubmit={handleSubmit(onSubmit)}>
-                <Heading size="2xl">Create New Campaign</Heading>
+                <Heading size="2xl">Create New Character</Heading>
                 <Text mt="6" mb="6">
-                    Let's get you started! Just enter a name and an optional description. The new campaign will be
-                    activated automatically.
+                    Voluptate veniam reprehenderit cupidatat sit deserunt dolore dolore quis ipsum laborum commodo
+                    laboris veniam. Proident ut ipsum dolore ad ad sit. Id et adipisicing occaecat dolore dolor
+                    excepteur nulla id culpa consequat incididunt elit. Aute culpa consequat magna cupidatat Lorem
+                    deserunt duis ex enim quis labore.
                 </Text>
 
                 <FormControl isInvalid={generalError != null} mb="6">
                     <FormErrorMessage>{generalError}</FormErrorMessage>
                 </FormControl>
-
+                {/*
                 <FormControl isInvalid={errors.name != null} mb="6">
                     <FormLabel htmlFor="name">Name</FormLabel>
                     <Input type="name" {...register('name')} />
@@ -89,10 +78,10 @@ const NewCampaign = () => {
                     <Button type="submit" colorScheme="orange" ml="auto">
                         Submit
                     </Button>
-                </HStack>
+                </HStack> */}
             </form>
         </VStack>
     );
 };
 
-export default NewCampaign;
+export default NewCharacter;
