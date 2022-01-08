@@ -19,6 +19,10 @@ export const RuleSchema = z.object({
 });
 export type Rule = z.infer<typeof RuleSchema>;
 
+export enum StandardRule {
+    RACES = 'Races',
+}
+
 export const GeneralRuleSchema = RuleSchema.extend({ category: z.literal(RuleCategory.GENERAL) });
 export type GeneralRule = z.infer<typeof GeneralRuleSchema>;
 

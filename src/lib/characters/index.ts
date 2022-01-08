@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { RaceSchema } from '../rules/races';
 import { BaseDBSchema } from '../util';
 
 export const CharacterSchema = BaseDBSchema.extend({
@@ -32,3 +33,11 @@ export const CharacterSchema = BaseDBSchema.extend({
 });
 
 export type Character = z.infer<typeof CharacterSchema>;
+
+export const CharacterOptionsSchema = z.object({
+    races: z.object({
+        description: z.string().min(1),
+        options: z.array(RaceSchema),
+    }),
+});
+export type CharacterOptions = z.infer<typeof CharacterOptionsSchema>;

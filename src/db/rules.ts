@@ -1,5 +1,16 @@
 import { User } from '../lib/auth';
-import { DBRule, DBRuleSchema, linkHref, Rule, RuleLinks, RuleLinksSchema, RuleSchema } from '../lib/rules/base';
+import { CharacterOptions, CharacterOptionsSchema } from '../lib/characters';
+import {
+    DBRule,
+    DBRuleSchema,
+    linkHref,
+    Rule,
+    RuleCategory,
+    RuleLinks,
+    RuleLinksSchema,
+    RuleSchema,
+    StandardRule,
+} from '../lib/rules/base';
 import { pool, sql } from './client';
 
 export async function upsertRule(rule: Rule, user?: User) {
@@ -52,4 +63,19 @@ export async function searchRules(query: string, user?: User): Promise<DBRule[]>
         `);
 
     return result.rows.map((r) => DBRuleSchema.parse(r));
+}
+
+export async function getCharacterOptions(userId: number, campaignId?: number): Promise<CharacterOptions> {
+    const {
+        rows: [{ description: racesDescription }],
+    } = await pool.query<Rule>(
+        sql`SELECT * FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.GENERAL} AND name = ${StandardRule.RACES} LIMIT 1;`,
+    );
+    const { rows: racesOptions } = await pool.query<Pick<DBRule, 'category' | 'name' | 'rule' | 'description'>>(
+        sql`SELECT category, name, rule, description FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.RACE};`,
+    );
+
+    return CharacterOptionsSchema.parse({
+        races: { description: racesDescription, options: racesOptions },
+    });
 }
