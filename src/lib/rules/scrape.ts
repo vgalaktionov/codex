@@ -4,7 +4,6 @@ import fs from 'fs/promises';
 import { JSDOM } from 'jsdom';
 import Turndown from 'turndown';
 import * as TurndownGFM from 'turndown-plugin-gfm';
-import sql from '../../db/client';
 import { log, measurePromise } from '../util';
 
 const HOST = 'https://5e.d20srd.org';
@@ -126,8 +125,4 @@ async function scrapeSpells(verbose = false) {
     );
 }
 
-measurePromise(() =>
-    Promise.all([scrapeClasses(false), scrapeRaces(false), scrapeSpells(false)]).then(() =>
-        setTimeout(() => sql.end(), 1000),
-    ),
-);
+measurePromise(() => Promise.all([scrapeClasses(false), scrapeRaces(false), scrapeSpells(false)]));
