@@ -2,6 +2,7 @@ import Cookies from 'cookies';
 import { IncomingMessage, ServerResponse } from 'http';
 import jwt from 'jsonwebtoken';
 import { z } from 'zod';
+import { BaseDBSchema } from './util';
 
 export const SECRET_KEY =
     process.env.SECRET_KEY ?? '97ab01312237cc6532ca9f95a10f078b56899c2993914a5c9a569950117844492834030d';
@@ -21,8 +22,7 @@ export const LoginFormSchema = z.object({
 });
 export type LoginForm = z.infer<typeof LoginFormSchema>;
 
-export const UserSchema = z.object({
-    id: z.number().int().positive().optional(),
+export const UserSchema = BaseDBSchema.extend({
     email: z.string().email(),
     passwordHash: z.string().min(1),
     ownsContent: z.object({}).optional().nullable(),

@@ -60,6 +60,7 @@ CREATE TABLE dicerolls (
   "createdAt" timestamptz NOT NULL DEFAULT NOW(),
   "updatedAt" timestamptz NOT NULL DEFAULT NOW(),
   "userId" integer NOT NULL REFERENCES users ("id"),
+  "campaignId" INTEGER REFERENCES campaigns(id) DEFAULT NULL,
   type TEXT NOT NULL DEFAULT 'd20',
   amount integer NOT NULL DEFAULT 1,
   result jsonb NOT NULL DEFAULT '[]'

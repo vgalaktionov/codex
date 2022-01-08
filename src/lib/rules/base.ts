@@ -1,5 +1,6 @@
 import { z, ZodSchema } from 'zod';
 import { User } from '../auth';
+import { BaseDBSchema } from '../util';
 import { Race } from './races';
 import { Subrace } from './subraces';
 
@@ -49,8 +50,7 @@ export const render = (rule: Rule, user?: User) => {
     return rule.description;
 };
 
-export const DBRuleSchema = RuleSchema.extend({
-    id: z.number().int().positive(),
+export const DBRuleSchema = RuleSchema.merge(BaseDBSchema).extend({
     rule: RuleSchema,
     highlighted: z.string().optional().nullable(),
 });

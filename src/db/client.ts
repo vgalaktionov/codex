@@ -4,9 +4,12 @@ import { SQL } from 'sql-template-strings';
 if ((global as any).pool == null) {
     const pool = new pg.Pool({
         connectionString: process.env.DATABASE_URL ?? 'postgres://vadim@localhost:5432/codex',
-        ssl: {
-            rejectUnauthorized: false,
-        },
+        ssl:
+            process.env.NODE_ENV === 'production'
+                ? {
+                      rejectUnauthorized: false,
+                  }
+                : false,
     });
 
     process.on('beforeExit', async () => {

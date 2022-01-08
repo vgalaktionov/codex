@@ -6,6 +6,7 @@ import { dehydrate, QueryClient, useQuery } from 'react-query';
 import { getCampaigns } from '../../../db/campaigns';
 import { getUserId } from '../../../lib/auth';
 import { Campaign } from '../../../lib/campaigns';
+import { serializeDates } from '../../../lib/util';
 import rest from '../../../rest';
 
 const CampaignsList = () => {
@@ -56,7 +57,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     const userId = getUserId(context.req, context.res);
 
-    await queryClient.prefetchQuery('campaigns', () => getCampaigns(userId));
+    await queryClient.prefetchQuery('campaigns', async () => (await getCampaigns(userId)).map(serializeDates));
 
     return { props: { dehydratedState: dehydrate(queryClient) } };
 };

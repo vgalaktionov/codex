@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { BaseDBSchema } from '../util';
 
 export enum DieType {
     D4 = 'd4',
@@ -12,11 +13,11 @@ export enum DieType {
 
 export const DieTypeSchema = z.nativeEnum(DieType);
 
-export const DiceRollSchema = z.object({
-    id: z.number().int().positive().optional().nullable(),
+export const DiceRollSchema = BaseDBSchema.extend({
     type: DieTypeSchema,
     amount: z.preprocess((n) => (typeof n === 'string' ? +n : n), z.number().int().positive()),
     result: z.array(z.object({ type: DieTypeSchema, roll: z.number().positive() })),
+    campaignId: z.number().int().positive().optional().nullable(),
 });
 export type DiceRoll = z.infer<typeof DiceRollSchema>;
 

@@ -24,6 +24,7 @@ import axios from 'axios';
 import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaDiceD20 } from 'react-icons/fa';
+import { useMutation, useQueryClient } from 'react-query';
 import { DiceRoll, DiceRollSchema, DieType, newRoll } from '../../../lib/dice';
 import { rollDice } from '../../../lib/dice/diceRoll';
 import { log } from '../../../lib/util';
@@ -37,15 +38,25 @@ const Roll = () => {
         handleSubmit,
         watch,
         formState: { errors },
-    } = useForm<DiceRoll>({ resolver: zodResolver(DiceRollSchema.omit({ result: true })) });
+    } = useForm<DiceRoll>({
+        resolver: zodResolver(DiceRollSchema.omit({ result: true, createdAt: true, updatedAt: true })),
+    });
     const [generalError, setGeneralError] = useState<string | undefined>(undefined);
     const [stable, setStable] = useState(true);
     const [roll, setRoll] = useState<DiceRoll | undefined>();
+    const queryClient = useQueryClient();
+    const mutation = useMutation(rest.createDiceRoll, {
+        onSuccess: () => {
+            queryClient.invalidateQueries('dicerolls');
+        },
+    });
     const onSubmit = async (data: DiceRoll) => {
+        console.log(data);
         try {
             setStable(false);
-            setRoll(newRoll(data.type, data.amount));
-            await rest.createDiceRoll(data);
+            const diceRoll = newRoll(data.type, data.amount);
+            setRoll(diceRoll);
+            await mutation.mutateAsync(diceRoll);
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 log.error(error.response?.data.error);
@@ -127,13 +138,12 @@ const Roll = () => {
                     <Heading size="lg" pb="6">
                         Results
                     </Heading>
-                    <Text>
+                    <Text as="div">
                         <strong>Dice:</strong>{' '}
                         {roll?.result.map((rs, id) => (
-                            <Fade in={stable}>
-                                <chakra.div
+                            <Fade in={stable} key={id}>
+                                <chakra.span
                                     display="inline-block"
-                                    key={id}
                                     backgroundColor="gray.500"
                                     textAlign="center"
                                     w="2rem"
@@ -142,7 +152,7 @@ const Roll = () => {
                                     as="kbd"
                                 >
                                     {rs.roll}
-                                </chakra.div>
+                                </chakra.span>
                             </Fade>
                         ))}
                         <br />

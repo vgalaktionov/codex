@@ -4,5 +4,17 @@
   },
   "sqltools.format": {
     "linesBetweenQueries": 2
-  }
+  },
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "Codex Dev",
+      "database": "codex",
+      "username": "vadim",
+      "password": ""
+    }
+  ]
 }
