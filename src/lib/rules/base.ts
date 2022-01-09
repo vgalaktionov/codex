@@ -50,15 +50,24 @@ export function resolveDescriptionsFromContent(rule: Rule) {
 export const linkHref = (rule: Rule) =>
     `/app/rules/${rule.category.toLowerCase()}/${encodeURIComponent(rule.name.toLowerCase())}`;
 
-export const render = (rule: Rule, user?: User) => {
-    return rule.description;
+export const render = (rule?: Rule, user?: User) => {
+    return rule?.description ?? '';
 };
 
 export const DBRuleSchema = RuleSchema.merge(BaseDBSchema).extend({
     rule: RuleSchema,
     highlighted: z.string().optional().nullable(),
 });
-export type DBRule = z.infer<typeof DBRuleSchema>;
+export type DBRule<T = Rule> = z.infer<typeof DBRuleSchema> & { rule: T };
+
+export const narrowDBRule = (rule: DBRule) => {
+    switch (rule.category) {
+        case RuleCategory.RACE:
+            return rule as DBRule<Race>;
+        default:
+            return rule;
+    }
+};
 
 export const GetOrChooseSchema = <T>(schema: ZodSchema<T>, options: readonly [string, ...string[]]) =>
     z.object({

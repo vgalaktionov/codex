@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { RaceSchema } from '../rules/races';
+import { DBRuleSchema, narrowDBRule } from '../rules/base';
 import { BaseDBSchema } from '../util';
 
 export const CharacterSchema = BaseDBSchema.extend({
@@ -37,7 +37,7 @@ export type Character = z.infer<typeof CharacterSchema>;
 export const CharacterOptionsSchema = z.object({
     races: z.object({
         description: z.string().min(1),
-        options: z.array(RaceSchema),
+        options: z.array(DBRuleSchema).refine((o) => o.map((r) => narrowDBRule(r))),
     }),
 });
 export type CharacterOptions = z.infer<typeof CharacterOptionsSchema>;

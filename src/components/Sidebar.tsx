@@ -90,7 +90,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
         <VStack
             height="calc(100vh - 62px)"
             maxHeight="calc(100vh - 62px)"
-            overflowY="scroll"
+            overflowY="auto"
             py="10"
             px="10"
             justifyContent="start"

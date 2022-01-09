@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { LoginForm, RegisterForm } from './lib/auth';
 import { Campaign, CampaignSchema } from './lib/campaigns';
-import { Character, CharacterSchema } from './lib/characters';
+import { Character, CharacterOptionsSchema, CharacterSchema } from './lib/characters';
 import { DiceRoll, DiceRollSchema } from './lib/dice';
 import { RuleLinksSchema } from './lib/rules/base';
 
@@ -48,6 +48,11 @@ async function createCharacter(data: Character) {
     await axios.post('/api/characters', data);
 }
 
+async function getCharacterOptions() {
+    const res = await client.get('/api/characters/options');
+    return CharacterOptionsSchema.parse(res.data);
+}
+
 export default {
     getRuleLinks,
     getCampaigns,
@@ -59,4 +64,5 @@ export default {
     getDiceRollHistory,
     getCharacters,
     createCharacter,
+    getCharacterOptions,
 };
