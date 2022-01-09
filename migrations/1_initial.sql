@@ -11,8 +11,16 @@ CREATE TABLE users (
   "createdAt" timestamptz NOT NULL DEFAULT NOW(),
   "updatedAt" timestamptz NOT NULL DEFAULT NOW(),
   email text UNIQUE NOT NULL,
-  "passwordHash" text NOT NULL,
-  "ownsContent" jsonb DEFAULT '{}'
+  "passwordHash" text NOT NULL
+);
+
+CREATE TABLE "ownedContent" (
+  id serial PRIMARY KEY,
+  "createdAt" timestamptz NOT NULL DEFAULT NOW(),
+  "updatedAt" timestamptz NOT NULL DEFAULT NOW(),
+  "userId" integer REFERENCES USERS (id) NOT NULL,
+  name text NOT NULL,
+  "proofOfPurchasePath" text NOT NULL
 );
 
 CREATE TRIGGER set_timestamp_users BEFORE
@@ -22,7 +30,7 @@ CREATE TABLE rules (
   id serial PRIMARY KEY,
   "createdAt" timestamptz NOT NULL DEFAULT NOW(),
   "updatedAt" timestamptz NOT NULL DEFAULT NOW(),
-  "userId" integer REFERENCES USERS (ID) DEFAULT NULL,
+  "userId" integer REFERENCES USERS (id) DEFAULT NULL,
   category text NOT NULL,
   name text NOT NULL,
   rule jsonb DEFAULT '{}',
@@ -68,3 +76,40 @@ CREATE TABLE dicerolls (
 
 CREATE TRIGGER set_timestamp_dicerolls BEFORE
 UPDATE ON dicerolls FOR EACH ROW EXECUTE PROCEDURE trigger_set_timestamp ();
+
+CREATE TABLE characters (
+  id serial PRIMARY KEY,
+  "createdAt" timestamptz NOT NULL DEFAULT NOW(),
+  "updatedAt" timestamptz NOT NULL DEFAULT NOW(),
+  "userId" integer NOT NULL REFERENCES users ("id"),
+  "campaignId" INTEGER NOT NULL REFERENCES campaigns(id),
+  active BOOLEAN DEFAULT true,
+  name TEXT NOT NULL,
+  level INTEGER DEFAULT 1,
+  race TEXT NOT NULL,
+  subrace TEXT,
+  classes TEXT [] DEFAULT '{}'::text [],
+  age TEXT,
+  alignment TEXT NOT NULL,
+  ideals TEXT,
+  bonds TEXT,
+  flaws TEXT,
+  background TEXT,
+  looks TEXT,
+  imagePath TEXT,
+  strength INTEGER NOT NULL,
+  dexterity INTEGER NOT NULL,
+  constitution INTEGER NOT NULL,
+  intelligence INTEGER NOT NULL,
+  wisdom INTEGER NOT NULL,
+  charisma INTEGER NOT NULL,
+  inventory JSONB DEFAULT '{}',
+  spells JSONB DEFAULT '{}',
+  UNIQUE("userId", "campaignId", name)
+);
+
+CREATE TRIGGER set_timestamp_characters BEFORE
+UPDATE ON characters FOR EACH ROW EXECUTE PROCEDURE trigger_set_timestamp ();
+
+CREATE UNIQUE INDEX active_character_campaign_user ON characters ("userId", "campaignId", active)
+WHERE active;
