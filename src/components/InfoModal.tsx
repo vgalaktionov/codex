@@ -22,14 +22,15 @@ import { render, Rule } from '../lib/rules/base';
 interface ModalProps {
     title: string;
     content?: Rule | string;
+    buttonText?: string;
 }
 
-export default function InfoModal({ title, content }: PropsWithChildren<ModalProps>) {
+export default function InfoModal({ title, content, buttonText }: PropsWithChildren<ModalProps>) {
     const { isOpen, onOpen, onClose } = useDisclosure();
     return (
         <>
             <Button leftIcon={<FaInfoCircle />} colorScheme="orange" variant="ghost" onClick={onOpen}>
-                {title}
+                {buttonText ?? title}
             </Button>
             <Modal onClose={onClose} isOpen={isOpen} isCentered scrollBehavior="inside" size="xl">
                 <ModalOverlay />

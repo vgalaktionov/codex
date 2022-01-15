@@ -1,6 +1,7 @@
 import { z, ZodSchema } from 'zod';
 import { User } from '../auth';
 import { BaseDBSchema } from '../util';
+import { Class } from './classes';
 import { Race } from './races';
 import { Subrace } from './subraces';
 
@@ -21,6 +22,7 @@ export type Rule = z.infer<typeof RuleSchema>;
 
 export enum StandardRule {
     RACES = 'Races',
+    CLASSES = 'Classes',
 }
 
 export const GeneralRuleSchema = RuleSchema.extend({ category: z.literal(RuleCategory.GENERAL) });
@@ -64,6 +66,10 @@ export const narrowDBRule = (rule: DBRule) => {
     switch (rule.category) {
         case RuleCategory.RACE:
             return rule as DBRule<Race>;
+        case RuleCategory.SUBRACE:
+            return rule as DBRule<Subrace>;
+        case RuleCategory.CLASS:
+            return rule as DBRule<Class>;
         default:
             return rule;
     }

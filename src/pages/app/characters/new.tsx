@@ -1,4 +1,5 @@
 import {
+    Box,
     chakra,
     FormControl,
     FormErrorMessage,
@@ -19,7 +20,7 @@ import { dehydrate, QueryClient, useMutation, useQuery, useQueryClient } from 'r
 import InfoModal from '../../../components/InfoModal';
 import { getCharacterOptions } from '../../../db/rules';
 import { getUserId } from '../../../lib/auth';
-import { Character, CharacterOptions, CharacterSchema } from '../../../lib/characters';
+import { Character, CharacterOptions, NewCharacter, NewCharacterSchema } from '../../../lib/characters';
 import { lexicographic, log } from '../../../lib/util';
 import rest from '../../../rest';
 
@@ -31,11 +32,13 @@ const NewCharacter = () => {
         handleSubmit,
         watch,
         formState: { errors },
-    } = useForm<Character>({
-        resolver: zodResolver(CharacterSchema),
+    } = useForm<NewCharacter>({
+        resolver: zodResolver(NewCharacterSchema),
     });
 
     const chosenRace = watch('race');
+    const chosenSubrace = watch('subrace');
+    const chosenClass = watch('class');
     const router = useRouter();
     const [generalError, setGeneralError] = useState<string | undefined>(undefined);
     const queryClient = useQueryClient();
@@ -77,12 +80,11 @@ const NewCharacter = () => {
                 flexDir={'column'}
                 justifyContent={'start'}
             >
-                <Heading size="xl">1. Choose a race</Heading>
                 <FormControl isInvalid={generalError != null} mb="6">
                     <FormErrorMessage>{generalError}</FormErrorMessage>
                 </FormControl>
-                <HStack w="100%">
-                    <FormControl pt="2" mx="auto" pb="10">
+                <VStack w="100%" pt="2" mx="auto" pb="10" justifyContent="start">
+                    <FormControl>
                         <FormLabel htmlFor="race">Race:</FormLabel>
                         <Select {...register('race')}>
                             {data?.races.options
@@ -94,9 +96,70 @@ const NewCharacter = () => {
                                 ))}
                         </Select>
                     </FormControl>
-                    <InfoModal title="Races" content={data?.races.description} />
-                    <InfoModal title="Chosen Race" content={data?.races.options.find((r) => r.name === chosenRace)} />
-                </HStack>
+                    <HStack w="100%">
+                        <InfoModal title="Races" content={data?.races.description} />
+                        <InfoModal
+                            title="Chosen Race"
+                            buttonText={chosenRace}
+                            content={data?.races.options.find((r) => r.name === chosenRace)}
+                        />
+                    </HStack>
+                </VStack>
+                <VStack w="100%" pt="2" mx="auto" pb="10" justifyContent="start">
+                    <FormControl>
+                        <FormLabel htmlFor="subrace">Subrace:</FormLabel>
+                        <Select
+                            {...register('subrace')}
+                            disabled={
+                                data?.subraces.options.filter(({ rule: { raceName } }) => raceName === chosenRace)
+                                    .length === 0
+                            }
+                        >
+                            <option key="none" value={undefined}>
+                                No subrace
+                            </option>
+                            {data?.subraces.options
+                                .filter(({ rule: { raceName } }) => raceName === chosenRace)
+                                .sort(({ name: a }, { name: b }) => lexicographic(a, b))
+                                .map((r) => (
+                                    <option key={r.name} value={r.name}>
+                                        {r.name}
+                                    </option>
+                                ))}
+                        </Select>
+                    </FormControl>
+                    {chosenSubrace && (
+                        <Box w="100%">
+                            <InfoModal
+                                title="Chosen Subrace"
+                                buttonText={chosenSubrace}
+                                content={data?.subraces.options.find((r) => r.name === chosenSubrace)}
+                            />
+                        </Box>
+                    )}
+                </VStack>
+                <VStack w="100%" pt="2" mx="auto" pb="10" justifyContent="start">
+                    <FormControl>
+                        <FormLabel htmlFor="race">Class:</FormLabel>
+                        <Select {...register('class')}>
+                            {data?.classes.options
+                                .sort(({ name: a }, { name: b }) => lexicographic(a, b))
+                                .map((r) => (
+                                    <option key={r.name} value={r.name}>
+                                        {r.name}
+                                    </option>
+                                ))}
+                        </Select>
+                    </FormControl>
+                    <HStack w="100%">
+                        <InfoModal title="Classes" content={data?.classes.description} />
+                        <InfoModal
+                            title="Chosen Class"
+                            buttonText={chosenClass}
+                            content={data?.classes.options.find((r) => r.name === chosenClass)}
+                        />
+                    </HStack>
+                </VStack>
             </chakra.form>
         </VStack>
     );

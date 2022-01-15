@@ -65,17 +65,41 @@ export async function searchRules(query: string, user?: User): Promise<DBRule[]>
     return result.rows.map((r) => DBRuleSchema.parse(r));
 }
 
+type RuleOption = Pick<DBRule, 'category' | 'name' | 'rule' | 'description'>;
+
 export async function getCharacterOptions(userId: number, campaignId?: number): Promise<CharacterOptions> {
-    const {
-        rows: [{ description: racesDescription }],
-    } = await pool.query<Rule>(
-        sql`SELECT * FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.GENERAL} AND name = ${StandardRule.RACES} LIMIT 1;`,
-    );
-    const { rows: racesOptions } = await pool.query<Pick<DBRule, 'category' | 'name' | 'rule' | 'description'>>(
-        sql`SELECT category, name, rule, description FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.RACE};`,
-    );
+    const [
+        {
+            rows: [{ description: racesDescription }],
+        },
+        {
+            rows: [{ description: classesDescription }],
+        },
+        { rows: racesOptions },
+        { rows: subracesOptions },
+        { rows: classesOptions },
+    ] = await Promise.all([
+        pool.query<Rule>(
+            sql`SELECT * FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.GENERAL} AND name = ${StandardRule.RACES} LIMIT 1;`,
+        ),
+        pool.query<Rule>(
+            sql`SELECT * FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.GENERAL} AND name = ${StandardRule.CLASSES} LIMIT 1;`,
+        ),
+
+        pool.query<RuleOption>(
+            sql`SELECT category, name, rule, description FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.RACE};`,
+        ),
+        pool.query<RuleOption>(
+            sql`SELECT category, name, rule, description FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.SUBRACE};`,
+        ),
+        pool.query<RuleOption>(
+            sql`SELECT category, name, rule, description FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.CLASS};`,
+        ),
+    ]);
 
     return CharacterOptionsSchema.parse({
         races: { description: racesDescription, options: racesOptions },
+        subraces: { options: subracesOptions },
+        classes: { description: classesDescription, options: classesOptions },
     });
 }

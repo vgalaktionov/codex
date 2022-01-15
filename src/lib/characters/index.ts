@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { DBRuleSchema, narrowDBRule } from '../rules/base';
+import { SubraceSchema } from '../rules/subraces';
 import { BaseDBSchema } from '../util';
 
 export const CharacterSchema = BaseDBSchema.extend({
@@ -34,8 +35,21 @@ export const CharacterSchema = BaseDBSchema.extend({
 
 export type Character = z.infer<typeof CharacterSchema>;
 
+export const NewCharacterSchema = CharacterSchema.omit({ classes: true }).extend({
+    class: z.string().min(2),
+});
+
+export type NewCharacter = z.infer<typeof NewCharacterSchema>;
+
 export const CharacterOptionsSchema = z.object({
     races: z.object({
+        description: z.string().min(1),
+        options: z.array(DBRuleSchema).refine((o) => o.map((r) => narrowDBRule(r))),
+    }),
+    subraces: z.object({
+        options: z.array(DBRuleSchema.extend({ rule: SubraceSchema })),
+    }),
+    classes: z.object({
         description: z.string().min(1),
         options: z.array(DBRuleSchema).refine((o) => o.map((r) => narrowDBRule(r))),
     }),
