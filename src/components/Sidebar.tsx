@@ -39,6 +39,7 @@ import { Campaign } from '../lib/campaigns';
 import { Character } from '../lib/characters';
 import { RuleCategory } from '../lib/rules/base';
 import { SearchForm, SearchFormSchema } from '../lib/search';
+import { lexicographic } from '../lib/util';
 import rest from '../rest';
 
 const CATEGORY_ICONS: Record<string, IconType> = {
@@ -95,7 +96,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
             px="10"
             justifyContent="start"
             alignItems="start"
-            width={['100%', '450px']}
+            width={['100%', '350px']}
         >
             <Heading size="md" color="orange.400" pb="2">
                 Characters
@@ -172,7 +173,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
             <Heading size="sm" pt="2">
                 Browse
             </Heading>
-            <Accordion width={['100%', '350px']} pt="2" borderTop="none" allowToggle>
+            <Accordion width={['100%']} pt="2" borderTop="none" allowToggle>
                 <AccordionItem borderTop="none">
                     <h2>
                         <AccordionButton>
@@ -182,8 +183,8 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
                             <AccordionIcon />
                         </AccordionButton>
                     </h2>
-                    <AccordionPanel pb={4} width={['100%', '350px']} pt="2">
-                        <Accordion width={['100%', '350px']} pt="2" allowToggle>
+                    <AccordionPanel pb={4} width={['100%']} pt="2">
+                        <Accordion width={['100%']} pt="2" allowToggle>
                             {Object.entries(ruleLinks ?? {}).map(([category, values]) => (
                                 <AccordionItem key={category} border="none">
                                     <Heading>
@@ -203,7 +204,7 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
                                     </Heading>
                                     <AccordionPanel>
                                         {Object.entries(values)
-                                            .sort(([a, _], [b, __]) => a.localeCompare(b, 'en-gb', { numeric: true }))
+                                            .sort(([a, _], [b, __]) => lexicographic(a, b))
                                             .map(([name, { href }]) => (
                                                 <Box key={name + '-sidebar'} ml="6" my="3">
                                                     <NextLink href={href} passHref>
@@ -251,11 +252,11 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
                 color={color[colorMode]}
                 justifyContent="space-between"
                 alignItems="center"
-                width="450px"
+                width="350px"
                 position="absolute"
                 top="62px"
             >
-                <Flex width="450px">{contents}</Flex>
+                <Flex width="350px">{contents}</Flex>
             </Flex>
 
             <Drawer placement="left" onClose={props.onClose} isOpen={props.isOpen}>

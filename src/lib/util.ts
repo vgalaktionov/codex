@@ -33,3 +33,5 @@ export const serializeDates = (obj: BaseDB) => ({
     createdAt: obj.createdAt!.getTime(),
     updatedAt: obj.createdAt!.getTime(),
 });
+
+export const lexicographic = (a: string, b: string) => a.localeCompare(b, 'en-gb', { numeric: true });

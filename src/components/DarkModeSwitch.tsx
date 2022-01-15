@@ -7,7 +7,7 @@ export const DarkModeSwitch = () => {
         <Flex justifyContent="end" mr="5">
             <Box>
                 🌝
-                <Switch px="2" colorScheme="blue" isChecked={isDark} onChange={toggleColorMode} />
+                <Switch px="2" colorScheme="orange" isChecked={isDark} onChange={toggleColorMode} />
                 🌚
             </Box>
         </Flex>
