@@ -64,7 +64,6 @@ const NewCharacter = () => {
     };
 
     const bgColor = { light: 'gray.100', dark: 'gray.900' };
-    console.log(data?.races.options.find((r) => r.name === chosenRace));
 
     return (
         <VStack
@@ -167,6 +166,7 @@ const NewCharacter = () => {
                 <AbilityScorePicker
                     race={data?.races.options.find((r) => r.name === chosenRace)}
                     subrace={data?.subraces.options.find((r) => r.name === chosenSubrace)}
+                    register={register}
                 />
             </chakra.form>
         </VStack>
