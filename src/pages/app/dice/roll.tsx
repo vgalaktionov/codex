@@ -15,6 +15,7 @@ import {
     NumberInputField,
     NumberInputStepper,
     Select,
+    Tag,
     Text,
     useColorMode,
     VStack,
@@ -142,17 +143,9 @@ const Roll = () => {
                         <strong>Dice:</strong>{' '}
                         {roll?.result.map((rs, id) => (
                             <Fade in={stable} key={id} style={{ display: 'inline-block' }}>
-                                <chakra.span
-                                    display="inline-block"
-                                    backgroundColor="gray.500"
-                                    textAlign="center"
-                                    w="2rem"
-                                    py="1"
-                                    mx="1"
-                                    as="kbd"
-                                >
+                                <Tag colorScheme="orange" mx="1">
                                     {rs.roll}
-                                </chakra.span>
+                                </Tag>
                             </Fade>
                         ))}
                         <br />

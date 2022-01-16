@@ -11,7 +11,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(StatusCodes.METHOD_NOT_ALLOWED).json({ error: ReasonPhrases.METHOD_NOT_ALLOWED });
 
     try {
-        log.info(req.body);
         const userId = getUserId(req, res);
         const campaignId = (await getActiveCampaign(userId))?.id ?? null;
         const roll = await createDiceRoll(DiceRollSchema.parse(req.body), userId, campaignId);
