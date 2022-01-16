@@ -164,21 +164,18 @@ export const Sidebar = (props: { onClose(): void; isOpen: boolean }) => {
                         <InputRightElement pointerEvents="none" children={<GiArchiveResearch />} />
                     </InputGroup>
                 </FormControl>
-                <Flex w="100%" justifyContent="end" pt="2" pb="4" borderBottom="1px" borderBottomColor="gray">
+                <Flex w="100%" justifyContent="end" pt="2" pb="4">
                     <Button colorScheme="orange" ml="auto" type="submit">
                         Search rules
                     </Button>
                 </Flex>
             </form>
-            <Heading size="sm" pt="2">
-                Browse
-            </Heading>
             <Accordion width={['100%']} pt="2" borderTop="none" allowToggle>
                 <AccordionItem borderTop="none">
                     <h2>
                         <AccordionButton>
                             <Box flex="1" textAlign="left">
-                                Rules
+                                Browse
                             </Box>
                             <AccordionIcon />
                         </AccordionButton>

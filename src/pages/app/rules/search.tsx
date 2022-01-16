@@ -26,6 +26,7 @@ import { searchRules } from '../../../db/rules';
 import { PUBLIC_ROUTES } from '../../../lib/auth';
 import { DBRule, linkHref } from '../../../lib/rules/base';
 import { SearchForm, SearchFormSchema } from '../../../lib/search';
+import { serializeDates } from '../../../lib/util';
 
 const Search = ({ results, query }: { results: DBRule[]; query: string }) => {
     const { colorMode } = useColorMode();
@@ -118,7 +119,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         return { props: { query: '', results: [] } };
 
     const query = (typeof context.query.q === 'string' ? context.query.q : context.query.q.join('')).replace('+', ' ');
-    const results = await searchRules(query);
+    const results = (await searchRules(query)).map((r) => serializeDates(r));
     return { props: { query, results } };
 };
 

@@ -41,6 +41,16 @@ export const NewCharacterSchema = CharacterSchema.omit({ classes: true }).extend
 
 export type NewCharacter = z.infer<typeof NewCharacterSchema>;
 
+export const AbilitiesSchema = NewCharacterSchema.pick({
+    charisma: true,
+    strength: true,
+    intelligence: true,
+    dexterity: true,
+    constitution: true,
+    wisdom: true,
+});
+export type Abilities = z.infer<typeof AbilitiesSchema>;
+
 export const CharacterOptionsSchema = z.object({
     races: z.object({
         description: z.string().min(1),

@@ -7,6 +7,7 @@ import {
     Heading,
     HStack,
     Select,
+    Text,
     useColorMode,
     VStack,
 } from '@chakra-ui/react';
@@ -17,6 +18,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { dehydrate, QueryClient, useMutation, useQuery, useQueryClient } from 'react-query';
+import AbilityScorePicker from '../../../components/characters/AbilityScorePicker';
 import InfoModal from '../../../components/InfoModal';
 import { getCharacterOptions } from '../../../db/rules';
 import { getUserId } from '../../../lib/auth';
@@ -160,6 +162,8 @@ const NewCharacter = () => {
                         />
                     </HStack>
                 </VStack>
+                <Text mb="6">Determine ability scores:</Text>
+                <AbilityScorePicker />
             </chakra.form>
         </VStack>
     );

@@ -11,6 +11,7 @@ export const Hero = () => {
             width="100vw"
             bgSize="cover"
             bgImage="linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/hero.jpeg')"
+            backgroundPosition="center"
         >
             <VStack height="100%" justifyContent="center" alignItems="start" mx="20" width="100%">
                 <Heading fontSize="6vw" maxWidth="50vw">

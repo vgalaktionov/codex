@@ -41,6 +41,7 @@ function CODEX({ Component, pageProps }: AppProps<{ rulesLinks: RuleLinks }>) {
                                     mt="62px"
                                     width="100%"
                                     overflowY="auto"
+                                    overflowX="hidden"
                                 >
                                     <Component {...pageProps} />
                                 </Container>
