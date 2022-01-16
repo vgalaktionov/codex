@@ -20,6 +20,7 @@ import { useForm } from 'react-hook-form';
 import { dehydrate, QueryClient, useMutation, useQuery, useQueryClient } from 'react-query';
 import AbilityScorePicker from '../../../components/characters/AbilityScorePicker';
 import InfoModal from '../../../components/InfoModal';
+import { getActiveCampaign } from '../../../db/campaigns';
 import { getCharacterOptions } from '../../../db/rules';
 import { getUserId } from '../../../lib/auth';
 import { Character, CharacterOptions, NewCharacter, NewCharacterSchema } from '../../../lib/characters';
@@ -173,8 +174,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const queryClient = new QueryClient();
 
     const userId = getUserId(context.req, context.res);
+    const campaignId = (await getActiveCampaign(userId))?.id ?? undefined;
 
-    await queryClient.prefetchQuery('characterOptions', async () => await getCharacterOptions(userId));
+    await queryClient.prefetchQuery('characterOptions', async () => await getCharacterOptions(userId, campaignId));
 
     return { props: { dehydratedState: dehydrate(queryClient) } };
 };

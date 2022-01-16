@@ -1,5 +1,6 @@
 import {
     FormControl,
+    FormErrorMessage,
     FormLabel,
     HStack,
     NumberDecrementStepper,
@@ -17,7 +18,7 @@ import {
     Text,
     VStack,
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import RollModal from './RollModal';
 
 const DefaultScores = () => {
@@ -30,6 +31,7 @@ const DefaultScores = () => {
     const [intelligence, setIntelligence] = useState<number>(0);
     const [wisdom, setWisdom] = useState<number>(0);
     const [charisma, setCharisma] = useState<number>(0);
+    const [generalError, setGeneralError] = useState<string | undefined>(undefined);
 
     return (
         <>
@@ -41,6 +43,9 @@ const DefaultScores = () => {
                     </Tag>
                 ))}
             </HStack>
+            <FormControl isInvalid={generalError != null} mb="6">
+                <FormErrorMessage>{generalError}</FormErrorMessage>
+            </FormControl>
             <FormControl>
                 <FormLabel htmlFor="strength">Strength:</FormLabel>
                 <Select
@@ -211,20 +216,26 @@ const RollScores = () => {
     const [intelligence, setIntelligence] = useState<number>(0);
     const [wisdom, setWisdom] = useState<number>(0);
     const [charisma, setCharisma] = useState<number>(0);
+    const [generalError, setGeneralError] = useState<string | undefined>(undefined);
+
+    const forceUpdate = useReducer(() => ({}), {})[1] as () => void;
 
     return (
         <>
             <HStack justifyContent={'center'}>
                 <Text textAlign={'center'}>Roll for scores: </Text>
-                <RollModal values={scores} setValues={setScores} />
+                <RollModal values={scores} setValues={setScores} forceUpdate={forceUpdate} />
             </HStack>
             <HStack justifyContent="center" mt="6" mb="6">
-                {scores.map((score, i) => (
+                {scores.filter(Boolean).map((score, i) => (
                     <Tag key={i} colorScheme={!taken[i] ? 'orange' : 'gray'}>
                         {score}
                     </Tag>
                 ))}
             </HStack>
+            <FormControl isInvalid={generalError != null} mb="6">
+                <FormErrorMessage>{generalError}</FormErrorMessage>
+            </FormControl>
             <FormControl>
                 <FormLabel htmlFor="strength">Strength:</FormLabel>
                 <Select
@@ -385,22 +396,63 @@ const RollScores = () => {
     );
 };
 
-const ManualScores = () => {
-    const [strength, setStrength] = useState<number>(0);
-    const [constitution, setConstitution] = useState<number>(0);
-    const [dexterity, setDexterity] = useState<number>(0);
-    const [intelligence, setIntelligence] = useState<number>(0);
-    const [wisdom, setWisdom] = useState<number>(0);
-    const [charisma, setCharisma] = useState<number>(0);
+const CustomizeScores = () => {
+    const [strength, setStrength] = useState(8);
+    const [constitution, setConstitution] = useState(8);
+    const [dexterity, setDexterity] = useState(8);
+    const [intelligence, setIntelligence] = useState(8);
+    const [wisdom, setWisdom] = useState(8);
+    const [charisma, setCharisma] = useState(8);
+    const [generalError, setGeneralError] = useState<string | undefined>(undefined);
+
+    const [spent, setSpent] = useState(0);
+    useEffect(() => {
+        const total = [strength, constitution, dexterity, intelligence, wisdom, charisma].reduce((acc, cur) => {
+            switch (cur) {
+                case 8:
+                    return acc;
+                case 9:
+                    return acc + 1;
+                case 10:
+                    return acc + 2;
+                case 11:
+                    return acc + 3;
+                case 12:
+                    return acc + 4;
+                case 13:
+                    return acc + 5;
+                case 14:
+                    return acc + 7;
+                case 15:
+                    return acc + 9;
+                default:
+                    return acc;
+            }
+        }, 0);
+        setSpent(total);
+        if (total > 27) setGeneralError('You have a maximum of 27 points to spend!');
+    }, [strength, constitution, dexterity, intelligence, wisdom, charisma, setGeneralError, setSpent]);
 
     return (
         <>
-            <Text textAlign={'center'} mb="12">
-                Enter your scores manually:
-            </Text>
+            <HStack justifyContent={'center'}>
+                <Text textAlign={'center'}>Customize your scores </Text>
+                <Tag colorScheme="orange">To spend: 27</Tag>
+                <Tag colorScheme={spent < 27 ? 'yellow' : spent > 27 ? 'red' : 'green'}>Spent: {spent}</Tag>
+            </HStack>
+            <FormControl isInvalid={generalError != null} mb="6">
+                <FormErrorMessage>{generalError}</FormErrorMessage>
+            </FormControl>
             <FormControl>
                 <FormLabel htmlFor="strength">Strength:</FormLabel>
-                <NumberInput step={1} defaultValue={8} min={8} max={20} onChange={(_, v) => setStrength(v)}>
+                <NumberInput
+                    step={1}
+                    min={8}
+                    defaultValue={8}
+                    max={15}
+                    keepWithinRange
+                    onChange={(_, v) => setStrength(v)}
+                >
                     <NumberInputField name="strength" value={strength} />
                     <NumberInputStepper>
                         <NumberIncrementStepper />
@@ -410,7 +462,14 @@ const ManualScores = () => {
             </FormControl>
             <FormControl>
                 <FormLabel htmlFor="constitution">Constitution:</FormLabel>
-                <NumberInput step={1} defaultValue={8} min={8} max={20} onChange={(_, v) => setConstitution(v)}>
+                <NumberInput
+                    step={1}
+                    min={8}
+                    defaultValue={8}
+                    max={15}
+                    keepWithinRange
+                    onChange={(_, v) => setConstitution(v)}
+                >
                     <NumberInputField name="constitution" value={constitution} />
                     <NumberInputStepper>
                         <NumberIncrementStepper />
@@ -420,7 +479,14 @@ const ManualScores = () => {
             </FormControl>
             <FormControl>
                 <FormLabel htmlFor="intelligence">Intelligence:</FormLabel>
-                <NumberInput step={1} defaultValue={8} min={8} max={20} onChange={(_, v) => setIntelligence(v)}>
+                <NumberInput
+                    step={1}
+                    min={8}
+                    defaultValue={8}
+                    max={15}
+                    keepWithinRange
+                    onChange={(_, v) => setIntelligence(v)}
+                >
                     <NumberInputField name="intelligence" value={intelligence} />
                     <NumberInputStepper>
                         <NumberIncrementStepper />
@@ -430,7 +496,14 @@ const ManualScores = () => {
             </FormControl>
             <FormControl>
                 <FormLabel htmlFor="dexterity">Dexterity:</FormLabel>
-                <NumberInput step={1} defaultValue={8} min={8} max={20} onChange={(_, v) => setDexterity(v)}>
+                <NumberInput
+                    step={1}
+                    min={8}
+                    defaultValue={8}
+                    max={15}
+                    keepWithinRange
+                    onChange={(_, v) => setDexterity(v)}
+                >
                     <NumberInputField name="dexterity" value={dexterity} />
                     <NumberInputStepper>
                         <NumberIncrementStepper />
@@ -440,7 +513,14 @@ const ManualScores = () => {
             </FormControl>
             <FormControl>
                 <FormLabel htmlFor="wisdom">Wisdom:</FormLabel>
-                <NumberInput step={1} defaultValue={8} min={8} max={20} onChange={(_, v) => setWisdom(v)}>
+                <NumberInput
+                    step={1}
+                    min={8}
+                    defaultValue={8}
+                    max={15}
+                    keepWithinRange
+                    onChange={(_, v) => setWisdom(v)}
+                >
                     <NumberInputField name="wisdom" value={wisdom} />
                     <NumberInputStepper>
                         <NumberIncrementStepper />
@@ -450,7 +530,137 @@ const ManualScores = () => {
             </FormControl>
             <FormControl>
                 <FormLabel htmlFor="charisma">Charisma:</FormLabel>
-                <NumberInput step={1} defaultValue={8} min={8} max={20} onChange={(_, v) => setCharisma(v)}>
+                <NumberInput
+                    step={1}
+                    min={8}
+                    defaultValue={8}
+                    max={15}
+                    keepWithinRange
+                    onChange={(_, v) => setCharisma(v)}
+                >
+                    <NumberInputField name="charisma" value={charisma} />
+                    <NumberInputStepper>
+                        <NumberIncrementStepper />
+                        <NumberDecrementStepper />
+                    </NumberInputStepper>
+                </NumberInput>
+            </FormControl>
+        </>
+    );
+};
+
+const ManualScores = () => {
+    const [strength, setStrength] = useState<number>(0);
+    const [constitution, setConstitution] = useState<number>(0);
+    const [dexterity, setDexterity] = useState<number>(0);
+    const [intelligence, setIntelligence] = useState<number>(0);
+    const [wisdom, setWisdom] = useState<number>(0);
+    const [charisma, setCharisma] = useState<number>(0);
+    const [generalError, setGeneralError] = useState<string | undefined>(undefined);
+
+    return (
+        <>
+            <Text textAlign={'center'} mb="12">
+                Enter your scores manually:
+            </Text>
+            <FormControl isInvalid={generalError != null} mb="6">
+                <FormErrorMessage>{generalError}</FormErrorMessage>
+            </FormControl>
+            <FormControl>
+                <FormLabel htmlFor="strength">Strength:</FormLabel>
+                <NumberInput
+                    step={1}
+                    min={0}
+                    defaultValue={8}
+                    max={20}
+                    keepWithinRange
+                    onChange={(_, v) => setStrength(v)}
+                >
+                    <NumberInputField name="strength" value={strength} />
+                    <NumberInputStepper>
+                        <NumberIncrementStepper />
+                        <NumberDecrementStepper />
+                    </NumberInputStepper>
+                </NumberInput>
+            </FormControl>
+            <FormControl>
+                <FormLabel htmlFor="constitution">Constitution:</FormLabel>
+                <NumberInput
+                    step={1}
+                    min={0}
+                    defaultValue={8}
+                    max={20}
+                    keepWithinRange
+                    onChange={(_, v) => setConstitution(v)}
+                >
+                    <NumberInputField name="constitution" value={constitution} />
+                    <NumberInputStepper>
+                        <NumberIncrementStepper />
+                        <NumberDecrementStepper />
+                    </NumberInputStepper>
+                </NumberInput>
+            </FormControl>
+            <FormControl>
+                <FormLabel htmlFor="intelligence">Intelligence:</FormLabel>
+                <NumberInput
+                    step={1}
+                    min={0}
+                    defaultValue={8}
+                    max={20}
+                    keepWithinRange
+                    onChange={(_, v) => setIntelligence(v)}
+                >
+                    <NumberInputField name="intelligence" value={intelligence} />
+                    <NumberInputStepper>
+                        <NumberIncrementStepper />
+                        <NumberDecrementStepper />
+                    </NumberInputStepper>
+                </NumberInput>
+            </FormControl>
+            <FormControl>
+                <FormLabel htmlFor="dexterity">Dexterity:</FormLabel>
+                <NumberInput
+                    step={1}
+                    min={0}
+                    defaultValue={8}
+                    max={20}
+                    keepWithinRange
+                    onChange={(_, v) => setDexterity(v)}
+                >
+                    <NumberInputField name="dexterity" value={dexterity} />
+                    <NumberInputStepper>
+                        <NumberIncrementStepper />
+                        <NumberDecrementStepper />
+                    </NumberInputStepper>
+                </NumberInput>
+            </FormControl>
+            <FormControl>
+                <FormLabel htmlFor="wisdom">Wisdom:</FormLabel>
+                <NumberInput
+                    step={1}
+                    min={0}
+                    defaultValue={8}
+                    max={20}
+                    keepWithinRange
+                    onChange={(_, v) => setWisdom(v)}
+                >
+                    <NumberInputField name="wisdom" value={wisdom} />
+                    <NumberInputStepper>
+                        <NumberIncrementStepper />
+                        <NumberDecrementStepper />
+                    </NumberInputStepper>
+                </NumberInput>
+            </FormControl>
+            <FormControl>
+                <FormLabel htmlFor="charisma">Charisma:</FormLabel>
+                <NumberInput
+                    step={1}
+                    min={0}
+                    defaultValue={8}
+                    max={20}
+                    keepWithinRange
+                    onChange={(_, v) => setCharisma(v)}
+                >
                     <NumberInputField name="charisma" value={charisma} />
                     <NumberInputStepper>
                         <NumberIncrementStepper />
@@ -480,7 +690,7 @@ export default function AbilityScorePicker() {
                         <RollScores />
                     </TabPanel>
                     <TabPanel>
-                        <p>three!</p>
+                        <CustomizeScores />
                     </TabPanel>
                     <TabPanel>
                         <ManualScores />

@@ -50,7 +50,7 @@ async function createCharacter(data: Character) {
 
 async function getCharacterOptions() {
     const res = await client.get('/api/characters/options');
-    return CharacterOptionsSchema.parse(res.data);
+    return CharacterOptionsSchema.parse(res.data.options);
 }
 
 export default {

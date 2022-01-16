@@ -16,36 +16,29 @@ import {
     useDisclosure,
 } from '@chakra-ui/react';
 import axios from 'axios';
-import { Dispatch, PropsWithChildren, SetStateAction, useCallback, useEffect, useRef, useState } from 'react';
+import { Dispatch, PropsWithChildren, SetStateAction, useEffect, useRef, useState } from 'react';
 import { FaDiceD6 } from 'react-icons/fa';
-import { useMutation, useQueryClient } from 'react-query';
 import { DiceRoll, DieType, newRoll } from '../../lib/dice';
 import { rollDice } from '../../lib/dice/diceRoll';
 import { log } from '../../lib/util';
-import rest from '../../rest';
 
 type RollValues = [number, number, number, number, number, number];
 
 interface ModalProps {
     values: RollValues;
     setValues: Dispatch<SetStateAction<RollValues>>;
+    forceUpdate(): void;
 }
 
-export default function RollModal({ values, setValues }: PropsWithChildren<ModalProps>) {
+export default function RollModal({ values, setValues, forceUpdate }: PropsWithChildren<ModalProps>) {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     const mountRef = useRef<HTMLDivElement | null>(null);
     const [thrown, setThrown] = useState(0);
     const [stable, setStable] = useState(true);
     const [roll, setRoll] = useState<DiceRoll | undefined>();
-    const queryClient = useQueryClient();
-    const mutation = useMutation(rest.createDiceRoll, {
-        onSuccess: () => {
-            queryClient.invalidateQueries('dicerolls');
-        },
-    });
 
-    const onNext = useCallback(async () => {
+    const onNext = () => {
         try {
             setStable(false);
             const diceRoll = newRoll(DieType.D6, 4);
@@ -55,17 +48,16 @@ export default function RollModal({ values, setValues }: PropsWithChildren<Modal
                     diceRoll.result
                         .sort(({ roll: a }, { roll: b }) => b - a)
                         .slice(0, 3)
-                        .reduce((acc, cur) => acc + cur.roll, 0) ?? 0;
+                        .reduce((acc, cur) => acc + cur.roll, 0) ?? draft[thrown];
                 return draft;
             });
             setRoll(diceRoll);
-            await mutation.mutateAsync(diceRoll);
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 log.error(error.response?.data.error);
             }
         }
-    }, [values, thrown, setStable, setThrown, setValues, setRoll]);
+    };
 
     useEffect(() => {
         if (thrown === 0 && isOpen) onNext();
@@ -76,7 +68,11 @@ export default function RollModal({ values, setValues }: PropsWithChildren<Modal
         if (roll != null && mountRef.current != null) {
             element = rollDice(mountRef, roll);
         }
-        return () => (element ? mountRef?.current?.removeChild(element) && undefined : undefined);
+        return () => {
+            try {
+                if (element) mountRef?.current?.removeChild(element);
+            } catch (error) {}
+        };
     }, [mountRef, roll]);
 
     const stableListener = () => setStable(true);
@@ -166,7 +162,14 @@ export default function RollModal({ values, setValues }: PropsWithChildren<Modal
                             </Button>
                         )}
                         {thrown === 6 && (
-                            <Button colorScheme="orange" onClick={onClose}>
+                            <Button
+                                colorScheme="orange"
+                                onClick={() => {
+                                    setThrown(0);
+                                    forceUpdate();
+                                    onClose();
+                                }}
+                            >
                                 Finish
                             </Button>
                         )}
