@@ -2,7 +2,9 @@
 name: Halfling
 traits:
     Ability Score Increase:
-        dexterity: 2
+        value:
+            get:
+                dexterity: 2
 ---
 
 # Halfling

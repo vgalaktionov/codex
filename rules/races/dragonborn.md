@@ -2,9 +2,10 @@
 name: Dragonborn
 traits:
     Ability Score Increase:
-        get:
-            strength: 2
-            charisma: 1
+        value:
+            get:
+                strength: 2
+                charisma: 1
 ---
 
 ## Dragonborn

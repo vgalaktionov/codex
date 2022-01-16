@@ -3,8 +3,10 @@ name: Lightfoot Halfling
 raceName: Halfling
 traits:
     Ability Score Increase:
-        get:
-            charisma: 1
+        value:
+            get:
+                get:
+                    charisma: 1
 ---
 
 # Lightfoot

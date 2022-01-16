@@ -3,8 +3,9 @@ name: Rock Gnome
 raceName: Gnome
 traits:
     Ability Score Increase:
-        get:
-            constitution: 1
+        value:
+            get:
+                constitution: 1
 ---
 
 # Rock Gnome

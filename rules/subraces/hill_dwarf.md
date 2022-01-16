@@ -3,7 +3,9 @@ name: Hill Dwarf
 raceName: Dwarf
 traits:
     Ability Score Increase:
-        wisdom: 1
+        value:
+            get:
+                wisdom: 1
     Dwarven Toughness:
 ---
 

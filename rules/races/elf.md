@@ -2,8 +2,9 @@
 name: Elf
 traits:
     Ability Score Increase:
-        get:
-            dexterity: 2
+        value:
+            get:
+                dexterity: 2
 ---
 
 # Elf

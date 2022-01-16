@@ -19,6 +19,7 @@ import {
     VStack,
 } from '@chakra-ui/react';
 import { useEffect, useReducer, useState } from 'react';
+import AbilityScoreBonuses, { BonusesProps } from './AbilityScoreBonuses';
 import RollModal from './RollModal';
 
 const DefaultScores = () => {
@@ -672,7 +673,7 @@ const ManualScores = () => {
     );
 };
 
-export default function AbilityScorePicker() {
+export default function AbilityScorePicker({ race, subrace }: BonusesProps) {
     return (
         <VStack w="100%">
             <Tabs variant="soft-rounded" size="sm" colorScheme="orange" w="100%" isFitted>
@@ -682,20 +683,23 @@ export default function AbilityScorePicker() {
                     <Tab>Customize</Tab>
                     <Tab>Manual</Tab>
                 </TabList>
-                <TabPanels>
-                    <TabPanel>
-                        <DefaultScores />
-                    </TabPanel>
-                    <TabPanel>
-                        <RollScores />
-                    </TabPanel>
-                    <TabPanel>
-                        <CustomizeScores />
-                    </TabPanel>
-                    <TabPanel>
-                        <ManualScores />
-                    </TabPanel>
-                </TabPanels>
+                <HStack w="100%">
+                    <TabPanels>
+                        <TabPanel>
+                            <DefaultScores />
+                        </TabPanel>
+                        <TabPanel>
+                            <RollScores />
+                        </TabPanel>
+                        <TabPanel>
+                            <CustomizeScores />
+                        </TabPanel>
+                        <TabPanel>
+                            <ManualScores />
+                        </TabPanel>
+                    </TabPanels>
+                    <AbilityScoreBonuses race={race} subrace={subrace} />
+                </HStack>
             </Tabs>
         </VStack>
     );

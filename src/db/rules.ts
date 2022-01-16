@@ -65,7 +65,7 @@ export async function searchRules(query: string, user?: User): Promise<DBRule[]>
     return result.rows.map((r) => DBRuleSchema.parse(r));
 }
 
-type RuleOption = Pick<DBRule, 'category' | 'name' | 'rule' | 'description'>;
+type RuleOption = Pick<DBRule, 'rule'>;
 
 export async function getCharacterOptions(userId: number, campaignId?: number): Promise<CharacterOptions> {
     const [
@@ -87,19 +87,19 @@ export async function getCharacterOptions(userId: number, campaignId?: number): 
         ),
 
         pool.query<RuleOption>(
-            sql`SELECT category, name, rule, description FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.RACE};`,
+            sql`SELECT rule FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.RACE};`,
         ),
         pool.query<RuleOption>(
-            sql`SELECT category, name, rule, description FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.SUBRACE};`,
+            sql`SELECT rule FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.SUBRACE};`,
         ),
         pool.query<RuleOption>(
-            sql`SELECT category, name, rule, description FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.CLASS};`,
+            sql`SELECT rule FROM rules WHERE "userId" = ${userId} OR "userId" IS NULL AND category = ${RuleCategory.CLASS};`,
         ),
     ]);
 
     return CharacterOptionsSchema.parse({
-        races: { description: racesDescription, options: racesOptions },
-        subraces: { options: subracesOptions },
-        classes: { description: classesDescription, options: classesOptions },
+        races: { description: racesDescription, options: racesOptions.map((r) => r.rule) },
+        subraces: { options: subracesOptions.map((r) => r.rule) },
+        classes: { description: classesDescription, options: classesOptions.map((r) => r.rule) },
     });
 }

@@ -35,3 +35,5 @@ export const serializeDates = (obj: BaseDB) => ({
 });
 
 export const lexicographic = (a: string, b: string) => a.localeCompare(b, 'en-gb', { numeric: true });
+
+export const range = (n: number) => [...Array(n).keys()];

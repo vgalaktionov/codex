@@ -2,13 +2,14 @@
 name: Human
 traits:
     Ability Score Increase:
-        get:
-            strength: 1
-            charisma: 1
-            dexterity: 1
-            constitution: 1
-            intelligence: 1
-            wisdom: 1
+        value:
+            get:
+                strength: 1
+                charisma: 1
+                dexterity: 1
+                constitution: 1
+                intelligence: 1
+                wisdom: 1
 ---
 
 ## Human

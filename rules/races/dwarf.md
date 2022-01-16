@@ -2,8 +2,9 @@
 name: Dwarf
 traits:
     Ability Score Increase:
-        get:
-            constitution: 2
+        value:
+            get:
+                constitution: 2
 ---
 
 # Dwarf

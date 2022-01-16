@@ -1,5 +1,6 @@
 import { z } from 'zod';
-import { DBRuleSchema, narrowDBRule } from '../rules/base';
+import { ClassSchema } from '../rules/classes';
+import { RaceSchema } from '../rules/races';
 import { SubraceSchema } from '../rules/subraces';
 import { BaseDBSchema } from '../util';
 
@@ -54,14 +55,14 @@ export type Abilities = z.infer<typeof AbilitiesSchema>;
 export const CharacterOptionsSchema = z.object({
     races: z.object({
         description: z.string().min(1),
-        options: z.array(DBRuleSchema).refine((o) => o.map((r) => narrowDBRule(r))),
+        options: z.array(RaceSchema),
     }),
     subraces: z.object({
-        options: z.array(DBRuleSchema.extend({ rule: SubraceSchema })),
+        options: z.array(SubraceSchema),
     }),
     classes: z.object({
         description: z.string().min(1),
-        options: z.array(DBRuleSchema).refine((o) => o.map((r) => narrowDBRule(r))),
+        options: z.array(ClassSchema),
     }),
 });
 export type CharacterOptions = z.infer<typeof CharacterOptionsSchema>;

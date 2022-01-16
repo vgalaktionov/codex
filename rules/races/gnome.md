@@ -2,8 +2,9 @@
 name: Gnome
 traits:
     Ability Score Increase:
-        get:
-            intelligence: 2
+        value:
+            get:
+                intelligence: 2
 ---
 
 ## Gnome

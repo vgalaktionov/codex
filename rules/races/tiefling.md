@@ -2,9 +2,10 @@
 name: Tiefling
 traits:
     Ability Score Increase:
-        get:
-            intelligence: 1
-            charisma: 2
+        value:
+            get:
+                intelligence: 1
+                charisma: 2
 ---
 
 ## Tiefling

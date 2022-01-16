@@ -64,6 +64,7 @@ const NewCharacter = () => {
     };
 
     const bgColor = { light: 'gray.100', dark: 'gray.900' };
+    console.log(data?.races.options.find((r) => r.name === chosenRace));
 
     return (
         <VStack
@@ -114,15 +115,14 @@ const NewCharacter = () => {
                         <Select
                             {...register('subrace')}
                             disabled={
-                                data?.subraces.options.filter(({ rule: { raceName } }) => raceName === chosenRace)
-                                    .length === 0
+                                data?.subraces.options.filter(({ raceName }) => raceName === chosenRace).length === 0
                             }
                         >
                             <option key="none" value={undefined}>
                                 No subrace
                             </option>
                             {data?.subraces.options
-                                .filter(({ rule: { raceName } }) => raceName === chosenRace)
+                                .filter(({ raceName }) => raceName === chosenRace)
                                 .sort(({ name: a }, { name: b }) => lexicographic(a, b))
                                 .map((r) => (
                                     <option key={r.name} value={r.name}>
@@ -164,7 +164,10 @@ const NewCharacter = () => {
                     </HStack>
                 </VStack>
                 <Text mb="6">Determine ability scores:</Text>
-                <AbilityScorePicker />
+                <AbilityScorePicker
+                    race={data?.races.options.find((r) => r.name === chosenRace)}
+                    subrace={data?.subraces.options.find((r) => r.name === chosenSubrace)}
+                />
             </chakra.form>
         </VStack>
     );

@@ -78,12 +78,12 @@ export const narrowDBRule = (rule: DBRule) => {
 export const GetOrChooseSchema = <T>(schema: ZodSchema<T>, options: readonly [string, ...string[]]) =>
     z.object({
         get: schema,
-        choose: z.array(
-            z.object({
+        choose: z
+            .object({
                 amount: z.number().int().default(0),
-                options: z.enum(options),
-            }),
-        ),
+                choices: z.array(z.enum(options)),
+            })
+            .optional(),
     });
 
 export const RuleLinksSchema = z.record(

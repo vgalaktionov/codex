@@ -3,8 +3,9 @@ name: High Elf
 raceName: Elf
 traits:
     Ability Score Increase:
-        get:
-            intelligence: 1
+        value:
+            get:
+                intelligence: 1
 ---
 
 # High Elf

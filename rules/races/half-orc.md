@@ -2,9 +2,10 @@
 name: Half-Orc
 traits:
     Ability Score Increase:
-        get:
-            strength: 2
-            constitution: 1
+        value:
+            get:
+                strength: 2
+                constitution: 1
 ---
 
 ## Half-Orc

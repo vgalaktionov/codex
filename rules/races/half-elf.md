@@ -2,16 +2,17 @@
 name: Half-Elf
 traits:
     Ability Score Increase:
-        get:
-            charisma: 2
-        choose:
-            amount: 2
-            choices:
-                - strength
-                - intelligence
-                - constitution
-                - wisdom
-                - dexterity
+        value:
+            get:
+                charisma: 2
+            choose:
+                amount: 2
+                choices:
+                    - strength
+                    - intelligence
+                    - constitution
+                    - wisdom
+                    - dexterity
 ---
 
 ## Half-Elf

@@ -3,12 +3,12 @@ import { GetOrChooseSchema, RuleCategory, RuleSchema } from './base';
 
 export const AbilityScoreIncreaseSchema = GetOrChooseSchema(
     z.object({
-        strength: z.number().int(),
-        dexterity: z.number().int(),
-        constitution: z.number().int(),
-        intelligence: z.number().int(),
-        wisdom: z.number().int(),
-        charisma: z.number().int(),
+        strength: z.number().int().optional(),
+        dexterity: z.number().int().optional(),
+        constitution: z.number().int().optional(),
+        intelligence: z.number().int().optional(),
+        wisdom: z.number().int().optional(),
+        charisma: z.number().int().optional(),
     }),
     ['strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'],
 );
@@ -18,7 +18,7 @@ export const SpeedSchema = z.number().int().positive();
 export type Speed = z.infer<typeof SpeedSchema>;
 
 export const RacialTraitSchema = z.record(
-    z.string().min(3),
+    z.union([z.string().min(3), z.literal('Ability Score Increase'), z.literal('Speed')]),
     z.nullable(
         z.object({
             description: z.string().optional(),
